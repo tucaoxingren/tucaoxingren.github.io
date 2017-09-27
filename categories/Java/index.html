@@ -182,6 +182,44 @@ boole...
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/08/StringBuilder/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Java StringBuilder</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+StringBuilderjdk1.5以后出现了功能和StringBuffer一模一样的对象。就是StringBuilder
+不同的是：
+
+StringBuffer是线程同步的。通常用于多线程。StringBuilder是线程不同步的。通常用于单线程。 它的出现提高效率。
+
+jdk升级：
+
+1.简化书写。2.提高效率。3.增加安全性。
+
+
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = StringBuilder>StringBuilder</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/08</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/08/Java单例设计模式/" >
                     <h2 class="abstract-title">
                         
@@ -239,44 +277,6 @@ StringBuffer append(data);StringBuffer insert(index,data);
                 <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-href = StringBuffer>StringBuffer</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/08</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/StringBuilder/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Java StringBuilder</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-StringBuilderjdk1.5以后出现了功能和StringBuffer一模一样的对象。就是StringBuilder
-不同的是：
-
-StringBuffer是线程同步的。通常用于多线程。StringBuilder是线程不同步的。通常用于单线程。 它的出现提高效率。
-
-jdk升级：
-
-1.简化书写。2.提高效率。3.增加安全性。
-
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = StringBuilder>StringBuilder</a>
     
 </div>
                 
@@ -350,16 +350,15 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/04/字符串常用操作/" >
+            <a class="content-show-full" href = "/2017/09/04/字符串常用方法/" >
                     <h2 class="abstract-title">
                         
-                        <span>字符串常用操作</span>
+                        <span>字符串常用方法</span>
                     </h2>
                 <div class="abstract-content">
                     
-字符串常用操作操作1.给定一个字符串数组，按照字典顺序进行从小到大的排序2.一个子串在整串中出现的次数 –1.拿需要查找的子串去切割源字符串 切割后的字符串数组长度 –2.indexOf 判断子串位置，
-3.两个字符串中最大相同的子串思路：–1.既然取得是最大子串，先看短的那个字符串是否在长的那个字符串中。如果存在，短的那个字符串就是最大子串。–2.如果不是呢，那么就将短的那个子串进行长度递减的方式去子串，去长串中判断是否存在，如果存在就已找到，就不用在找了。
-4.模拟一个trim功能一致的方法。去除字符串两端的空白思路： –1.定义两个变量。 一个变量作为从头开始判断字符串空格的角标...
+字符串常用方法方法  按照面向对象的思想对字符串进行功能分类。  “abcd” 
+1.获取　1.1 获取字符串中字符的个数(长度).　　int length();　1.2 根据位置获取字符。　char charAt(int index);　1.3 根据字符获取在字符串中的第一次出现的位置.　　int indexOf(int ch)　　int indexOf(int ch,int fromIndex):从指定位置进行ch的查找第一次出现位置　　int indexOf(String str);　　int indexOf(String str,int fromIndex);　　根据字符串获取...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -381,15 +380,16 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/04/字符串常用方法/" >
+            <a class="content-show-full" href = "/2017/09/04/字符串常用操作/" >
                     <h2 class="abstract-title">
                         
-                        <span>字符串常用方法</span>
+                        <span>字符串常用操作</span>
                     </h2>
                 <div class="abstract-content">
                     
-字符串常用方法方法  按照面向对象的思想对字符串进行功能分类。  “abcd” 
-1.获取　1.1 获取字符串中字符的个数(长度).　　int length();　1.2 根据位置获取字符。　char charAt(int index);　1.3 根据字符获取在字符串中的第一次出现的位置.　　int indexOf(int ch)　　int indexOf(int ch,int fromIndex):从指定位置进行ch的查找第一次出现位置　　int indexOf(String str);　　int indexOf(String str,int fromIndex);　　根据字符串获取...
+字符串常用操作操作1.给定一个字符串数组，按照字典顺序进行从小到大的排序2.一个子串在整串中出现的次数 –1.拿需要查找的子串去切割源字符串 切割后的字符串数组长度 –2.indexOf 判断子串位置，
+3.两个字符串中最大相同的子串思路：–1.既然取得是最大子串，先看短的那个字符串是否在长的那个字符串中。如果存在，短的那个字符串就是最大子串。–2.如果不是呢，那么就将短的那个子串进行长度递减的方式去子串，去长串中判断是否存在，如果存在就已找到，就不用在找了。
+4.模拟一个trim功能一致的方法。去除字符串两端的空白思路： –1.定义两个变量。 一个变量作为从头开始判断字符串空格的角标...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -818,16 +818,6 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-archive"> Total : 24 </div>
     
     <div class="post-archive">
@@ -880,11 +870,6 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
@@ -896,6 +881,11 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
@@ -974,41 +964,41 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
         <span class="sidebar-tag-name"><a href= "#">collection</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Java</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">Git</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">StringBuilder</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">Linux commond</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Menu</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
+        <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">static</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">

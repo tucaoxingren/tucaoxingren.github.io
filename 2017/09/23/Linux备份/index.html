@@ -149,10 +149,10 @@
 <p>在备份Windows系统的时候你可能想过，我能不能把整个C盘都放到一个ZIP文件里去呢。这在Windows下是不可能的，因为在Windows中有 很多文件在它们运行时是不允许拷贝或覆盖的，因此你需要专门的备份工具对Windows系统进行特殊处理。</p>
 <p>和备份Windows系统不同，如果你要备份Ubuntu系统(或者其它任何Linux系统)，你不再需要像Ghost这类备份工具。事实上，Ghost 这类备份工具对于Linux文件系统的支持很糟糕，例如一些Ghost版本只能完善地支持Ext2文件系统，如果你用它来备份Ext3文件系统，你可能会 丢失一些宝贵的数据。</p>
 <h3 id="1-备份系统"><a href="#1-备份系统" class="headerlink" title="1. 备份系统"></a>1. 备份系统</h3><p>我该如何备份我的Ubuntu系统呢？很简单，就像你备份或压缩其它东西一样，使用TAR。和Windows不同，Linux不会限制root访问任何东 西，你可以把分区上的所有东西都扔到一个TAR文件里去！</p>
-<p>首先成为root用户：<br>$ sudo su</p>
-<p>然后进入文件系统的根目录(当然，如果你不想备份整个文件系统，你也可以进入你想要备份的目录，包括远程目录或者移动硬盘上的目录)：</p>
-<h1 id="cd"><a href="#cd" class="headerlink" title="cd /"></a>cd /</h1><p>下面是我用来备份系统的完整命令：</p>
-<h1 id="tar-cvpzf-backup-tgz-–exclude-proc-–exclude-lost-found-–exclude-backup-tgz-–exclude-mnt-–exclude-sys"><a href="#tar-cvpzf-backup-tgz-–exclude-proc-–exclude-lost-found-–exclude-backup-tgz-–exclude-mnt-–exclude-sys" class="headerlink" title="tar cvpzf backup.tgz –exclude=/proc –exclude=/lost+found –exclude=/backup.tgz –exclude=/mnt –exclude=/sys /"></a>tar cvpzf backup.tgz –exclude=/proc –exclude=/lost+found –exclude=/backup.tgz –exclude=/mnt –exclude=/sys /</h1><p>让我们来简单看一下这个命令：</p>
+<p>首先成为root用户：<br><code>$ sudo su</code></p>
+<p>然后进入文件系统的根目录(当然，如果你不想备份整个文件系统，你也可以进入你想要备份的目录，包括远程目录或者移动硬盘上的目录)：<br><code># cd /</code></p>
+<p>下面是我用来备份系统的完整命令：<br><code># tar cvpzf backup.tgz –exclude=/proc –exclude=/lost+found –exclude=/backup.tgz –exclude=/mnt –exclude=/sys /</code></p>
+<p>让我们来简单看一下这个命令：</p>
 <p>“tar”当然就是我们备份系统所使用的程序了。</p>
 <p>“cvpfz”是tar的选项，意思是“创建档案文件”、“保持权限”(保留所有东西原来的权限)、“使用gzip来减小文件尺寸”。</p>
 <p>“backup.gz”是我们将要得到的档案文件的文件名。</p>
@@ -162,17 +162,17 @@
 <p>执行备份命令之前请再确认一下你所键入的命令是不是你想要的。执行备份命令可能需要一段不短的时间。</p>
 <p>备份完成后，在文件系统的根目录将生成一个名为“backup.tgz”的文件，它的尺寸有可能非常大。现在你可以把它烧录到DVD上或者放到你认为安全 的地方去。</p>
 <p>在备份命令结束时你可能会看到这样一个提示：’tar: Error exit delayed from previous errors’，多数情况下你可以忽略它。</p>
-<p>你还可以用Bzip2来压缩文件，Bzip2比gzip的压缩率高，但是速度慢一些。如果压缩率对你来说很重要，那么你应该使用Bzip2，用“j”代替 命令中的“z”，并且给档案文件一个正确的扩展名“bz2”。完整的命令如下：<br>/*</p>
-<h1 id="tar-cvpjf-backup-tar-bz2-–exclude-proc-–exclude-lost-found-–exclude-backup-tar-bz2-–exclude-mnt-–exclude-sys"><a href="#tar-cvpjf-backup-tar-bz2-–exclude-proc-–exclude-lost-found-–exclude-backup-tar-bz2-–exclude-mnt-–exclude-sys" class="headerlink" title="tar cvpjf backup.tar.bz2 –exclude=/proc –exclude=/lost+found –exclude=/backup.tar.bz2 –exclude=/mnt –exclude=/sys /"></a>tar cvpjf backup.tar.bz2 –exclude=/proc –exclude=/lost+found –exclude=/backup.tar.bz2 –exclude=/mnt –exclude=/sys /</h1><p>*/<br>tar cvpjf backup.tar.bz2 –exclude=/proc –exclude=/lost+found –exclude=/backup.tar.bz2 –exclude=/mnt –exclude=/sys –exclude=/media –exclude=/home/laoke/下载  –exclude=/home/laoke/program media/laoke/文档/备份/debian/tarDebian</p>
+<p>你还可以用Bzip2来压缩文件，Bzip2比gzip的压缩率高，但是速度慢一些。如果压缩率对你来说很重要，那么你应该使用Bzip2，用“j”代替 命令中的“z”，并且给档案文件一个正确的扩展名“bz2”。完整的命令如下：<br>/<em><br><code># tar cvpjf backup.tar.bz2 –exclude=/proc –exclude=/lost+found –exclude=/backup.tar.bz2 –exclude=/mnt –exclude=/sys /</code>
+</em>/<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar cvpjf backup.tar.bz2 –exclude=/proc –exclude=/lost+found –exclude=/backup.tar.bz2 –exclude=/mnt –exclude=/sys –exclude=/media –exclude=/home/laoke/下载  –exclude=/home/laoke/program media/laoke/文档/备份/debian/tarDebian</div></pre></td></tr></table></figure></p>
 <h3 id="2-恢复系统"><a href="#2-恢复系统" class="headerlink" title="2. 恢复系统"></a>2. 恢复系统</h3><p>在进行恢复系统的操作时一定要小心！如果你不清楚自己在做什么，那么你有可能把重要的数据弄丢，请务必小心！</p>
 <p>接着上面的例子。切换到root用户，并把文件“backup.tgz”拷贝到分区的根目录下。</p>
 <p>在 Linux中有一件很美妙的事情，就是你可以在一个运行的系统中恢复系统，而不需要用boot-cd来专门引导。当然，如果你的系统已经挂掉不能启动了， 你可以用Live CD来启动，效果是一样的。你还可以用一个命令把Linux系统中的所有文件干掉，当然在这里我不打算给出这个命令！</p>
-<p>使用下面的命令来恢复系统：</p>
-<h1 id="tar-xvpfz-backup-tgz-C"><a href="#tar-xvpfz-backup-tgz-C" class="headerlink" title="tar xvpfz backup.tgz -C /"></a>tar xvpfz backup.tgz -C /</h1><p>如果你的档案文件是使用Bzip2压缩的，应该用：</p>
-<h1 id="tar-xvpfj-backup-tar-bz2-C"><a href="#tar-xvpfj-backup-tar-bz2-C" class="headerlink" title="tar xvpfj backup.tar.bz2 -C /"></a>tar xvpfj backup.tar.bz2 -C /</h1><p>注意：上面的命令会用档案文件中的文件覆盖分区上的所有文件。</p>
+<p>使用下面的命令来恢复系统：<br><code># tar xvpfz backup.tgz -C /</code></p>
+<p>如果你的档案文件是使用Bzip2压缩的，应该用：<br><code># tar xvpfj backup.tar.bz2 -C /</code></p>
+<p>注意：上面的命令会用档案文件中的文件覆盖分区上的所有文件。</p>
 <p>执行恢复命令之前请再确认一下你所键入的命令是不是你想要的，执行恢复命令可能需要一段不短的时间。</p>
-<p>恢复命令结束时，你的工作还没完成，别忘了重新创建那些在备份时被排除在外的目录：</p>
-<h1 id="mkdir-proc"><a href="#mkdir-proc" class="headerlink" title="mkdir proc"></a>mkdir proc</h1><h1 id="mkdir-lost-found"><a href="#mkdir-lost-found" class="headerlink" title="mkdir lost+found"></a>mkdir lost+found</h1><h1 id="mkdir-mnt"><a href="#mkdir-mnt" class="headerlink" title="mkdir mnt"></a>mkdir mnt</h1><h1 id="mkdir-sys"><a href="#mkdir-sys" class="headerlink" title="mkdir sys"></a>mkdir sys</h1><p>等等</p>
+<p>恢复命令结束时，你的工作还没完成，别忘了重新创建那些在备份时被排除在外的目录：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> mkdir proc</div><div class="line"><span class="meta">#</span> mkdir lost+found</div><div class="line"><span class="meta">#</span> mkdir mnt</div><div class="line"><span class="meta">#</span> mkdir sys</div></pre></td></tr></table></figure></p>
+<p>等等</p>
 <p>当你重启电脑，你会发现一切东西恢复到你创建备份时的样子了！</p>
 
     </article>
@@ -188,9 +188,9 @@
         
         
             <li class="next">
-                <a href= "/2017/09/21/note1/" title= Android Activity >
+                <a href= "/2017/09/21/menu/" title= Android menu >
                     <span>Next Post</span>
-                    <span>Android Activity</span>
+                    <span>Android menu</span>
                 </a>
             </li>
         
@@ -575,16 +575,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-archive"> Total : 24 </div>
     
     <div class="post-archive">
@@ -637,11 +627,6 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
@@ -653,6 +638,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
@@ -731,41 +721,41 @@
     
         <span class="sidebar-tag-name"><a href= "#">collection</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Java</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">Git</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">StringBuilder</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">Linux commond</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Menu</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
+        <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">static</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">

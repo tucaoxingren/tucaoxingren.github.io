@@ -149,17 +149,17 @@
 <h3 id="创建Activity"><a href="#创建Activity" class="headerlink" title="创建Activity"></a>创建Activity</h3><ol>
 <li>一个<code>Activity</code>就是一个类，要继承<code>AppCompatActivity</code>类</li>
 <li><p>要覆写<code>onCreat</code>方法 （即<strong>main</strong>方法，<code>Activity</code>的入口）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public class MainActivity extends AppCompatActivity &#123;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>每一个<code>Activity</code>都需要<code>在AndroidMainfest.xml</code>文件中进行配置</p>
 </li>
 <li><p>若一个<code>Activity</code>含有<code>&lt;intent_filter&gt;</code>标签则这个<code>Activity</code>是<em>APP</em>启动时第一个加载的Activity</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;activity android:name=&quot;.MainActivity&quot;&gt;</div><div class="line">            &lt;intent-filter&gt;</div><div class="line">                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</div><div class="line"></div><div class="line">                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</div><div class="line">            &lt;/intent-filter&gt;</div><div class="line">        &lt;/activity&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MainActivity"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;</span></div><div class="line"></div><div class="line">                <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>为Activity添加控件</p>
 </li>
 </ol>
-<h3 id="为Activity添加控件"><a href="#为Activity添加控件" class="headerlink" title="为Activity添加控件"></a>为Activity添加控件</h3><p><code>～/layout/activity_main.xml</code>(即<code>MainActivity</code>的布局文件)<br>常见布局文件如下 <code>&lt;TextView&gt;</code> 即一个文本控件 可以显示文本<br>布局方式 ：<code>ConstraintLayout</code>即约束布局<br><strong>Android studio2.2 新加入的布局方式，适合手动布局而非代码布局</strong><br><a href="http://blog.csdn.net/guolin_blog/article/details/53122387" target="_blank" rel="external">ConstraintLayout详解</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</div><div class="line">&lt;android.support.constraint.ConstraintLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</div><div class="line">    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;</div><div class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot;</div><div class="line"></div><div class="line">    android:layout_centerHorizontal=&quot;true&quot;</div><div class="line">    android:layout_centerVertical=&quot;true&quot;</div><div class="line"></div><div class="line">    tools:context=&quot;com.example.laoke.helloworld.MainActivity&quot;&gt;</div><div class="line"></div><div class="line">    &lt;TextView</div><div class="line">        android:text=&quot;@string/hello&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot; /&gt;</div><div class="line"></div><div class="line">&lt;/android.support.constraint.ConstraintLayout&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="为Activity添加控件"><a href="#为Activity添加控件" class="headerlink" title="为Activity添加控件"></a>为Activity添加控件</h3><p><code>～/layout/activity_main.xml</code>(即<code>MainActivity</code>的布局文件)<br>常见布局文件如下 <code>&lt;TextView&gt;</code> 即一个文本控件 可以显示文本<br>布局方式 ：<code>ConstraintLayout</code>即约束布局<br><strong>Android studio2.2 新加入的布局方式，适合手动布局而非代码布局</strong><br><a href="http://blog.csdn.net/guolin_blog/article/details/53122387" target="_blank" rel="external">ConstraintLayout详解</a><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.constraint.ConstraintLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></div><div class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag"></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_centerHorizontal</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_centerVertical</span>=<span class="string">"true"</span></span></div><div class="line"><span class="tag"></span></div><div class="line"><span class="tag">    <span class="attr">tools:context</span>=<span class="string">"com.example.laoke.helloworld.MainActivity"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"@string/hello"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span> /&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">android.support.constraint.ConstraintLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>常用控件：<br><code>TextView</code>：文本<br><code>Button</code>：按钮<br>所有控件的父类是<code>view</code></p>
 <h2 id="Xml"><a href="#Xml" class="headerlink" title="Xml"></a>Xml</h2><p>每个Activity对应一个xml ,xml控制布局位置<br>xml即布局文件</p>
 <p>src目录：存放代码</p>
@@ -169,17 +169,17 @@
     <ul class="post-pager">
         
             <li class="previous">
-                <a href= "/2017/09/23/Linux备份/" title= Linux 备份与恢复 >
+                <a href= "/2017/09/21/menu/" title= Android menu >
                     <span>Previous Post</span>
-                    <span>Linux 备份与恢复</span>
+                    <span>Android menu</span>
                 </a>
             </li>
         
         
             <li class="next">
-                <a href= "/2017/09/21/menu/" title= Android menu >
+                <a href= "/2017/09/20/Git操作/" title= Git命令 >
                     <span>Next Post</span>
-                    <span>Android menu</span>
+                    <span>Git命令</span>
                 </a>
             </li>
         
@@ -564,16 +564,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-archive"> Total : 24 </div>
     
     <div class="post-archive">
@@ -626,11 +616,6 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
@@ -642,6 +627,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
@@ -720,41 +710,41 @@
     
         <span class="sidebar-tag-name"><a href= "#">collection</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Java</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">Git</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">StringBuilder</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">Linux commond</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Menu</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
+        <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">static</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
