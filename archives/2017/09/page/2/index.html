@@ -111,21 +111,16 @@
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/Java单例设计模式/" >
+            <a class="content-show-full" href = "/2017/09/08/Java 变量存储理解/" >
                     <h2 class="abstract-title">
                         
-                        <span>Java 单例设计模式</span>
+                        <span>Java 变量存储理解</span>
                     </h2>
                 <div class="abstract-content">
                     
-Java 单例设计模式设计模式   对问题行之有效的解决方式
-1. 单例设计模式
-解决的问题：就是可以保证一个类在内存中的对象唯一性必须对于多个应用程序使用同一配置信息对象时，就需要保证对象的唯一性。如何保证对象的唯一性？1.不允许其他程序用new创建该类对象。2.在该类中创建一个本类实例。3.对外提供一个方法让其他程序可以获取到该对象。
+Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保存的，不管其是基本类型的变量，还是引用类型的变量，都是存储在各自的方法栈区中；但引用类型变量所引用的对象（包括数组、普通Java对象）则总是存储在堆内存中。 
+&ensp;&ensp;引用变量本质上只是一个指针，只要程序通过引用变量访问属性，或者通过引用变量来调用方法，该引用变量将会由它所引用的对象代替。
 
-2.步骤：
-1.把构造方法私有化2.通过new在本类中创建一个本类对象3.定义一个共有的方法，将创建的对象返回。
-
-123456789101112131415161718192021222324252627282930313233343536373...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -147,19 +142,23 @@ Java 单例设计模式设计模式   对问题行之有效的解决方式
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/StringBuffer/" >
+            <a class="content-show-full" href = "/2017/09/08/StringBuilder/" >
                     <h2 class="abstract-title">
                         
-                        <span>Java StringBuffer</span>
+                        <span>Java StringBuilder</span>
                     </h2>
                 <div class="abstract-content">
                     
-StringBufferStringBuffer:就是字符串缓冲区。用于存储数据的容器。
-特点：1.长度的可变的。2.可以存储不同类型数据。3.最终要转成字符串进行使用。4.可以对字符串进行修改。 
-既然是一个容器对象。应该具备什么功能呢？1.添加：
-StringBuffer append(data);StringBuffer insert(index,data);
-2.删除：StringBuffer delete(start,end):包含头，不包含尾。StringBuffer deleteCharAt(int index):删除指定位置的元素 
-3.查找：char charAt(i...
+StringBuilderjdk1.5以后出现了功能和StringBuffer一模一样的对象。就是StringBuilder
+不同的是：
+
+StringBuffer是线程同步的。通常用于多线程。StringBuilder是线程不同步的。通常用于单线程。 它的出现提高效率。
+
+jdk升级：
+
+1.简化书写。2.提高效率。3.增加安全性。
+
+
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -167,7 +166,7 @@ StringBuffer append(data);StringBuffer insert(index,data);
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = StringBuffer>StringBuffer</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = StringBuilder>StringBuilder</a>
     
 </div>
                 
@@ -315,20 +314,24 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/02/多线程小结/" >
+            <a class="content-show-full" href = "/2017/09/02/停止线程的三种方式/" >
                     <h2 class="abstract-title">
                         
-                        <span>多线程小结</span>
+                        <span>停止线程的两种方式</span>
                     </h2>
                 <div class="abstract-content">
-                    
-多线程小结1.进程和线程的概念。
-–进程：进程是程序的基本执行实体；进程是线程的容器；程序是指令、数据及其组织形式的描述，进程是程序的实体。
-–线程：一个进程可以有多个线程，表现为一个程序中有多个任务同时运行，线程共享进程中的数据。
+                    停止线程的两种方式
+stop方法调用Runable接口中的stop()方法
+run方法结束怎么控制线程的任务结束呢?
 
-2.jvm中的多线程体现。
-–主线程，垃圾回收线程，自定义线程。以及他们运行的代码的位置。创建线程的方式
-123456789101112131415161718192021222324252627282930313233343536class PrimeThread extends Thread &#123;         long minPrime;...
+任务中都会有循环结构，只要控制住循环就可以结束任务。
+
+控制循环通常使用定义标记标记来完成。
+但是如果线程处于了冻结状态，无法读取标记。如何结束呢？
+
+可以使用interrupt()方法将线程从冻结状态强制恢复到运行状态中来，让线程具备cpu的执行资格。但是强制动作会发生InterruptedException异常，记得要处理
+
+Demo代码如下：12345678910111213141516171819202122232425262728293031323334353...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -350,24 +353,20 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/02/停止线程的三种方式/" >
+            <a class="content-show-full" href = "/2017/09/02/多线程小结/" >
                     <h2 class="abstract-title">
                         
-                        <span>停止线程的两种方式</span>
+                        <span>多线程小结</span>
                     </h2>
                 <div class="abstract-content">
-                    停止线程的两种方式
-stop方法调用Runable接口中的stop()方法
-run方法结束怎么控制线程的任务结束呢?
+                    
+多线程小结1.进程和线程的概念。
+–进程：进程是程序的基本执行实体；进程是线程的容器；程序是指令、数据及其组织形式的描述，进程是程序的实体。
+–线程：一个进程可以有多个线程，表现为一个程序中有多个任务同时运行，线程共享进程中的数据。
 
-任务中都会有循环结构，只要控制住循环就可以结束任务。
-
-控制循环通常使用定义标记标记来完成。
-但是如果线程处于了冻结状态，无法读取标记。如何结束呢？
-
-可以使用interrupt()方法将线程从冻结状态强制恢复到运行状态中来，让线程具备cpu的执行资格。但是强制动作会发生InterruptedException异常，记得要处理
-
-Demo代码如下：12345678910111213141516171819202122232425262728293031323334353...
+2.jvm中的多线程体现。
+–主线程，垃圾回收线程，自定义线程。以及他们运行的代码的位置。创建线程的方式
+123456789101112131415161718192021222324252627282930313233343536class PrimeThread extends Thread &#123;         long minPrime;...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -788,16 +787,6 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-archive"> Total : 24 </div>
     
     <div class="post-archive">
@@ -850,11 +839,6 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
@@ -866,6 +850,11 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
@@ -944,41 +933,41 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
         <span class="sidebar-tag-name"><a href= "#">collection</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Java</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">Git</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">StringBuilder</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">Linux commond</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Menu</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
+        <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">static</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
