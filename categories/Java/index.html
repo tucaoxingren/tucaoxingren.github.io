@@ -111,6 +111,43 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/28/集合类/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>集合类</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+集合类集合类的由来：    对象用于封装特有数据-对象多了需要存储-如果对象的个数不确定。    就使用集合容器进行存储。
+集合特点：1-用于存储对象的容器。2-集合的长度是可变的。3-集合中不可以存储基本数据类型值。 
+集合容器因为内部的数据结构不同-有多种具体容器。不断的向上抽取-就形成了集合框架。
+框架的顶层Collection接口：
+Collection的常见方法：
+1-添加。boolean add(Object obj):
+boolean addAll(Collection coll):
+2-删除。boolean remove(object obj):
+boolean rem...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = Java Collection>Java Collection</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/28</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/21/note1/" >
                     <h2 class="abstract-title">
                         
@@ -175,6 +212,71 @@ boole...
                 <!-- date  -->
                 <div class="abstract-date">
                     <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/12</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/08/Java 变量存储理解/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Java 变量存储理解</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保存的，不管其是基本类型的变量，还是引用类型的变量，都是存储在各自的方法栈区中；但引用类型变量所引用的对象（包括数组、普通Java对象）则总是存储在堆内存中。 
+&ensp;&ensp;引用变量本质上只是一个指针，只要程序通过引用变量访问属性，或者通过引用变量来调用方法，该引用变量将会由它所引用的对象代替。
+
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = Java>Java</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/08</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/08/StringBuffer/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Java StringBuffer</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+StringBufferStringBuffer:就是字符串缓冲区。用于存储数据的容器。
+特点：1.长度的可变的。2.可以存储不同类型数据。3.最终要转成字符串进行使用。4.可以对字符串进行修改。 
+既然是一个容器对象。应该具备什么功能呢？1.添加：
+StringBuffer append(data);StringBuffer insert(index,data);
+2.删除：StringBuffer delete(start,end):包含头，不包含尾。StringBuffer deleteCharAt(int index):删除指定位置的元素 
+3.查找：char charAt(i...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = StringBuffer>StringBuffer</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/08</span>
                 </div>
             </div>
         </article>
@@ -256,71 +358,6 @@ Java 单例设计模式设计模式   对问题行之有效的解决方式
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/StringBuffer/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Java StringBuffer</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-StringBufferStringBuffer:就是字符串缓冲区。用于存储数据的容器。
-特点：1.长度的可变的。2.可以存储不同类型数据。3.最终要转成字符串进行使用。4.可以对字符串进行修改。 
-既然是一个容器对象。应该具备什么功能呢？1.添加：
-StringBuffer append(data);StringBuffer insert(index,data);
-2.删除：StringBuffer delete(start,end):包含头，不包含尾。StringBuffer deleteCharAt(int index):删除指定位置的元素 
-3.查找：char charAt(i...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = StringBuffer>StringBuffer</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/08</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/Java 变量存储理解/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Java 变量存储理解</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保存的，不管其是基本类型的变量，还是引用类型的变量，都是存储在各自的方法栈区中；但引用类型变量所引用的对象（包括数组、普通Java对象）则总是存储在堆内存中。 
-&ensp;&ensp;引用变量本质上只是一个指针，只要程序通过引用变量访问属性，或者通过引用变量来调用方法，该引用变量将会由它所引用的对象代替。
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Java>Java</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/08</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/06/String类/" >
                     <h2 class="abstract-title">
                         
@@ -343,36 +380,6 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
                 <!-- date  -->
                 <div class="abstract-date">
                     <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/06</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/04/字符串常用方法/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>字符串常用方法</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-字符串常用方法方法  按照面向对象的思想对字符串进行功能分类。  “abcd” 
-1.获取　1.1 获取字符串中字符的个数(长度).　　int length();　1.2 根据位置获取字符。　char charAt(int index);　1.3 根据字符获取在字符串中的第一次出现的位置.　　int indexOf(int ch)　　int indexOf(int ch,int fromIndex):从指定位置进行ch的查找第一次出现位置　　int indexOf(String str);　　int indexOf(String str,int fromIndex);　　根据字符串获取...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = java字符串>java字符串</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/04</span>
                 </div>
             </div>
         </article>
@@ -411,29 +418,15 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/03/多线程 锁的理解/" >
+            <a class="content-show-full" href = "/2017/09/04/字符串常用方法/" >
                     <h2 class="abstract-title">
                         
-                        <span>多线程 锁的理解</span>
+                        <span>字符串常用方法</span>
                     </h2>
                 <div class="abstract-content">
                     
-多线程 锁的理解什么是锁
-顾名思义锁可以理解为一个占用标记，持有锁的线程可以访问数据，而没有锁的线程无法访问数据
-
-为什么要加锁
-多个线程同时访问一个共享数据时，可能会造成此数据同时被多个线程访问甚至修改，进而可能会导致程序逻辑错误等
-
-如何加锁
-同步
-
-同步代码块Object obj = new Object();synchronized(obj){code…(需要同步的代码)}
-
-–
-
-同步函数public synchronized void method(){}
-
-实现Lock接口,JDK1.8示例如下：12345678910111213141516171819202122232...
+字符串常用方法方法  按照面向对象的思想对字符串进行功能分类。  “abcd” 
+1.获取　1.1 获取字符串中字符的个数(长度).　　int length();　1.2 根据位置获取字符。　char charAt(int index);　1.3 根据字符获取在字符串中的第一次出现的位置.　　int indexOf(int ch)　　int indexOf(int ch,int fromIndex):从指定位置进行ch的查找第一次出现位置　　int indexOf(String str);　　int indexOf(String str,int fromIndex);　　根据字符串获取...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -441,13 +434,13 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = java线程锁>java线程锁</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = java字符串>java字符串</a>
     
 </div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/03</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/04</span>
                 </div>
             </div>
         </article>
@@ -818,7 +811,113 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
     
-    <div class="total-archive"> Total : 24 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 30 </div>
     
     <div class="post-archive">
     
@@ -827,6 +926,31 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/集合类/" >集合类</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span><a class="archive-post-title" href= "/2017/09/27/android常用控件/" >Android 常用控件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/25</span><a class="archive-post-title" href= "/2017/09/25/Activity布局/" >Activity布局</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -870,12 +994,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
@@ -885,7 +1009,7 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
@@ -940,6 +1064,11 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2017/04/20/阿里巴巴校招编程试题/" >阿里巴巴校招编程试题1</a>
         </li>
     
@@ -962,17 +1091,25 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
         <div class="sidebar-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name"><a href= "#">activity</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">collection</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">handle</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Git</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Java</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">StringBuilder</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
@@ -980,25 +1117,23 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
         <span class="sidebar-tag-name"><a href= "#">Menu</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">Android</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
+        <span class="sidebar-tag-name"><a href= "#">java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">static</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java</a></span>
+        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Java Collection</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
