@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>
         
-        集合类 · tucaoxingren&#39;s Blog
+        字节流复制文件 · tucaoxingren&#39;s Blog
         
     </title>
     <link rel="icon" href= /assests/favicon.ico>
@@ -81,7 +81,7 @@
                 <a href="/" >tucaoxingren&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">集合类</a>
+                <a href="#" class="post-name">字节流复制文件</a>
             </div>
     </div>
     
@@ -102,7 +102,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            集合类
+            字节流复制文件
             <!-- 404 -->
             
         </h1>
@@ -120,18 +120,18 @@
             
                 <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = Java Collection>Java Collection</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = io流>io流</a>
     
 </div>
             
             <div class="post-intro-meta">
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                <span class="post-intro-time">2017/09/28</span>
+                <span class="post-intro-time">2017/08/01</span>
             </div>
             <!-- 
 
 <div class="post-share iconfont-archer">
-    <ul class="share-box" data-href = "/2017/09/28/集合类/" data-title = "集合类" >
+    <ul class="share-box" data-href = "/2017/08/01/字节流复制文件/" data-title = "字节流复制文件" >
         <li class="to-weibo">分享到微博</li>
         <li class="to-wechat">分享到微信</li>
         <li class="to-qq">分享到QQ</li>
@@ -145,158 +145,24 @@
             <main class="main post-page">
     <article class="article-entry">
         <p></p><p></p>
-<h1 id="集合类"><a href="#集合类" class="headerlink" title="集合类"></a>集合类</h1><p>集合类的由来：<br>    对象用于封装特有数据-对象多了需要存储-如果对象的个数不确定。<br>    就使用集合容器进行存储。</p>
-<p>集合特点：<br>1-用于存储对象的容器。<br>2-集合的长度是可变的。<br>3-集合中不可以存储基本数据类型值。 </p>
-<p>集合容器因为内部的数据结构不同-有多种具体容器。<br>不断的向上抽取-就形成了集合框架。</p>
-<p>框架的顶层Collection接口：</p>
-<p>Collection的常见方法：</p>
-<h2 id="1-添加。"><a href="#1-添加。" class="headerlink" title="1-添加。"></a>1-添加。</h2><pre><code>boolean add(Object obj):
-boolean addAll(Collection coll):
-</code></pre><h2 id="2-删除。"><a href="#2-删除。" class="headerlink" title="2-删除。"></a>2-删除。</h2><pre><code>boolean remove(object obj):
-boolean removeAll(Collection coll);
-void clear();
-</code></pre><h2 id="3-判断："><a href="#3-判断：" class="headerlink" title="3-判断："></a>3-判断：</h2><pre><code>boolean contains(object obj):
-boolean containsAll(Colllection coll);
-boolean isEmpty():判断集合中是否有元素。 
-</code></pre><h2 id="4-获取："><a href="#4-获取：" class="headerlink" title="4-获取："></a>4-获取：</h2><pre><code>int size():
-Iterator iterator():取出元素的方式：迭代器。
-该对象必须依赖于具体容器-因为每一个容器的数据结构都不同。
-所以该迭代器对象是在容器中进行内部实现的。
-对于使用容器者而言-具体的实现不重要-只要通过容器获取到该实现的迭代器的对象即可-
-也就是iterator方法。
-
-Iterator接口就是对所有的Collection容器进行元素取出的公共接口。
-其实就是抓娃娃游戏机中的夹子！
-</code></pre><h2 id="5-其他："><a href="#5-其他：" class="headerlink" title="5-其他："></a>5-其他：</h2><pre><code>boolean retainAll(Collection coll);取交集。
-Object[] toArray():将集合转成数组。 
-</code></pre><hr>
-<p>Collection<br>    |–List：有序(存入和取出的顺序一致),元素都有索引(角标)-元素可以重复。<br>    |–Set：元素不能重复,无序。</p>
-<h2 id="List-特有的常见方法：有一个共性特点就是都可以操作角标。"><a href="#List-特有的常见方法：有一个共性特点就是都可以操作角标。" class="headerlink" title="List:特有的常见方法：有一个共性特点就是都可以操作角标。"></a>List:特有的常见方法：有一个共性特点就是都可以操作角标。</h2><h3 id="1-添加"><a href="#1-添加" class="headerlink" title="1-添加"></a>1-添加</h3><pre><code>void add(index,element);
-void add(index,collection);
-</code></pre><h3 id="2-删除；"><a href="#2-删除；" class="headerlink" title="2-删除；"></a>2-删除；</h3><pre><code>Object remove(index):
-</code></pre><h3 id="3-修改："><a href="#3-修改：" class="headerlink" title="3-修改："></a>3-修改：</h3><pre><code>Object set(index,element);
-</code></pre><h3 id="4-获取：-1"><a href="#4-获取：-1" class="headerlink" title="4-获取："></a>4-获取：</h3><pre><code>Object get(index);
-int indexOf(object);
-int lastIndexOf(object);
-List subList(from,to);
-</code></pre><p>list集合是可以完成对元素的增删改查。</p>
-<h2 id="List"><a href="#List" class="headerlink" title="List:"></a>List:</h2><pre><code>|--Vector:内部是数组数据结构-是同步的。增删-查询都很慢！|--ArrayList:内部是数组数据结构-是不同步的。替代了Vector。查询的速度快。
-
-|--LinkedList:内部是链表数据结构-是不同步的。增删元素的速度很快。
-
-LinkedList:
-
-addFirst();
-addLast():
-jdk1.6
-offerFirst();
-offetLast();
-
-
-getFirst();.//获取但不移除-如果链表为空-抛出NoSuchElementException.
-getLast();
-jdk1.6
-peekFirst();//获取但不移除-如果链表为空-返回null.
-peekLast():
-
-removeFirst();//获取并移除-如果链表为空-抛出NoSuchElementException.
-removeLast();
-jdk1.6
-pollFirst();//获取并移除-如果链表为空-返回null.
-pollLast();
-</code></pre><hr>
-<p>Set:元素不可以重复-是无序。<br>    Set接口中的方法和Collection一致。<br>    |–HashSet: 内部数据结构是哈希表 -是不同步的。<br>        如何保证该集合的元素唯一性呢？<br>        是通过对象的hashCode和equals方法来完成对象唯一性的。<br>        如果对象的hashCode值不同-那么不用判断equals方法-就直接存储到哈希表中。<br>        如果对象的hashCode值相同-那么要再次判断对象的equals方法是否为true。<br>        如果为true-视为相同元素-不存。如果为false-那么视为不同元素-就进行存储。</p>
-<pre><code>    记住：如果元素要存储到HashSet集合中-必须覆盖hashCode方法和equals方法。
-    一般情况下-如果定义的类会产生很多对象-比如人-学生-书-通常都需要覆盖equals-hashCode方法。
-    建立对象判断是否相同的依据。
-
-
-
-
-|--TreeSet:可以对Set集合中的元素进行排序。是不同步的。 
-            判断元素唯一性的方式：就是根据比较方法的返回结果是否是0-是0-就是相同元素-不存。 
-
-            TreeSet对元素进行排序的方式一：
-            让元素自身具备比较功能-元就需要实现Comparable接口。覆盖compareTo方法。
-
-            如果不要按照对象中具备的自然顺序进行排序。如果对象中不具备自然顺序。怎么办？
-            可以使用TreeSet集合第二种排序方式二：
-            让集合自身具备比较功能-定义一个类实现Comparator接口-覆盖compare方法。
-            将该类对象作为参数传递给TreeSet集合的构造函数。
-</code></pre><p>if(this.hashCode()== obj.hashCode() &amp;&amp; this.equals(obj))</p>
-<p>哈希表确定元素是否相同<br>1-判断的是两个元素的哈希值是否相同。<br>    如果相同-在判断两个对象的内容是否相同。</p>
-<p>2-判断哈希值相同-其实判断的是对象的hashCode的方法。判断内容相同-用的是equals方法。</p>
-<p>注意：如果哈希值不同-是不需要判断equals。</p>
-<hr>
-<p>泛型：<br>    jdk1.5出现的安全机制。</p>
-<p>好处：<br>    1-将运行时期的问题ClassCastException转到了编译时期。<br>    2-避免了强制转换的麻烦。</p>
-<p>&lt;&gt;:什么时候用？当操作的引用数据类型不确定的时候。就使用&lt;&gt;。将要操作的引用数据类型传入即可.<br>   其实&lt;&gt;就是一个用于接收具体引用数据类型的参数范围。</p>
-<p>在程序中-只要用到了带有&lt;&gt;的类或者接口-就要明确传入的具体引用数据类型 。</p>
-<p>泛型技术是给编译器使用的技术,用于编译时期。确保了类型的安全。</p>
-<p>运行时-会将泛型去掉-生成的class文件中是不带泛型的,这个称为泛型的擦除。<br>为什么擦除呢？因为为了兼容运行的类加载器。</p>
-<p>泛型的补偿：在运行时-通过获取元素的类型进行转换动作。不用使用者在强制转换了。</p>
-<p>泛型的通配符：? 未知类型。 </p>
-<p>泛型的限定：<br>? extends E: 接收E类型或者E的子类型对象。上限<br>一般存储对象的时候用。比如 添加元素 addAll.</p>
-<p>? super E: 接收E类型或者E的父类型对象。 下限。<br>一般取出对象的时候用。比如比较器。</p>
-<p>===========================================================</p>
-<p>集合的一些技巧：</p>
-<p>需要唯一吗？<br>需要：Set<br>    需要制定顺序：<br>            需要： TreeSet<br>            不需要：HashSet<br>            但是想要一个和存储一致的顺序(有序):LinkedHashSet<br>不需要：List<br>    需要频繁增删吗？<br>        需要：LinkedList<br>        不需要：ArrayList</p>
-<p>如何记录每一个容器的结构和所属体系呢？</p>
-<p>看名字！</p>
-<p>List<br>    |–ArrayList<br>    |–LinkedList</p>
-<p>Set<br>    |–HashSet<br>    |–TreeSet</p>
-<p>后缀名就是该集合所属的体系。</p>
-<p>前缀名就是该集合的数据结构。</p>
-<p>看到array：就要想到数组-就要想到查询快-有角标.<br>看到link：就要想到链表-就要想到增删快-就要想要 add get remove+frist last的方法<br>看到hash:就要想到哈希表-就要想到唯一性-就要想到元素需要覆盖hashcode方法和equals方法。<br>看到tree：就要想到二叉树-就要想要排序-就要想到两个接口Comparable-Comparator 。</p>
-<p>而且通常这些常用的集合容器都是不同步的。 </p>
-<p>============================================</p>
-<p>Map：一次添加一对元素。Collection 一次添加一个元素。<br>    Map也称为双列集合-Collection集合称为单列集合。<br>    其实map集合中存储的就是键值对。<br>    map集合中必须保证键的唯一性。 </p>
-<p>常用方法：<br>1-添加。<br>    value put(key,value):返回前一个和key关联的值-如果没有返回null.</p>
-<p>2-删除。<br>    void  clear():清空map集合。<br>    value remove(key):根据指定的key翻出这个键值对。 </p>
-<p>3-判断。<br>    boolean containsKey(key):<br>    boolean containsValue(value):<br>    boolean isEmpty();</p>
-<p>4-获取。<br>    value get(key):通过键获取值-如果没有该键返回null。<br>                    当然可以通过返回null-来判断是否包含指定键。<br>    int size(): 获取键值对的个数。 </p>
-<p>Map常用的子类：<br>    |–Hashtable :内部结构是哈希表-是同步的。不允许null作为键-null作为值。<br>        |–Properties：用来存储键值对型的配置文件的信息-可以和IO技术相结合。<br>    |–HashMap : 内部结构是哈希表-不是同步的。允许null作为键-null作为值。<br>    |–TreeMap : 内部结构是二叉树-不是同步的。可以对Map集合中的键进行排序。 </p>
-<p>List list = new ArrayList();//非同步的。</p>
-<p>list = MyCollections.synList(list);//返回一个同步的list.</p>
-<p>给非同步的集合加锁。</p>
-<p>class MyCollections{</p>
-<pre><code>public static  List synList(List list){
-
-    return new MyList(list);
-}
-
-private class MyList implements List{
-private List list;
-
-private static final Object lock = new Object();
-MyList(List list){    
-    this.list = list;    
-}
-
-public boolean add(Object obj){
-    synchronized(lock)
-    {
-        return list.add(obj);
-    }
-}
-
-public boolean remove(Object obj){
-    synchronized(lock)
-    {
-        return list.remove(obj);
-    }
-}
-</code></pre><p>}<br>}</p>
-
+<h1 id="字节流复制文件"><a href="#字节流复制文件" class="headerlink" title="字节流复制文件"></a>字节流复制文件</h1><h2 id="直接复制"><a href="#直接复制" class="headerlink" title="直接复制"></a>直接复制</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="string">"smile.mp3"</span>);     </div><div class="line">FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="string">".\\music\\smile.mp3"</span>);</div><div class="line"></div><div class="line"><span class="keyword">byte</span>[] buf = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line"></div><div class="line"><span class="keyword">int</span> len = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">while</span>((len=fis.read(buf))!=-<span class="number">1</span>)&#123;</div><div class="line">    fos.write(buf,<span class="number">0</span>,len);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fos.close();</div><div class="line">fis.close();</div></pre></td></tr></table></figure>
+<h2 id="使用缓冲区复制"><a href="#使用缓冲区复制" class="headerlink" title="使用缓冲区复制"></a>使用缓冲区复制</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="string">"smile.mp3"</span>); </div><div class="line">BufferedInputStream bufis = <span class="keyword">new</span> BufferedInputStream(fis);</div><div class="line"></div><div class="line">FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="string">".\\music\\smile.mp3"</span>);</div><div class="line">BufferedOutputStream bufos = <span class="keyword">new</span> BufferedOutputStream(fos);</div><div class="line"></div><div class="line"><span class="keyword">int</span> ch = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">while</span>((ch=bufis.read())!=-<span class="number">1</span>)&#123;</div><div class="line">    bufos.write(ch);</div><div class="line">&#125;</div><div class="line"></div><div class="line">bufos.close();</div><div class="line">bufis.close();</div></pre></td></tr></table></figure>
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
         
+            <li class="previous">
+                <a href= "/2017/08/01/Java字节字符转换流/" title= Java字节字符转换流 >
+                    <span>Previous Post</span>
+                    <span>Java字节字符转换流</span>
+                </a>
+            </li>
+        
         
             <li class="next">
-                <a href= "/2017/09/28/Handle初识(1)/" title= Handle初识(1) >
+                <a href= "/2017/04/20/阿里巴巴校招编程试题/" title= 阿里巴巴校招编程试题1 >
                     <span>Next Post</span>
-                    <span>Handle初识(1)</span>
+                    <span>阿里巴巴校招编程试题1</span>
                 </a>
             </li>
         
@@ -787,7 +653,137 @@ public boolean remove(Object obj){
     
     
     
-    <div class="total-archive"> Total : 30 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 36 </div>
     
     <div class="post-archive">
     
@@ -799,7 +795,27 @@ public boolean remove(Object obj){
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/集合类/" >集合类</a>
+            <span class="archive-post-date">10/06</span><a class="archive-post-title" href= "/2017/10/06/自定义的BufferedReader/" >自定义的BufferedReader</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/05</span><a class="archive-post-title" href= "/2017/10/05/Java IO流/" >Java IO流</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
@@ -839,12 +855,12 @@ public boolean remove(Object obj){
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
         </li>
     
     
@@ -904,12 +920,12 @@ public boolean remove(Object obj){
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
@@ -929,12 +945,22 @@ public boolean remove(Object obj){
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/hello-world/" >Hello World</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/hello-world/" >Hello World</a>
         </li>
     
     
@@ -961,29 +987,31 @@ public boolean remove(Object obj){
         <div class="sidebar-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name"><a href= "#">activity</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Git</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">collection</a></span>
+        <span class="sidebar-tag-name"><a href= "#">activity</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">handle</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Git</a></span>
+        <span class="sidebar-tag-name"><a href= "#">handler</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">collection</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">IO流</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">SQLite</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">StringBuilder</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">StringBuilder</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Linux commond</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Menu</a></span>
     
@@ -991,19 +1019,25 @@ public boolean remove(Object obj){
     
         <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Linux commond</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
+        <span class="sidebar-tag-name"><a href= "#">io流</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">static</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">BufferedReader</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Java Collection</a></span>
+        <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
