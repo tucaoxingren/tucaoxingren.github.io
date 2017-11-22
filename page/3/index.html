@@ -116,6 +116,74 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/21/menu/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Android menu</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+android menu若想使用菜单键需要覆写onCreatOptionsMenu方法123456789101112131415public boolean onCreateOptionsMenu(Menu menu) &#123;        //菜单组ID，菜单ID，排序，菜单名字        menu.add(0,1,1,R.string.exit);        menu.add(0,2,2,R.string.about);        return super.onCreateOptionsMenu(menu);    &#125;    @Override    p...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = Menu>Menu</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/21</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/20/Git操作/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Git命令</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+Git命令Git分支操作查看分支：git branch
+创建分支：git branch &lt;name&gt;
+切换分支：git checkout &lt;name&gt;
+创建+切换分支：git checkout -b &lt;name&gt;
+合并某分支到当前分支：git merge &lt;name&gt;
+删除分支：git branch -d &lt;name&gt;
+更新与合并要更新你的本地仓库至最新改动，执行：
+git pull
+以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动
+要合并其他分支到你的当前分支（例如 master），执行：
+git ...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = Git>Git</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/20</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/12/Collection-集合类/" >
                     <h2 class="abstract-title">
                         
@@ -357,37 +425,6 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/04/字符串常用操作/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>字符串常用操作</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-字符串常用操作操作1.给定一个字符串数组，按照字典顺序进行从小到大的排序2.一个子串在整串中出现的次数 –1.拿需要查找的子串去切割源字符串 切割后的字符串数组长度 –2.indexOf 判断子串位置，
-3.两个字符串中最大相同的子串思路：–1.既然取得是最大子串，先看短的那个字符串是否在长的那个字符串中。如果存在，短的那个字符串就是最大子串。–2.如果不是呢，那么就将短的那个子串进行长度递减的方式去子串，去长串中判断是否存在，如果存在就已找到，就不用在找了。
-4.模拟一个trim功能一致的方法。去除字符串两端的空白思路： –1.定义两个变量。 一个变量作为从头开始判断字符串空格的角标...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = java字符串>java字符串</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/04</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/04/字符串常用方法/" >
                     <h2 class="abstract-title">
                         
@@ -411,50 +448,6 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
                 <!-- date  -->
                 <div class="abstract-date">
                     <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/04</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/03/多线程 锁的理解/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>多线程 锁的理解</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-多线程 锁的理解什么是锁
-顾名思义锁可以理解为一个占用标记，持有锁的线程可以访问数据，而没有锁的线程无法访问数据
-
-为什么要加锁
-多个线程同时访问一个共享数据时，可能会造成此数据同时被多个线程访问甚至修改，进而可能会导致程序逻辑错误等
-
-如何加锁
-同步
-
-同步代码块Object obj = new Object();synchronized(obj){code…(需要同步的代码)}
-
-–
-
-同步函数public synchronized void method(){}
-
-实现Lock接口,JDK1.8示例如下：12345678910111213141516171819202122232...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = java线程锁>java线程锁</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/03</span>
                 </div>
             </div>
         </article>
@@ -1193,7 +1186,94 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
     
-    <div class="total-archive"> Total : 41 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 44 </div>
     
     <div class="post-archive">
     
@@ -1202,6 +1282,39 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1255,12 +1368,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
         </li>
     
     
@@ -1290,12 +1403,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
         </li>
     
     
@@ -1315,7 +1428,7 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
@@ -1325,17 +1438,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
         </li>
     
     
@@ -1355,12 +1463,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
@@ -1385,7 +1493,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/hello-world/" >Hello World</a>
         </li>
     
     
@@ -1395,7 +1508,7 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/hello-world/" >Hello World</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1479,6 +1592,10 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
         <span class="sidebar-tag-name"><a href= "#">BufferedReader</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">大O</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">oracle</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">蓝牙</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
