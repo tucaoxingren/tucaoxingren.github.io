@@ -111,6 +111,81 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/04/字符串常用操作/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>字符串常用操作</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+字符串常用操作操作1.给定一个字符串数组，按照字典顺序进行从小到大的排序2.一个子串在整串中出现的次数 –1.拿需要查找的子串去切割源字符串 切割后的字符串数组长度 –2.indexOf 判断子串位置，
+3.两个字符串中最大相同的子串思路：–1.既然取得是最大子串，先看短的那个字符串是否在长的那个字符串中。如果存在，短的那个字符串就是最大子串。–2.如果不是呢，那么就将短的那个子串进行长度递减的方式去子串，去长串中判断是否存在，如果存在就已找到，就不用在找了。
+4.模拟一个trim功能一致的方法。去除字符串两端的空白思路： –1.定义两个变量。 一个变量作为从头开始判断字符串空格的角标...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = java字符串>java字符串</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/04</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/03/多线程 锁的理解/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>多线程 锁的理解</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+多线程 锁的理解什么是锁
+顾名思义锁可以理解为一个占用标记，持有锁的线程可以访问数据，而没有锁的线程无法访问数据
+
+为什么要加锁
+多个线程同时访问一个共享数据时，可能会造成此数据同时被多个线程访问甚至修改，进而可能会导致程序逻辑错误等
+
+如何加锁
+同步
+
+同步代码块Object obj = new Object();synchronized(obj){code…(需要同步的代码)}
+
+–
+
+同步函数public synchronized void method(){}
+
+实现Lock接口,JDK1.8示例如下：12345678910111213141516171819202122232...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = java线程锁>java线程锁</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/03</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/02/停止线程的三种方式/" >
                     <h2 class="abstract-title">
                         
@@ -279,41 +354,25 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/08/01/BlogEssay/" >
+            <a class="content-show-full" href = "/2017/08/01/字节流复制文件/" >
                     <h2 class="abstract-title">
                         
-                        <span>Hello World</span>
+                        <span>字节流复制文件</span>
                     </h2>
                 <div class="abstract-content">
                     
-
+字节流复制文件直接复制12345678910111213FileInputStream fis = new FileInputStream("smile.mp3");     FileOutputStream fos = new FileOutputStream(".\\music\\smile.mp3");byte[] buf = new byte[1024];int len = 0;while((len=fis.read(buf))!=-1)&#123;    fos.write(buf,0,len);&#125;fos.close();fis.close();
+使用缓冲区复制12...
                 </div>
             </a>
             <div class="abstract-post-meta">
                 <!-- tags  -->
                 
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/08/01</span>
-                </div>
-            </div>
-        </article>
+                <div class= abstract-tags >
     
+        <a class="post-tag" href="javascript:void(0);" data-href = io流>io流</a>
     
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/08/01/Java字节字符转换流/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Java字节字符转换流</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Java字节字符转换流转换流的用法12345678910111213141516171819202122232425//字节流InputStream in = System.in;//将字节转成字符的桥梁  转换流InputStreamReader isr = new InputStreamReader(in);//字符流BufferedReader bufr = new BufferedReader(isr);OutputStream out = System.out;OutputStreamWriter osw = new OutputStreamWriter(out);Buffe...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
+</div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
@@ -352,25 +411,18 @@ Mor...
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/08/01/字节流复制文件/" >
+            <a class="content-show-full" href = "/2017/08/01/Java字节字符转换流/" >
                     <h2 class="abstract-title">
                         
-                        <span>字节流复制文件</span>
+                        <span>Java字节字符转换流</span>
                     </h2>
                 <div class="abstract-content">
                     
-字节流复制文件直接复制12345678910111213FileInputStream fis = new FileInputStream("smile.mp3");     FileOutputStream fos = new FileOutputStream(".\\music\\smile.mp3");byte[] buf = new byte[1024];int len = 0;while((len=fis.read(buf))!=-1)&#123;    fos.write(buf,0,len);&#125;fos.close();fis.close();
-使用缓冲区复制12...
+Java字节字符转换流转换流的用法12345678910111213141516171819202122232425//字节流InputStream in = System.in;//将字节转成字符的桥梁  转换流InputStreamReader isr = new InputStreamReader(in);//字符流BufferedReader bufr = new BufferedReader(isr);OutputStream out = System.out;OutputStreamWriter osw = new OutputStreamWriter(out);Buffe...
                 </div>
             </a>
             <div class="abstract-post-meta">
                 <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = io流>io流</a>
-    
-</div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
@@ -379,39 +431,10 @@ Mor...
             </div>
         </article>
     
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/04/20/阿里巴巴校招编程试题/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>阿里巴巴校招编程试题1</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-阿里巴巴校招编程试题1题目某用户下单买了如下商品n（商品件数）item1Price,item1Long,item1With,item1Highitem2Price,item2Long,item2With,item2Highitem3Price,item3Long,item3With,item3Highitem4Price,item4Long,item4With,item4High…（商品价格，商品长，商品宽，商品高） (所有输入类型均为int型正整数)请你算出需要使用最小的箱子数量，可以将这些商品顺利得清关送到消费者手中，如果无解，输出-1 输入: 输入箱子长宽高 输入购买商品数 输入...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = 阿里巴巴校招>阿里巴巴校招</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/04/20</span>
-                </div>
-            </div>
-        </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2017/page/3/">#PREV</a><a class="page-number" href="/archives/2017/">1</a><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><span class="page-number current">4</span>
+        <a class="extend prev" rel="prev" href="/archives/2017/page/3/">#PREV</a><a class="page-number" href="/archives/2017/">1</a><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2017/page/5/">5</a><a class="extend next" rel="next" href="/archives/2017/page/5/">#NEXT</a>
     </nav>
     
 </main>
@@ -1087,7 +1110,94 @@ Mor...
     
     
     
-    <div class="total-archive"> Total : 41 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 44 </div>
     
     <div class="post-archive">
     
@@ -1096,6 +1206,39 @@ Mor...
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1149,12 +1292,12 @@ Mor...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
         </li>
     
     
@@ -1184,12 +1327,12 @@ Mor...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
         </li>
     
     
@@ -1209,7 +1352,7 @@ Mor...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
@@ -1219,17 +1362,12 @@ Mor...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
         </li>
     
     
@@ -1249,12 +1387,12 @@ Mor...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
@@ -1279,7 +1417,12 @@ Mor...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/hello-world/" >Hello World</a>
         </li>
     
     
@@ -1289,7 +1432,7 @@ Mor...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/hello-world/" >Hello World</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1373,6 +1516,10 @@ Mor...
         <span class="sidebar-tag-name"><a href= "#">BufferedReader</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">大O</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">oracle</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">蓝牙</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">

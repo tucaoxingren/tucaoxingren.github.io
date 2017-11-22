@@ -116,14 +116,74 @@
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/28/Handle初识(2)/" >
+            <a class="content-show-full" href = "/2017/09/29/Android 调试/" >
                     <h2 class="abstract-title">
                         
-                        <span>Handle初识(2)</span>
+                        <span>Android 日志</span>
                     </h2>
                 <div class="abstract-content">
                     
-handle 异步通信1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950private Button timeButton = null;private ProgressBar progressBar = null;@Overrideprotected void onCreate(Bundle savedInstanceState) &#123;    ...    timeButton = (Button)findViewById(R.id.proBut...
+Java输出流在开发工具的Android Monitor标签处可以查看System.out.print();
+Log调试信息–DEBUG
+Log.d(String tag,String msg)tag-标签名,msg-日志信息
+错误信息–ERRORLog.e(String tag,String msg)
+警告信息–WARNINGLog.w(String tag,String msg)
+普通信息–INFOLog.i(String tag,String msg)
+
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/29</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/29/Handle初识(3)/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Handler初识(3)</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+Handler与线程Handle 其实并没有真正的启动一个线程,Handle.post(Thread);只是调用了线程的run方法
+HandlerThread真正开启了新线程12345678910111213141516171819202122232425262728293031323334353637383940414243protected void onCreate(Bundle savedInstanceState) &#123;    ...    //HandlerThread    //输出    // com.example.handleactivity I/Syste...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = handler>handler</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/29</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/28/Handle初识(1)/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Handle初识(1)</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+HandleWhat’s handleAndroid程序实现多线程的方式
+How use创建Handle对象Handler handler = new Handler();将要执行的操作写在线程对象的run方法中12345678Runnable updateThread = new Runnable() &#123;    @Override    public void run() &#123;        //要执行的动作        //延迟2000ms再加载updateThread线程        //handler.postDelayed(updateThread,20...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -145,15 +205,14 @@ handle 异步通信1234567891011121314151617181920212223242526272829303132333435
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/28/Handle初识(1)/" >
+            <a class="content-show-full" href = "/2017/09/28/Handle初识(2)/" >
                     <h2 class="abstract-title">
                         
-                        <span>Handle初识(1)</span>
+                        <span>Handle初识(2)</span>
                     </h2>
                 <div class="abstract-content">
                     
-HandleWhat’s handleAndroid程序实现多线程的方式
-How use创建Handle对象Handler handler = new Handler();将要执行的操作写在线程对象的run方法中12345678Runnable updateThread = new Runnable() &#123;    @Override    public void run() &#123;        //要执行的动作        //延迟2000ms再加载updateThread线程        //handler.postDelayed(updateThread,20...
+handle 异步通信1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950private Button timeButton = null;private ProgressBar progressBar = null;@Overrideprotected void onCreate(Bundle savedInstanceState) &#123;    ...    timeButton = (Button)findViewById(R.id.proBut...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -319,35 +378,6 @@ tar备份与恢复linux  在使用Ubuntu之前，相信很多人都有过使用W
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/21/menu/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Android menu</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-android menu若想使用菜单键需要覆写onCreatOptionsMenu方法123456789101112131415public boolean onCreateOptionsMenu(Menu menu) &#123;        //菜单组ID，菜单ID，排序，菜单名字        menu.add(0,1,1,R.string.exit);        menu.add(0,2,2,R.string.about);        return super.onCreateOptionsMenu(menu);    &#125;    @Override    p...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Menu>Menu</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/21</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/21/note1/" >
                     <h2 class="abstract-title">
                         
@@ -374,45 +404,6 @@ AndroidActivity控件容器
                 <!-- date  -->
                 <div class="abstract-date">
                     <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/21</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/20/Git操作/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Git命令</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Git命令Git分支操作查看分支：git branch
-创建分支：git branch &lt;name&gt;
-切换分支：git checkout &lt;name&gt;
-创建+切换分支：git checkout -b &lt;name&gt;
-合并某分支到当前分支：git merge &lt;name&gt;
-删除分支：git branch -d &lt;name&gt;
-更新与合并要更新你的本地仓库至最新改动，执行：
-git pull
-以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动
-要合并其他分支到你的当前分支（例如 master），执行：
-git ...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Git>Git</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/20</span>
                 </div>
             </div>
         </article>
@@ -1151,7 +1142,94 @@ git ...
     
     
     
-    <div class="total-archive"> Total : 41 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 44 </div>
     
     <div class="post-archive">
     
@@ -1160,6 +1238,39 @@ git ...
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1213,12 +1324,12 @@ git ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
         </li>
     
     
@@ -1248,12 +1359,12 @@ git ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
         </li>
     
     
@@ -1273,7 +1384,7 @@ git ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
@@ -1283,17 +1394,12 @@ git ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
         </li>
     
     
@@ -1313,12 +1419,12 @@ git ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
@@ -1343,7 +1449,12 @@ git ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/hello-world/" >Hello World</a>
         </li>
     
     
@@ -1353,7 +1464,7 @@ git ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/hello-world/" >Hello World</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1437,6 +1548,10 @@ git ...
         <span class="sidebar-tag-name"><a href= "#">BufferedReader</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">大O</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">oracle</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">蓝牙</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
