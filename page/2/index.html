@@ -116,6 +116,30 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>String,StringBuffer与StringBuilder的区别</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+转载自http://blog.csdn.net/rmn190/article/details/1492013
+String,StringBuffer与StringBuilder的区别String 字符串常量StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全） 简要的说， String 类型和 StringBuffer 类型的主要性能区别其实在于 String是不可变的对象,因此在每次对String类型进行改变的时候其实都等同于生成了一个新的String 对象，然后将指针指向新的String对象，所以经常改变内容的字符串最好不要用 Stri...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/08</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/10/08/Java正则表达式/" >
                     <h2 class="abstract-title">
                         
@@ -134,30 +158,6 @@ Java正则表达式简单运用12345678910111213141516171819202122232425//匹配
         <a class="post-tag" href="javascript:void(0);" data-href = 正则表达式>正则表达式</a>
     
 </div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/08</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>String,StringBuffer与StringBuilder的区别</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-转载自http://blog.csdn.net/rmn190/article/details/1492013
-String,StringBuffer与StringBuilder的区别String 字符串常量StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全） 简要的说， String 类型和 StringBuffer 类型的主要性能区别其实在于 String是不可变的对象,因此在每次对String类型进行改变的时候其实都等同于生成了一个新的String 对象，然后将指针指向新的String对象，所以经常改变内容的字符串最好不要用 Stri...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
                 
                 <!-- date  -->
                 <div class="abstract-date">
@@ -227,35 +227,6 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/29/Android 调试/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Android 日志</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Java输出流在开发工具的Android Monitor标签处可以查看System.out.print();
-Log调试信息–DEBUG
-Log.d(String tag,String msg)tag-标签名,msg-日志信息
-错误信息–ERRORLog.e(String tag,String msg)
-警告信息–WARNINGLog.w(String tag,String msg)
-普通信息–INFOLog.i(String tag,String msg)
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/29</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/29/SQLite Android开发/" >
                     <h2 class="abstract-title">
                         
@@ -316,14 +287,44 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/28/Handle初识(2)/" >
+            <a class="content-show-full" href = "/2017/09/29/Android 调试/" >
                     <h2 class="abstract-title">
                         
-                        <span>Handle初识(2)</span>
+                        <span>Android 日志</span>
                     </h2>
                 <div class="abstract-content">
                     
-handle 异步通信1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950private Button timeButton = null;private ProgressBar progressBar = null;@Overrideprotected void onCreate(Bundle savedInstanceState) &#123;    ...    timeButton = (Button)findViewById(R.id.proBut...
+Java输出流在开发工具的Android Monitor标签处可以查看System.out.print();
+Log调试信息–DEBUG
+Log.d(String tag,String msg)tag-标签名,msg-日志信息
+错误信息–ERRORLog.e(String tag,String msg)
+警告信息–WARNINGLog.w(String tag,String msg)
+普通信息–INFOLog.i(String tag,String msg)
+
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/29</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/28/Handle初识(1)/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Handle初识(1)</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+HandleWhat’s handleAndroid程序实现多线程的方式
+How use创建Handle对象Handler handler = new Handler();将要执行的操作写在线程对象的run方法中12345678Runnable updateThread = new Runnable() &#123;    @Override    public void run() &#123;        //要执行的动作        //延迟2000ms再加载updateThread线程        //handler.postDelayed(updateThread,20...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -345,15 +346,14 @@ handle 异步通信1234567891011121314151617181920212223242526272829303132333435
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/28/Handle初识(1)/" >
+            <a class="content-show-full" href = "/2017/09/28/Handle初识(2)/" >
                     <h2 class="abstract-title">
                         
-                        <span>Handle初识(1)</span>
+                        <span>Handle初识(2)</span>
                     </h2>
                 <div class="abstract-content">
                     
-HandleWhat’s handleAndroid程序实现多线程的方式
-How use创建Handle对象Handler handler = new Handler();将要执行的操作写在线程对象的run方法中12345678Runnable updateThread = new Runnable() &#123;    @Override    public void run() &#123;        //要执行的动作        //延迟2000ms再加载updateThread线程        //handler.postDelayed(updateThread,20...
+handle 异步通信1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950private Button timeButton = null;private ProgressBar progressBar = null;@Overrideprotected void onCreate(Bundle savedInstanceState) &#123;    ...    timeButton = (Button)findViewById(R.id.proBut...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -1271,6 +1271,12 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-archive"> Total : 49 </div>
     
     <div class="post-archive">
@@ -1293,12 +1299,12 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
@@ -1323,7 +1329,7 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
         </li>
     
     
@@ -1333,7 +1339,7 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
         </li>
     
     
@@ -1353,12 +1359,12 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
@@ -1398,12 +1404,12 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
         </li>
     
     
@@ -1433,12 +1439,12 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1493,35 +1499,12 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Java字节字符转换流/" >Java字节字符转换流</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2017 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1531,7 +1514,7 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1553,6 +1536,20 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
         </li>
     
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
     </div>
   </div>
         <div class="sidebar-tags">
@@ -1560,65 +1557,65 @@ TextView12345678910111213&lt;TextViewandroid:layout_width="53dp"android:layout_h
     
         <span class="sidebar-tag-name"><a href= "#">activity</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">collection</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">handle</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">蓝牙</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">collection</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">Git</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">handler</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">IO流</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">正则表达式</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">handler</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">list</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
+        <span class="sidebar-tag-name"><a href= "#">oracle</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">SQLite</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">StringBuilder</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">IO流</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux commond</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Menu</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">static</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
+        <span class="sidebar-tag-name"><a href= "#">大O</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
+        <span class="sidebar-tag-name"><a href= "#">io流</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">static</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">io流</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">BufferedReader</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">大O</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">oracle</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">蓝牙</a></span>
+        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">

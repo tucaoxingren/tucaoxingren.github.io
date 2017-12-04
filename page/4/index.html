@@ -147,6 +147,42 @@ Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/08/Java单例设计模式/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Java 单例设计模式</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+Java 单例设计模式设计模式   对问题行之有效的解决方式
+1. 单例设计模式
+解决的问题：就是可以保证一个类在内存中的对象唯一性必须对于多个应用程序使用同一配置信息对象时，就需要保证对象的唯一性。如何保证对象的唯一性？1.不允许其他程序用new创建该类对象。2.在该类中创建一个本类实例。3.对外提供一个方法让其他程序可以获取到该对象。
+
+2.步骤：
+1.把构造方法私有化2.通过new在本类中创建一个本类对象3.定义一个共有的方法，将创建的对象返回。
+
+123456789101112131415161718192021222324252627282930313233343536373...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = Java>Java</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/08</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/08/StringBuffer/" >
                     <h2 class="abstract-title">
                         
@@ -168,44 +204,6 @@ StringBuffer append(data);StringBuffer insert(index,data);
                 <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-href = StringBuffer>StringBuffer</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/08</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/StringBuilder/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Java StringBuilder</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-StringBuilderjdk1.5以后出现了功能和StringBuffer一模一样的对象。就是StringBuilder
-不同的是：
-
-StringBuffer是线程同步的。通常用于多线程。StringBuilder是线程不同步的。通常用于单线程。 它的出现提高效率。
-
-jdk升级：
-
-1.简化书写。2.提高效率。3.增加安全性。
-
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = StringBuilder>StringBuilder</a>
     
 </div>
                 
@@ -248,16 +246,15 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/04/字符串常用操作/" >
+            <a class="content-show-full" href = "/2017/09/04/字符串常用方法/" >
                     <h2 class="abstract-title">
                         
-                        <span>字符串常用操作</span>
+                        <span>字符串常用方法</span>
                     </h2>
                 <div class="abstract-content">
                     
-字符串常用操作操作1.给定一个字符串数组，按照字典顺序进行从小到大的排序2.一个子串在整串中出现的次数 –1.拿需要查找的子串去切割源字符串 切割后的字符串数组长度 –2.indexOf 判断子串位置，
-3.两个字符串中最大相同的子串思路：–1.既然取得是最大子串，先看短的那个字符串是否在长的那个字符串中。如果存在，短的那个字符串就是最大子串。–2.如果不是呢，那么就将短的那个子串进行长度递减的方式去子串，去长串中判断是否存在，如果存在就已找到，就不用在找了。
-4.模拟一个trim功能一致的方法。去除字符串两端的空白思路： –1.定义两个变量。 一个变量作为从头开始判断字符串空格的角标...
+字符串常用方法方法  按照面向对象的思想对字符串进行功能分类。  “abcd” 
+1.获取　1.1 获取字符串中字符的个数(长度).　　int length();　1.2 根据位置获取字符。　char charAt(int index);　1.3 根据字符获取在字符串中的第一次出现的位置.　　int indexOf(int ch)　　int indexOf(int ch,int fromIndex):从指定位置进行ch的查找第一次出现位置　　int indexOf(String str);　　int indexOf(String str,int fromIndex);　　根据字符串获取...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -279,15 +276,16 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/04/字符串常用方法/" >
+            <a class="content-show-full" href = "/2017/09/04/字符串常用操作/" >
                     <h2 class="abstract-title">
                         
-                        <span>字符串常用方法</span>
+                        <span>字符串常用操作</span>
                     </h2>
                 <div class="abstract-content">
                     
-字符串常用方法方法  按照面向对象的思想对字符串进行功能分类。  “abcd” 
-1.获取　1.1 获取字符串中字符的个数(长度).　　int length();　1.2 根据位置获取字符。　char charAt(int index);　1.3 根据字符获取在字符串中的第一次出现的位置.　　int indexOf(int ch)　　int indexOf(int ch,int fromIndex):从指定位置进行ch的查找第一次出现位置　　int indexOf(String str);　　int indexOf(String str,int fromIndex);　　根据字符串获取...
+字符串常用操作操作1.给定一个字符串数组，按照字典顺序进行从小到大的排序2.一个子串在整串中出现的次数 –1.拿需要查找的子串去切割源字符串 切割后的字符串数组长度 –2.indexOf 判断子串位置，
+3.两个字符串中最大相同的子串思路：–1.既然取得是最大子串，先看短的那个字符串是否在长的那个字符串中。如果存在，短的那个字符串就是最大子串。–2.如果不是呢，那么就将短的那个子串进行长度递减的方式去子串，去长串中判断是否存在，如果存在就已找到，就不用在找了。
+4.模拟一个trim功能一致的方法。去除字符串两端的空白思路： –1.定义两个变量。 一个变量作为从头开始判断字符串空格的角标...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -1336,6 +1334,12 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-archive"> Total : 49 </div>
     
     <div class="post-archive">
@@ -1358,12 +1362,12 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
@@ -1388,7 +1392,7 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
         </li>
     
     
@@ -1398,7 +1402,7 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
         </li>
     
     
@@ -1418,12 +1422,12 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
@@ -1463,12 +1467,12 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
         </li>
     
     
@@ -1498,12 +1502,12 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1558,35 +1562,12 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Java字节字符转换流/" >Java字节字符转换流</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2017 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1596,7 +1577,7 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1618,6 +1599,20 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
         </li>
     
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
     </div>
   </div>
         <div class="sidebar-tags">
@@ -1625,65 +1620,65 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
         <span class="sidebar-tag-name"><a href= "#">activity</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">collection</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">handle</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">蓝牙</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">collection</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">Git</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">handler</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">IO流</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">正则表达式</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">handler</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">list</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
+        <span class="sidebar-tag-name"><a href= "#">oracle</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">SQLite</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">StringBuilder</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">IO流</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux commond</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Menu</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">static</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
+        <span class="sidebar-tag-name"><a href= "#">大O</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
+        <span class="sidebar-tag-name"><a href= "#">io流</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">static</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">io流</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">BufferedReader</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">大O</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">oracle</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">蓝牙</a></span>
+        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
