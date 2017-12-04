@@ -285,21 +285,23 @@ dpkg命令dpkg -i package-name (安装包)dpkg -l | grep package-name (查看包
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/Java单例设计模式/" >
+            <a class="content-show-full" href = "/2017/09/08/StringBuilder/" >
                     <h2 class="abstract-title">
                         
-                        <span>Java 单例设计模式</span>
+                        <span>Java StringBuilder</span>
                     </h2>
                 <div class="abstract-content">
                     
-Java 单例设计模式设计模式   对问题行之有效的解决方式
-1. 单例设计模式
-解决的问题：就是可以保证一个类在内存中的对象唯一性必须对于多个应用程序使用同一配置信息对象时，就需要保证对象的唯一性。如何保证对象的唯一性？1.不允许其他程序用new创建该类对象。2.在该类中创建一个本类实例。3.对外提供一个方法让其他程序可以获取到该对象。
+StringBuilderjdk1.5以后出现了功能和StringBuffer一模一样的对象。就是StringBuilder
+不同的是：
 
-2.步骤：
-1.把构造方法私有化2.通过new在本类中创建一个本类对象3.定义一个共有的方法，将创建的对象返回。
+StringBuffer是线程同步的。通常用于多线程。StringBuilder是线程不同步的。通常用于单线程。 它的出现提高效率。
 
-123456789101112131415161718192021222324252627282930313233343536373...
+jdk升级：
+
+1.简化书写。2.提高效率。3.增加安全性。
+
+
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -307,7 +309,7 @@ Java 单例设计模式设计模式   对问题行之有效的解决方式
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = Java>Java</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = StringBuilder>StringBuilder</a>
     
 </div>
                 
@@ -352,6 +354,42 @@ Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/08/Java单例设计模式/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Java 单例设计模式</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+Java 单例设计模式设计模式   对问题行之有效的解决方式
+1. 单例设计模式
+解决的问题：就是可以保证一个类在内存中的对象唯一性必须对于多个应用程序使用同一配置信息对象时，就需要保证对象的唯一性。如何保证对象的唯一性？1.不允许其他程序用new创建该类对象。2.在该类中创建一个本类实例。3.对外提供一个方法让其他程序可以获取到该对象。
+
+2.步骤：
+1.把构造方法私有化2.通过new在本类中创建一个本类对象3.定义一个共有的方法，将创建的对象返回。
+
+123456789101112131415161718192021222324252627282930313233343536373...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = Java>Java</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/08</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/08/StringBuffer/" >
                     <h2 class="abstract-title">
                         
@@ -373,44 +411,6 @@ StringBuffer append(data);StringBuffer insert(index,data);
                 <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-href = StringBuffer>StringBuffer</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/08</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/StringBuilder/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Java StringBuilder</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-StringBuilderjdk1.5以后出现了功能和StringBuffer一模一样的对象。就是StringBuilder
-不同的是：
-
-StringBuffer是线程同步的。通常用于多线程。StringBuilder是线程不同步的。通常用于单线程。 它的出现提高效率。
-
-jdk升级：
-
-1.简化书写。2.提高效率。3.增加安全性。
-
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = StringBuilder>StringBuilder</a>
     
 </div>
                 
@@ -1271,6 +1271,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-archive"> Total : 49 </div>
     
     <div class="post-archive">
@@ -1293,12 +1299,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
@@ -1323,7 +1329,7 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
         </li>
     
     
@@ -1333,7 +1339,7 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
         </li>
     
     
@@ -1353,12 +1359,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
@@ -1398,12 +1404,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
         </li>
     
     
@@ -1433,12 +1439,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1493,35 +1499,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Java字节字符转换流/" >Java字节字符转换流</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2017 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1531,7 +1514,7 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1553,6 +1536,20 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
         </li>
     
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
     </div>
   </div>
         <div class="sidebar-tags">
@@ -1560,65 +1557,65 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
         <span class="sidebar-tag-name"><a href= "#">activity</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">collection</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">handle</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">蓝牙</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">collection</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">Git</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">handler</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">IO流</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Java</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">正则表达式</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">handler</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">list</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Linux</a></span>
+        <span class="sidebar-tag-name"><a href= "#">oracle</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">SQLite</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">StringBuilder</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">Linux 备份与恢复</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">StringBuffer</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">字符串</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">IO流</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
+        <span class="sidebar-tag-name"><a href= "#">Activity</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Linux commond</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Menu</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">Android</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">java线程</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java线程锁</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">static</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
+        <span class="sidebar-tag-name"><a href= "#">大O</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
+        <span class="sidebar-tag-name"><a href= "#">io流</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">static</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">java</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">io流</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">BufferedReader</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">大O</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">oracle</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">蓝牙</a></span>
+        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
