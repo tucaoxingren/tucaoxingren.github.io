@@ -139,11 +139,11 @@
             <main class="main post-page">
     <article class="article-entry">
         <p></p><p></p>
-<h1 id="iBATIS-框架-学习小结"><a href="#iBATIS-框架-学习小结" class="headerlink" title="iBATIS 框架 学习小结"></a>iBATIS 框架 学习小结</h1><h2 id="iBATIS简单查询语句"><a href="#iBATIS简单查询语句" class="headerlink" title="iBATIS简单查询语句"></a>iBATIS简单查询语句</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 查询一批数据的查询 --&gt;</span></div><div class="line"><span class="comment">&lt;!-- id: sql语句id parameterClass：参数集 resultClass：结果集--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"get"</span> <span class="attr">parameterClass</span>=<span class="string">"map"</span> <span class="attr">resultClass</span>=<span class="string">"kf05Domain"</span>&gt;</span></div><div class="line">		SELECT </div><div class="line">		       a.aaz263 as aaz263,</div><div class="line">		  FROM kf05 a</div><div class="line">		 WHERE 1 = 1 <span class="comment">&lt;!-- 若要查询的参数未输入 则返回全部数据  --&gt;</span></div><div class="line">&lt;![CDATA[	   AND a.aaz263 = #aaz263#    ]]&gt; <span class="comment">&lt;!-- &lt;![CDATA[[ 可缺省参数 ]]&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="iBATIS-框架-学习小结"><a href="#iBATIS-框架-学习小结" class="headerlink" title="iBATIS 框架 学习小结"></a>iBATIS 框架 学习小结</h1><h2 id="iBATIS简单查询语句"><a href="#iBATIS简单查询语句" class="headerlink" title="iBATIS简单查询语句"></a>iBATIS简单查询语句</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 查询一批数据的查询 --&gt;</span></div><div class="line"><span class="comment">&lt;!-- id: sql语句id parameterClass：参数集 resultClass：结果集--&gt;</span></div><div class="line"><span class="comment">&lt;!-- sql语句后不要写分号 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"get"</span> <span class="attr">parameterClass</span>=<span class="string">"map"</span> <span class="attr">resultClass</span>=<span class="string">"kf05Domain"</span>&gt;</span></div><div class="line">		SELECT </div><div class="line">		       a.aaz263 as aaz263,</div><div class="line">		  FROM kf05 a</div><div class="line">		 WHERE 1 = 1 <span class="comment">&lt;!-- 若要查询的参数未输入 则返回全部数据  --&gt;</span></div><div class="line">&lt;![CDATA[	   AND a.aaz263 = #aaz263#    ]]&gt; <span class="comment">&lt;!-- &lt;![CDATA[[ 可缺省参数 ]]&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
 <blockquote>
 <p>对应关系图</p>
 </blockquote>
-<p><img src=".\img\image008.gif" alt="对应关系图"></p>
+<p><img src="https://github.com/tucaoxingren/ProgramingNote/raw/master/img/image008.gif" alt="对应关系图"></p>
 <blockquote>
 <p>参考文章<br><a href="https://www.ibm.com/developerworks/cn/java/j-lo-ibatis-principle/" target="_blank" rel="external">深入iBATIS</a></p>
 </blockquote>
@@ -963,52 +963,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-archive"> Total : 49 </div>
     
     <div class="post-archive">
@@ -1031,22 +985,22 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
         </li>
     
     
@@ -1061,17 +1015,22 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/07</span><a class="archive-post-title" href= "/2017/10/07/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
@@ -1086,11 +1045,6 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
         </li>
     
@@ -1101,12 +1055,17 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
         </li>
     
     
@@ -1166,7 +1125,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1176,7 +1135,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
@@ -1201,12 +1160,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
@@ -1225,18 +1184,31 @@
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
@@ -1247,6 +1219,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1266,20 +1243,6 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
         </li>
     
     </div>

@@ -111,6 +111,42 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/01/线程间通信-等待唤醒机制/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>线程间通信-等待唤醒机制</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+线程间通信-等待唤醒机制线程间通讯：
+多个线程在处理同一资源，但是任务却不同。
+
+等待/唤醒机制。
+涉及的方法：1，wait(): 让线程处于冻结状态，被wait的线程会被存储到线程池中。2，notify():唤醒线程池中一个线程(任意).3，notifyAll():唤醒线程池中的所有线程。这些方法都必须定义在同步中。因为这些方法是用于操作线程状态的方法。必须要明确到底操作的是哪个锁上的线程。
+
+为什么操作线程的方法wait notify notifyAll定义在了Object类中？
+因为这些方法是监视器的方法。监视器其实就是锁。锁可以是任意的对象，任意的对象调用的方式一定定义在Obj...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = java>java</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/01</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/08/29/成员变量与局部变量理解及static变量/" >
                     <h2 class="abstract-title">
                         
@@ -169,15 +205,18 @@
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/08/01/字节流复制文件/" >
+            <a class="content-show-full" href = "/2017/08/01/Android 蓝牙通信/" >
                     <h2 class="abstract-title">
                         
-                        <span>字节流复制文件</span>
+                        <span>Android 蓝牙通信</span>
                     </h2>
                 <div class="abstract-content">
                     
-字节流复制文件直接复制12345678910111213FileInputStream fis = new FileInputStream("smile.mp3");     FileOutputStream fos = new FileOutputStream(".\\music\\smile.mp3");byte[] buf = new byte[1024];int len = 0;while((len=fis.read(buf))!=-1)&#123;    fos.write(buf,0,len);&#125;fos.close();fis.close();
-使用缓冲区复制12...
+Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter 
+代表本地蓝牙适配器（蓝牙无线电）。BluetoothAdapter是所有蓝牙交互的入口。使用这个你可以发现其他蓝牙设备，查询已配对的设备列表，使用一个已知的MAC地址来实例化一个BluetoothDevice，以及创建一个BluetoothServerSocket来为监听与其他设备的通信。
+ BluetoothDevice 
+代表一个远程蓝牙设备，使用这个来请求一个与远程设备的BluetoothSocket连接，或者查询关于设备名称、地址、类和连接状态等设备信息。
+ BluetoothSock...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -185,7 +224,7 @@
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = io流>io流</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = 蓝牙>蓝牙</a>
     
 </div>
                 
@@ -226,41 +265,15 @@ Mor...
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/08/01/Java字节字符转换流/" >
+            <a class="content-show-full" href = "/2017/08/01/字节流复制文件/" >
                     <h2 class="abstract-title">
                         
-                        <span>Java字节字符转换流</span>
+                        <span>字节流复制文件</span>
                     </h2>
                 <div class="abstract-content">
                     
-Java字节字符转换流转换流的用法12345678910111213141516171819202122232425//字节流InputStream in = System.in;//将字节转成字符的桥梁  转换流InputStreamReader isr = new InputStreamReader(in);//字符流BufferedReader bufr = new BufferedReader(isr);OutputStream out = System.out;OutputStreamWriter osw = new OutputStreamWriter(out);Buffe...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/08/01</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/08/01/Android 蓝牙通信/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Android 蓝牙通信</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter 
-代表本地蓝牙适配器（蓝牙无线电）。BluetoothAdapter是所有蓝牙交互的入口。使用这个你可以发现其他蓝牙设备，查询已配对的设备列表，使用一个已知的MAC地址来实例化一个BluetoothDevice，以及创建一个BluetoothServerSocket来为监听与其他设备的通信。
- BluetoothDevice 
-代表一个远程蓝牙设备，使用这个来请求一个与远程设备的BluetoothSocket连接，或者查询关于设备名称、地址、类和连接状态等设备信息。
- BluetoothSock...
+字节流复制文件直接复制12345678910111213FileInputStream fis = new FileInputStream("smile.mp3");     FileOutputStream fos = new FileOutputStream(".\\music\\smile.mp3");byte[] buf = new byte[1024];int len = 0;while((len=fis.read(buf))!=-1)&#123;    fos.write(buf,0,len);&#125;fos.close();fis.close();
+使用缓冲区复制12...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -268,7 +281,7 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = 蓝牙>蓝牙</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = io流>io流</a>
     
 </div>
                 
@@ -1147,52 +1160,6 @@ This is the second paragraph in the blockquote.
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-archive"> Total : 49 </div>
     
     <div class="post-archive">
@@ -1215,22 +1182,22 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
         </li>
     
     
@@ -1245,17 +1212,22 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/07</span><a class="archive-post-title" href= "/2017/10/07/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
@@ -1270,11 +1242,6 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
         </li>
     
@@ -1285,12 +1252,17 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
         </li>
     
     
@@ -1350,7 +1322,7 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1360,7 +1332,7 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
@@ -1385,12 +1357,12 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
@@ -1409,18 +1381,31 @@ This is the second paragraph in the blockquote.
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
@@ -1431,6 +1416,11 @@ This is the second paragraph in the blockquote.
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1450,20 +1440,6 @@ This is the second paragraph in the blockquote.
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
         </li>
     
     </div>

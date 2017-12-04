@@ -111,25 +111,24 @@
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/29/Handle初识(3)/" >
+            <a class="content-show-full" href = "/2017/09/29/Android 调试/" >
                     <h2 class="abstract-title">
                         
-                        <span>Handler初识(3)</span>
+                        <span>Android 日志</span>
                     </h2>
                 <div class="abstract-content">
                     
-Handler与线程Handle 其实并没有真正的启动一个线程,Handle.post(Thread);只是调用了线程的run方法
-HandlerThread真正开启了新线程12345678910111213141516171819202122232425262728293031323334353637383940414243protected void onCreate(Bundle savedInstanceState) &#123;    ...    //HandlerThread    //输出    // com.example.handleactivity I/Syste...
+Java输出流在开发工具的Android Monitor标签处可以查看System.out.print();
+Log调试信息–DEBUG
+Log.d(String tag,String msg)tag-标签名,msg-日志信息
+错误信息–ERRORLog.e(String tag,String msg)
+警告信息–WARNINGLog.w(String tag,String msg)
+普通信息–INFOLog.i(String tag,String msg)
+
                 </div>
             </a>
             <div class="abstract-post-meta">
                 <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = handler>handler</a>
-    
-</div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
@@ -141,15 +140,16 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/28/Handle初识(1)/" >
+            <a class="content-show-full" href = "/2017/09/24/activity-intent/" >
                     <h2 class="abstract-title">
                         
-                        <span>Handle初识(1)</span>
+                        <span>Android--Activity与Intent</span>
                     </h2>
                 <div class="abstract-content">
                     
-HandleWhat’s handleAndroid程序实现多线程的方式
-How use创建Handle对象Handler handler = new Handler();将要执行的操作写在线程对象的run方法中12345678Runnable updateThread = new Runnable() &#123;    @Override    public void run() &#123;        //要执行的动作        //延迟2000ms再加载updateThread线程        //handler.postDelayed(updateThread,20...
+Activity 与 IntentIntent多个Activity间相互跳转startActivity(Intent intent)
+123456Intent intent = new Intent();//intent.putExtra("参数名","参数值");//传递参数//从‘MainActivity’跳转到‘MapActivity’intent.setClass(MainActivity.this,MapActivity.class);//启动跳转MainActivity.this.startActivity(intent);
+activity生命周期123456789101...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -157,13 +157,13 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = handle>handle</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = Activity>Activity</a>
     
 </div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/28</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/24</span>
                 </div>
             </div>
         </article>
@@ -171,14 +171,15 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/28/Handle初识(2)/" >
+            <a class="content-show-full" href = "/2017/09/21/menu/" >
                     <h2 class="abstract-title">
                         
-                        <span>Handle初识(2)</span>
+                        <span>Android menu</span>
                     </h2>
                 <div class="abstract-content">
                     
-handle 异步通信1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950private Button timeButton = null;private ProgressBar progressBar = null;@Overrideprotected void onCreate(Bundle savedInstanceState) &#123;    ...    timeButton = (Button)findViewById(R.id.proBut...
+android menu若想使用菜单键需要覆写onCreatOptionsMenu方法
+直接创建123456789101112131415public boolean onCreateOptionsMenu(Menu menu) &#123;        //菜单组ID，菜单ID，排序，菜单名字        menu.add(0,1,1,R.string.exit);        menu.add(0,2,2,R.string.about);        return super.onCreateOptionsMenu(menu);    &#125;    @Override...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -186,43 +187,13 @@ handle 异步通信1234567891011121314151617181920212223242526272829303132333435
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = handle>handle</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = Menu>Menu</a>
     
 </div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/28</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/25/Activity布局/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Activity布局</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:orientation=&quot;vertical    垂直布局-竖屏android:layout_width=&quot;fill_parent  宽度填满屏幕
-1234567&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"    android:id="@+id/...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = activity>activity</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/25</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/21</span>
                 </div>
             </div>
         </article>
@@ -1004,52 +975,6 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-archive"> Total : 49 </div>
     
     <div class="post-archive">
@@ -1072,22 +997,22 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
         </li>
     
     
@@ -1102,17 +1027,22 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/07</span><a class="archive-post-title" href= "/2017/10/07/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
@@ -1127,11 +1057,6 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
         </li>
     
@@ -1142,12 +1067,17 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
         </li>
     
     
@@ -1207,7 +1137,7 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1217,7 +1147,7 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
@@ -1242,12 +1172,12 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
@@ -1266,18 +1196,31 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
@@ -1288,6 +1231,11 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1307,20 +1255,6 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
         </li>
     
     </div>
@@ -1379,6 +1313,63 @@ Activity布局android:orientation=&quot;horizontal  水平布局-横屏android:o
         <span class="sidebar-tag-name"><a href= "#">java字符串</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">io流</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">static</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">java</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">BufferedReader</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">阿里巴巴校招</a></span>
+    
+    </div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #888; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tag-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var jsInfo = {
+        root: '/'
+    }
+</script>
+    <!-- 不蒜子  -->
+    
+    <!-- CNZZ统计  -->
+    
+    </div>
+    </body>
+</html>
+
+
+name"><a href= "#">io流</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Markdown</a></span>
     
