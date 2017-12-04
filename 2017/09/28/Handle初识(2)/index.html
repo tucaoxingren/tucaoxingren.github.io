@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>
         
-        Handle初识(2) · tucaoxingren&#39;s Blog
+        Handler初识(2) · tucaoxingren&#39;s Blog
         
     </title>
     <link rel="icon" href= /assests/favicon.ico>
@@ -81,7 +81,7 @@
                 <a href="/" >tucaoxingren&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Handle初识(2)</a>
+                <a href="#" class="post-name">Handler初识(2)</a>
             </div>
     </div>
     
@@ -102,7 +102,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Handle初识(2)
+            Handler初识(2)
             <!-- 404 -->
             
         </h1>
@@ -120,7 +120,7 @@
             
                 <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = handle>handle</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = handler>handler</a>
     
 </div>
             
@@ -131,7 +131,7 @@
             <!-- 
 
 <div class="post-share iconfont-archer">
-    <ul class="share-box" data-href = "/2017/09/28/Handle初识(2)/" data-title = "Handle初识(2)" >
+    <ul class="share-box" data-href = "/2017/09/28/Handle初识(2)/" data-title = "Handler初识(2)" >
         <li class="to-weibo">分享到微博</li>
         <li class="to-wechat">分享到微信</li>
         <li class="to-qq">分享到QQ</li>
@@ -145,15 +145,15 @@
             <main class="main post-page">
     <article class="article-entry">
         <p></p><p></p>
-<h2 id="handle-异步通信"><a href="#handle-异步通信" class="headerlink" title="handle 异步通信"></a>handle 异步通信</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Button timeButton = <span class="keyword">null</span>;</div><div class="line"><span class="keyword">private</span> ProgressBar progressBar = <span class="keyword">null</span>;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    ...</div><div class="line">    timeButton = (Button)findViewById(R.id.proButton);</div><div class="line">    progressBar = (ProgressBar)findViewById(R.id.progressBar);</div><div class="line">    timeButton.setOnClickListener(<span class="keyword">new</span> Button.OnClickListener()&#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">                progressBar.setVisibility(View.VISIBLE);</div><div class="line">                timeHandle.post(timeThread);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">    Handler timeHandle = <span class="keyword">new</span> Handler()&#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">            <span class="comment">//super.handleMessage(msg);</span></div><div class="line">            progressBar.setProgress(msg.arg1);<span class="comment">//progressBar赋值</span></div><div class="line">            timeHandle.post(timeThread);<span class="comment">//把线程压入到线程队列中</span></div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    Runnable timeThread = <span class="keyword">new</span> Runnable() &#123;</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">            System.out.println(<span class="string">"Begin timeThread"</span>);</div><div class="line">            i = i + <span class="number">10</span>;</div><div class="line">            <span class="comment">//得到一个消息对象,Message类是由Android操作系统提供</span></div><div class="line">            Message msg = timeHandle.obtainMessage();</div><div class="line">            <span class="comment">//将Message对象的arg1成员变量赋值为i,</span></div><div class="line">            <span class="comment">//用arg1和arg2这两个成员变量的好处是占用资源低</span></div><div class="line">            msg.arg1 = i;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="comment">//设置此线程休眠1000ms</span></div><div class="line">                Thread.sleep(<span class="number">1000</span>);</div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//将Message对象加入到Message消息队列中</span></div><div class="line">            timeHandle.sendMessage(msg);<span class="comment">//把消息压入到Message队列中</span></div><div class="line">            <span class="keyword">if</span>(i == <span class="number">100</span>)&#123;</div><div class="line">                <span class="comment">//如果当i的值为100时,就将线程从handle中移除</span></div><div class="line">                timeHandle.removeCallbacks(timeThread);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="handler-异步通信"><a href="#handler-异步通信" class="headerlink" title="handler 异步通信"></a>handler 异步通信</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Button timeButton = <span class="keyword">null</span>;</div><div class="line"><span class="keyword">private</span> ProgressBar progressBar = <span class="keyword">null</span>;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    ...</div><div class="line">    timeButton = (Button)findViewById(R.id.proButton);</div><div class="line">    progressBar = (ProgressBar)findViewById(R.id.progressBar);</div><div class="line">    timeButton.setOnClickListener(<span class="keyword">new</span> Button.OnClickListener()&#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">                progressBar.setVisibility(View.VISIBLE);</div><div class="line">                timeHandle.post(timeThread);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">    Handler timeHandle = <span class="keyword">new</span> Handler()&#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">            <span class="comment">//super.handleMessage(msg);</span></div><div class="line">            progressBar.setProgress(msg.arg1);<span class="comment">//progressBar赋值</span></div><div class="line">            timeHandle.post(timeThread);<span class="comment">//把线程压入到线程队列中</span></div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">    Runnable timeThread = <span class="keyword">new</span> Runnable() &#123;</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">            System.out.println(<span class="string">"Begin timeThread"</span>);</div><div class="line">            i = i + <span class="number">10</span>;</div><div class="line">            <span class="comment">//得到一个消息对象,Message类是由Android操作系统提供</span></div><div class="line">            Message msg = timeHandle.obtainMessage();</div><div class="line">            <span class="comment">//将Message对象的arg1成员变量赋值为i,</span></div><div class="line">            <span class="comment">//用arg1和arg2这两个成员变量的好处是占用资源低</span></div><div class="line">            msg.arg1 = i;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                <span class="comment">//设置此线程休眠1000ms</span></div><div class="line">                Thread.sleep(<span class="number">1000</span>);</div><div class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//将Message对象加入到Message消息队列中</span></div><div class="line">            timeHandle.sendMessage(msg);<span class="comment">//把消息压入到Message队列中</span></div><div class="line">            <span class="keyword">if</span>(i == <span class="number">100</span>)&#123;</div><div class="line">                <span class="comment">//如果当i的值为100时,就将线程从handle中移除</span></div><div class="line">                timeHandle.removeCallbacks(timeThread);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
         
             <li class="previous">
-                <a href= "/2017/09/28/Handle初识(1)/" title= Handle初识(1) >
+                <a href= "/2017/09/28/Handle初识(1)/" title= Handler初识(1) >
                     <span>Previous Post</span>
-                    <span>Handle初识(1)</span>
+                    <span>Handler初识(1)</span>
                 </a>
             </li>
         
@@ -961,52 +961,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-archive"> Total : 49 </div>
     
     <div class="post-archive">
@@ -1029,22 +983,22 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
         </li>
     
     
@@ -1059,17 +1013,22 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/07</span><a class="archive-post-title" href= "/2017/10/07/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
@@ -1084,11 +1043,6 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
         </li>
     
@@ -1099,12 +1053,17 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
         </li>
     
     
@@ -1164,7 +1123,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1174,7 +1133,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
@@ -1199,12 +1158,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
@@ -1223,18 +1182,31 @@
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
@@ -1245,6 +1217,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1264,20 +1241,6 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
         </li>
     
     </div>

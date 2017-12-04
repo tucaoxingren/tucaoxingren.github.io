@@ -142,19 +142,22 @@
 <h2 id="TextView"><a href="#TextView" class="headerlink" title="TextView"></a>TextView</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"53dp"</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"30dp"</span></span></div><div class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"Hello World!"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintBottom_toBottomOf</span>=<span class="string">"parent"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintLeft_toLeftOf</span>=<span class="string">"parent"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">"parent"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintTop_toTopOf</span>=<span class="string">"parent"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintHorizontal_bias</span>=<span class="string">"0.552"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintVertical_bias</span>=<span class="string">"0.108"</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_marginRight</span>=<span class="string">"8dp"</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_marginLeft</span>=<span class="string">"8dp"</span></span></div><div class="line"><span class="tag"><span class="attr">android:id</span>=<span class="string">"@+id/textView"</span> /&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Button</span></span></div><div class="line"><span class="tag"><span class="attr">android:id</span>=<span class="string">"@+id/button"</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag"><span class="attr">android:text</span>=<span class="string">"Begin"</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_marginTop</span>=<span class="string">"8dp"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintTop_toBottomOf</span>=<span class="string">"@+id/textView"</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_marginBottom</span>=<span class="string">"8dp"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintBottom_toTopOf</span>=<span class="string">"@+id/progressBar2"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintLeft_toRightOf</span>=<span class="string">"@+id/progressBar"</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_marginLeft</span>=<span class="string">"8dp"</span></span></div><div class="line"><span class="tag"><span class="attr">android:layout_marginRight</span>=<span class="string">"8dp"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintRight_toRightOf</span>=<span class="string">"parent"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintHorizontal_bias</span>=<span class="string">"0.563"</span></span></div><div class="line"><span class="tag"><span class="attr">app:layout_constraintVertical_bias</span>=<span class="string">"0.098"</span> /&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Button button = (Button)findViewById(R.id.button);</div><div class="line">button.setOnClickListener(<span class="keyword">new</span> Button.OnClickListener()&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View view)</span></span>&#123;</div><div class="line">        <span class="comment">//点击动作</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h2><p><img src=".\img\浮动消息.png" alt="浮动消息"><br>    浮动显示消息的控件<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Toast.makeText(MainActivity.<span class="keyword">this</span>,<span class="string">"要显示的内容"</span>,Toast.LENGTH_SHORT).show();</div></pre></td></tr></table></figure></p>
-<h2 id="ProgressBar"><a href="#ProgressBar" class="headerlink" title="ProgressBar"></a>ProgressBar</h2><p><img src=".\img\进度条.png" alt=""><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ProgressBar secondBar = (ProgressBar)findViewById(R.id.progressBar2);<span class="comment">//长条形进度条</span></div><div class="line"><span class="comment">//secondBar ProgressBar对象名</span></div><div class="line"><span class="comment">//设置为可见状态</span></div><div class="line">secondBar.setVisibility(View.VISIBLE);</div><div class="line"><span class="comment">//设置进度条最大值</span></div><div class="line">secondBar.setMax(<span class="number">200</span>);</div><div class="line"><span class="comment">//设置进度条为不可见状态</span></div><div class="line">secondBar.setVisibility(View.GONE);</div></pre></td></tr></table></figure></p>
-<h2 id="单选按钮组"><a href="#单选按钮组" class="headerlink" title="单选按钮组"></a>单选按钮组</h2><p><img src=".\img\单选按钮.PNG" alt="单选按钮"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明控件变量</span></div><div class="line"><span class="keyword">private</span> RadioGroup genderGroup = <span class="keyword">null</span></div><div class="line"><span class="keyword">private</span> RadioButton femaleButton = <span class="keyword">null</span>;</div><div class="line"><span class="keyword">private</span> RadioButton maleButton = <span class="keyword">null</span>;</div><div class="line">...</div><div class="line"><span class="comment">//通过控件ID获取控件对象</span></div><div class="line">genderGroup = (RadioGroup)findViewById(R.id.genderGroup);</div><div class="line">femaleButton = (RadioButton)findViewById(R.id.femaleButton);</div><div class="line">maleButton = (RadioButton)findViewById(R.id.maleButton);</div><div class="line">...</div><div class="line"><span class="comment">//单选按钮组 共用一个监听代码块</span></div><div class="line">genderGroup.setOnCheckedChangeListener(<span class="keyword">new</span> RadioGroup.OnCheckedChangeListener()&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(RadioGroup radioGroup, @IdRes <span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (femaleButton.getId() == i)&#123;</div><div class="line">            System.out.println(<span class="string">"female"</span>);</div><div class="line">            <span class="comment">//浮动提示信息</span></div><div class="line">            Toast.makeText(MainActivity.<span class="keyword">this</span>,<span class="string">"您已选择性别-女"</span>,Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (maleButton.getId() == i)&#123;</div><div class="line">            System.out.println(<span class="string">"male"</span>);</div><div class="line">            Toast.makeText(MainActivity.<span class="keyword">this</span>,<span class="string">"您已选择性别-男"</span>,Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h2 id="多选按钮"><a href="#多选按钮" class="headerlink" title="多选按钮"></a>多选按钮</h2><p><img src=".\img\多选按钮.png" alt="多选按钮"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明控件变量</span></div><div class="line"><span class="keyword">private</span> CheckBox swimBox = <span class="keyword">null</span>;</div><div class="line"><span class="keyword">private</span> CheckBox runBox = <span class="keyword">null</span>;</div><div class="line"><span class="keyword">private</span> CheckBox readBox = <span class="keyword">null</span>;</div><div class="line"> <span class="comment">//通过控件ID获取控件对象</span></div><div class="line">swimBox = (CheckBox)findViewById(R.id.swim);</div><div class="line">runBox = (CheckBox)findViewById(R.id.run);</div><div class="line">readBox = (CheckBox)findViewById(R.id.read);</div><div class="line"><span class="comment">//checkBox没有组 每个checkBox都需要单独的监听</span></div><div class="line">swimBox.setOnCheckedChangeListener(<span class="keyword">new</span> CompoundButton.OnCheckedChangeListener()&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(CompoundButton compoundButton, <span class="keyword">boolean</span> b)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (b)</div><div class="line">            System.out.println(<span class="string">"swim is checked"</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            System.out.println(<span class="string">"swim is unchecked"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">runBox.setOnCheckedChangeListener(<span class="keyword">new</span> CompoundButton.OnCheckedChangeListener()&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(CompoundButton compoundButton, <span class="keyword">boolean</span> b)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (b)</div><div class="line">            System.out.println(<span class="string">"run is checked"</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            System.out.println(<span class="string">"run is unchecked"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">readBox.setOnCheckedChangeListener(<span class="keyword">new</span> CompoundButton.OnCheckedChangeListener()&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(CompoundButton compoundButton, <span class="keyword">boolean</span> b)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (b)</div><div class="line">            System.out.println(<span class="string">"read is checked"</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            System.out.println(<span class="string">"read is unchecked"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="Toast"><a href="#Toast" class="headerlink" title="Toast"></a>Toast</h2><p><img src="https://github.com/tucaoxingren/ProgramingNote/raw/master/img/浮动消息.png" alt="浮动消息"></p>
+<pre><code>浮动显示消息的控件
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Toast.makeText(MainActivity.<span class="keyword">this</span>,<span class="string">"要显示的内容"</span>,Toast.LENGTH_SHORT).show();</div></pre></td></tr></table></figure>
+<h2 id="ProgressBar"><a href="#ProgressBar" class="headerlink" title="ProgressBar"></a>ProgressBar</h2><p><img src="https://github.com/tucaoxingren/ProgramingNote/raw/master/img/img/进度条.png" alt=""><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ProgressBar secondBar = (ProgressBar)findViewById(R.id.progressBar2);<span class="comment">//长条形进度条</span></div><div class="line"><span class="comment">//secondBar ProgressBar对象名</span></div><div class="line"><span class="comment">//设置为可见状态</span></div><div class="line">secondBar.setVisibility(View.VISIBLE);</div><div class="line"><span class="comment">//设置进度条最大值</span></div><div class="line">secondBar.setMax(<span class="number">200</span>);</div><div class="line"><span class="comment">//设置进度条为不可见状态</span></div><div class="line">secondBar.setVisibility(View.GONE);</div></pre></td></tr></table></figure></p>
+<h2 id="单选按钮组"><a href="#单选按钮组" class="headerlink" title="单选按钮组"></a>单选按钮组</h2><p><img src="https://github.com/tucaoxingren/ProgramingNote/raw/master/img/单选按钮.PNG" alt="单选按钮"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明控件变量</span></div><div class="line"><span class="keyword">private</span> RadioGroup genderGroup = <span class="keyword">null</span></div><div class="line"><span class="keyword">private</span> RadioButton femaleButton = <span class="keyword">null</span>;</div><div class="line"><span class="keyword">private</span> RadioButton maleButton = <span class="keyword">null</span>;</div><div class="line">...</div><div class="line"><span class="comment">//通过控件ID获取控件对象</span></div><div class="line">genderGroup = (RadioGroup)findViewById(R.id.genderGroup);</div><div class="line">femaleButton = (RadioButton)findViewById(R.id.femaleButton);</div><div class="line">maleButton = (RadioButton)findViewById(R.id.maleButton);</div><div class="line">...</div><div class="line"><span class="comment">//单选按钮组 共用一个监听代码块</span></div><div class="line">genderGroup.setOnCheckedChangeListener(<span class="keyword">new</span> RadioGroup.OnCheckedChangeListener()&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(RadioGroup radioGroup, @IdRes <span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (femaleButton.getId() == i)&#123;</div><div class="line">            System.out.println(<span class="string">"female"</span>);</div><div class="line">            <span class="comment">//浮动提示信息</span></div><div class="line">            Toast.makeText(MainActivity.<span class="keyword">this</span>,<span class="string">"您已选择性别-女"</span>,Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (maleButton.getId() == i)&#123;</div><div class="line">            System.out.println(<span class="string">"male"</span>);</div><div class="line">            Toast.makeText(MainActivity.<span class="keyword">this</span>,<span class="string">"您已选择性别-男"</span>,Toast.LENGTH_SHORT).show();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="多选按钮"><a href="#多选按钮" class="headerlink" title="多选按钮"></a>多选按钮</h2><p><img src="https://github.com/tucaoxingren/ProgramingNote/raw/master/img/多选按钮.png" alt="多选按钮"><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明控件变量</span></div><div class="line"><span class="keyword">private</span> CheckBox swimBox = <span class="keyword">null</span>;</div><div class="line"><span class="keyword">private</span> CheckBox runBox = <span class="keyword">null</span>;</div><div class="line"><span class="keyword">private</span> CheckBox readBox = <span class="keyword">null</span>;</div><div class="line"> <span class="comment">//通过控件ID获取控件对象</span></div><div class="line">swimBox = (CheckBox)findViewById(R.id.swim);</div><div class="line">runBox = (CheckBox)findViewById(R.id.run);</div><div class="line">readBox = (CheckBox)findViewById(R.id.read);</div><div class="line"><span class="comment">//checkBox没有组 每个checkBox都需要单独的监听</span></div><div class="line">swimBox.setOnCheckedChangeListener(<span class="keyword">new</span> CompoundButton.OnCheckedChangeListener()&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(CompoundButton compoundButton, <span class="keyword">boolean</span> b)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (b)</div><div class="line">            System.out.println(<span class="string">"swim is checked"</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            System.out.println(<span class="string">"swim is unchecked"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">runBox.setOnCheckedChangeListener(<span class="keyword">new</span> CompoundButton.OnCheckedChangeListener()&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(CompoundButton compoundButton, <span class="keyword">boolean</span> b)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (b)</div><div class="line">            System.out.println(<span class="string">"run is checked"</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            System.out.println(<span class="string">"run is unchecked"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">readBox.setOnCheckedChangeListener(<span class="keyword">new</span> CompoundButton.OnCheckedChangeListener()&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(CompoundButton compoundButton, <span class="keyword">boolean</span> b)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (b)</div><div class="line">            System.out.println(<span class="string">"read is checked"</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            System.out.println(<span class="string">"read is unchecked"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
         
             <li class="previous">
-                <a href= "/2017/09/28/Handle初识(2)/" title= Handle初识(2) >
+                <a href= "/2017/09/28/Handle初识(2)/" title= Handler初识(2) >
                     <span>Previous Post</span>
-                    <span>Handle初识(2)</span>
+                    <span>Handler初识(2)</span>
                 </a>
             </li>
         
@@ -962,52 +965,6 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-archive"> Total : 49 </div>
     
     <div class="post-archive">
@@ -1030,22 +987,22 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
         </li>
     
     
@@ -1060,17 +1017,22 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/07</span><a class="archive-post-title" href= "/2017/10/07/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
@@ -1085,11 +1047,6 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/SQLite Android开发/" >SQLite Android开发</a>
         </li>
     
@@ -1100,12 +1057,17 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handle初识(2)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handle初识(1)</a>
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
         </li>
     
     
@@ -1165,7 +1127,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1175,7 +1137,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
@@ -1200,12 +1162,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
@@ -1224,18 +1186,31 @@
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Java字节字符转换流/" >Java字节字符转换流</a>
         </li>
     
     
@@ -1246,6 +1221,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1265,20 +1245,6 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2017/11/22/README/" >[Untitled Post]</a>
         </li>
     
     </div>
