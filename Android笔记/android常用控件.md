@@ -57,7 +57,7 @@ button.setOnClickListener(new Button.OnClickListener(){
 Toast.makeText(MainActivity.this,"要显示的内容",Toast.LENGTH_SHORT).show();
 ```
 ## ProgressBar
-![](.\img\进度条.png)
+![](https://github.com/tucaoxingren/ProgramingNote/raw/master/img/img/进度条.png)
 ```java
 ProgressBar secondBar = (ProgressBar)findViewById(R.id.progressBar2);//长条形进度条
 //secondBar ProgressBar对象名
@@ -70,7 +70,7 @@ secondBar.setVisibility(View.GONE);
 ```
 
 ## 单选按钮组
-![单选按钮](.\img\单选按钮.PNG)
+![单选按钮](https://github.com/tucaoxingren/ProgramingNote/raw/master/img/单选按钮.PNG)
 ```java
 //声明控件变量
 private RadioGroup genderGroup = null
@@ -101,7 +101,7 @@ genderGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
 ```
 
 ## 多选按钮
-![多选按钮](.\img\多选按钮.png)
+![多选按钮](https://github.com/tucaoxingren/ProgramingNote/raw/master/img/多选按钮.png)
 ```java
 //声明控件变量
 private CheckBox swimBox = null;
