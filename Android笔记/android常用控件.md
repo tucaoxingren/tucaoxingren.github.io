@@ -51,7 +51,8 @@ button.setOnClickListener(new Button.OnClickListener(){
 }
 ```
 ## Toast
-![浮动消息](.\img\浮动消息.png)
+![浮动消息](https://github.com/tucaoxingren/ProgramingNote/raw/master/img/浮动消息.png)
+
     浮动显示消息的控件
 ```java
 Toast.makeText(MainActivity.this,"要显示的内容",Toast.LENGTH_SHORT).show();
@@ -71,6 +72,7 @@ secondBar.setVisibility(View.GONE);
 
 ## 单选按钮组
 ![单选按钮](https://github.com/tucaoxingren/ProgramingNote/raw/master/img/单选按钮.PNG)
+
 ```java
 //声明控件变量
 private RadioGroup genderGroup = null
