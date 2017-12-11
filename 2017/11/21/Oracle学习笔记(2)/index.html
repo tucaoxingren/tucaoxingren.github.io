@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>
         
-        tucaoxingren&#39;s Blog
+        Oracle学习笔记(2) · tucaoxingren&#39;s Blog
         
     </title>
     <link rel="icon" href= /assests/favicon.ico>
@@ -68,13 +68,22 @@
     
 </head>
     
-        <body class="four-zero-four-body">
+        <body class="post-body">
     
     
 <header class="header">
 
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >tucaoxingren&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Oracle学习笔记(2)</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>tucaoxingren's Blog.</a>
 </header>
@@ -84,65 +93,104 @@
     <!-- 主页  -->
     
     
+    <!-- 404页  -->
     
-    <div class="site-intro-img" style="background-image: url(/intro/404.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            [404]
+            Oracle学习笔记(2)
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            <p class="intro-subtitle"> </p>
+            
+        </p>
+        <!-- 404 -->
         
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+                <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = oracle>oracle</a>
+    
+</div>
+            
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2017/11/21</span>
+            </div>
+            <!-- 
+
+<div class="post-share iconfont-archer">
+    <ul class="share-box" data-href = "/2017/11/21/Oracle学习笔记(2)/" data-title = "Oracle学习笔记(2)" >
+        <li class="to-weibo">分享到微博</li>
+        <li class="to-wechat">分享到微信</li>
+        <li class="to-qq">分享到QQ</li>
+        <li class="to-twitter">分享到twitter</li>
+    </ul>
+</div> -->
         
     </div>
 </div>
         <div class="container">
-            <main class="main index-page">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p></p><p></p>
+<h1 id="Oracle学习笔记-2"><a href="#Oracle学习笔记-2" class="headerlink" title="Oracle学习笔记(2)"></a>Oracle学习笔记(2)</h1><h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- date -&gt; char  and  char -&gt; date</span></div><div class="line"><span class="keyword">select</span> hiredate,to_char(hiredate,<span class="string">'yyyy-mm-dd'</span>) <span class="string">"日期转字符串"</span>,</div><div class="line">       <span class="keyword">to_date</span>(<span class="string">'2015-12-31'</span>,<span class="string">'yyyy-mm/dd'</span>) <span class="string">"字符串转日期"</span></div><div class="line"><span class="keyword">from</span> emp;</div><div class="line"><span class="comment">-- number -&gt; char  and  char -&gt; number</span></div><div class="line"><span class="keyword">select</span> sal,to_char(sal,<span class="string">'$9999.999'</span>),to_number(<span class="string">'2423423'</span>) <span class="keyword">from</span> emp;</div><div class="line"><span class="comment">-- NVL(A,B) 如果A为null则返回B，否则返回A</span></div><div class="line"><span class="keyword">select</span> sal <span class="string">"薪水"</span>,comm <span class="string">"奖金"</span>,sal+nvl(comm,<span class="number">0</span>) <span class="string">"薪金和"</span> <span class="keyword">from</span> emp;</div><div class="line"><span class="comment">-- NVL2(A,B,C) 如果A不为null 返回B 为null返回C</span></div><div class="line"><span class="keyword">select</span> sal,comm,nvl2(comm,<span class="number">1000</span>,<span class="number">100</span>) <span class="keyword">from</span> emp;</div><div class="line"><span class="comment">-- NULLIF(A,B) 如果A和B相等 返回null 否则 返回A</span></div><div class="line"><span class="keyword">select</span> comm,<span class="keyword">nullif</span>(comm,<span class="number">500</span>) <span class="keyword">from</span> emp;</div><div class="line"><span class="comment">-- COLAESCE(expr1,expr2,...,exprn) 返回清单中的第一个非空值</span></div><div class="line"><span class="keyword">select</span> <span class="keyword">coalesce</span>(<span class="literal">null</span>,<span class="literal">null</span>,<span class="number">2</span>,<span class="literal">null</span>) <span class="keyword">from</span> dual;</div><div class="line"><span class="comment">-- DECODE(col|expression,search1,result1[,search2,result2,...,][,default])</span></div><div class="line"><span class="keyword">select</span> sal,<span class="keyword">decode</span>(sal,<span class="number">800</span>,<span class="string">'a'</span>,<span class="number">1600</span>,<span class="string">'b'</span>,<span class="string">'c'</span>) <span class="keyword">from</span> emp;</div><div class="line"><span class="comment">-- 分组函数 AVG MAX MIN COUNT SUM</span></div><div class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*),<span class="keyword">SUM</span>(SAL),<span class="keyword">AVG</span>(SAL),<span class="keyword">MAX</span>(SAL),<span class="keyword">MIN</span>(SAL) <span class="keyword">FROM</span> EMP;</div><div class="line"><span class="keyword">SELECT</span> DEPTNO,<span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> EMP <span class="keyword">GROUP</span> <span class="keyword">BY</span> DEPTNO;</div><div class="line"></div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> EMP;</div><div class="line"></div><div class="line"><span class="comment">-- 查询雇员姓名以及所属部门的名字</span></div><div class="line"><span class="keyword">select</span> e.ename,d.dname <span class="keyword">from</span> emp e,dept d <span class="keyword">where</span> e.deptno=d.deptno;</div></pre></td></tr></table></figure>
+<h2 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 查询所有部门的名字及他们所包含员工的名字</span></div><div class="line"><span class="keyword">select</span> d.dname,e.ename</div><div class="line"><span class="keyword">from</span> emp e,dept d</div><div class="line"><span class="keyword">where</span> d.deptno=e.deptno(+);<span class="comment">-- 左外连接 显示右表的剩余结果</span></div><div class="line"><span class="comment">--where d.deptno(+)=e.deptno;-- 右外连接 显示左表的剩余结果</span></div></pre></td></tr></table></figure>
+<h2 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 查询所有员工的领导的名字</span></div><div class="line"><span class="keyword">select</span> e1.ename,e2.ename mgr</div><div class="line"><span class="keyword">from</span> emp e1,emp e2</div><div class="line"><span class="keyword">where</span> e1.mgr=e2.empno(+);</div></pre></td></tr></table></figure>
+<h2 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 子查询语句只有一行结果 -&gt; 单行比较操作符  &lt;,&lt;=,&gt;,&gt;=,&lt;&gt;,is not null</span></div><div class="line"><span class="comment">-- 子查询语句有多行结果 -&gt; 多行操作符   NOT IN  IN  ANY  ALL</span></div><div class="line"><span class="comment">-- 子查询语句 有一个null  整个查询语句返回的结果都是 null</span></div><div class="line"><span class="keyword">select</span> ename,sal <span class="keyword">from</span> emp <span class="keyword">where</span> sal&gt;(<span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> ename=<span class="string">'ALLEN'</span>);</div><div class="line"><span class="keyword">select</span> sal <span class="keyword">from</span> emp <span class="keyword">where</span> ename=<span class="string">'ALLEN'</span>;</div><div class="line"><span class="comment">-- 查询工资最高的前5名</span></div><div class="line"><span class="keyword">select</span> ename,sal</div><div class="line"><span class="keyword">from</span> (<span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">desc</span>)</div><div class="line"><span class="keyword">where</span> <span class="keyword">rownum</span> &lt;=<span class="number">5</span>;</div></pre></td></tr></table></figure>
+<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 并 -&gt; UNION/UNION ALL</span></div><div class="line"><span class="comment">-- 交 -&gt; INTERSECT</span></div><div class="line"><span class="comment">-- 差 -&gt; MINUS</span></div><div class="line"><span class="keyword">select</span> empno,ename,sal <span class="keyword">from</span> emp <span class="keyword">where</span> sal&gt;<span class="number">1500</span></div><div class="line"><span class="keyword">MINUS</span></div><div class="line"><span class="keyword">select</span> empno,ename,sal <span class="keyword">from</span> emp <span class="keyword">where</span> sal&lt;<span class="number">3000</span>;</div></pre></td></tr></table></figure>
+<h2 id="行转列"><a href="#行转列" class="headerlink" title="行转列"></a>行转列</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">-- 查询员工总数，以及分布在1980 1981 1982 1987 雇佣的员工人数</span></div><div class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) total,</div><div class="line">       <span class="keyword">sum</span>(<span class="keyword">decode</span>(<span class="keyword">extract</span>(<span class="keyword">year</span> <span class="keyword">from</span> hiredate),<span class="string">'1980'</span>,<span class="number">1</span>,<span class="number">0</span>))<span class="string">"1980"</span>,</div><div class="line">       <span class="keyword">sum</span>(<span class="keyword">decode</span>(<span class="keyword">extract</span>(<span class="keyword">year</span> <span class="keyword">from</span> hiredate),<span class="string">'1981'</span>,<span class="number">1</span>,<span class="number">0</span>))<span class="string">"1981"</span>,</div><div class="line">       <span class="keyword">sum</span>(<span class="keyword">decode</span>(<span class="keyword">extract</span>(<span class="keyword">year</span> <span class="keyword">from</span> hiredate),<span class="string">'1982'</span>,<span class="number">1</span>,<span class="number">0</span>))<span class="string">"1982"</span>,</div><div class="line">       <span class="keyword">sum</span>(<span class="keyword">decode</span>(<span class="keyword">extract</span>(<span class="keyword">year</span> <span class="keyword">from</span> hiredate),<span class="string">'1987'</span>,<span class="number">1</span>,<span class="number">0</span>))<span class="string">"1987"</span></div><div class="line"><span class="keyword">from</span> emp;</div></pre></td></tr></table></figure>
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-pager">
+        
+            <li class="previous">
+                <a href= "/2017/11/22/README/" title=  >
+                    <span>Previous Post</span>
+                    <span>[Untitled Post]</span>
+                </a>
+            </li>
+        
+        
+            <li class="next">
+                <a href= "/2017/11/21/SSI框架/" title= Oracle学习笔记 >
+                    <span>Next Post</span>
+                    <span>Oracle学习笔记</span>
+                </a>
+            </li>
+        
+    </ul>
+    <!-- 来必力City版安装代码 -->
+
     
+    <div id="lv-container" data-id="city" data-uid= MTAyMC8zMDUyOC83MDgz>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
     
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/08/01/Android 蓝牙通信/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Android 蓝牙通信</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter 
-代表本地蓝牙适配器（蓝牙无线电）。BluetoothAdapter是所有蓝牙交互的入口。使用这个你可以发现其他蓝牙设备，查询已配对的设备列表，使用一个已知的MAC地址来实例化一个BluetoothDevice，以及创建一个BluetoothServerSocket来为监听与其他设备的通信。
- BluetoothDevice 
-代表一个远程蓝牙设备，使用这个来请求一个与远程设备的BluetoothSocket连接，或者查询关于设备名称、地址、类和连接状态等设备信息。
- BluetoothSock...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = 蓝牙>蓝牙</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/08/01</span>
-                </div>
-            </div>
-        </article>
-    
-    <!-- paginator  -->
-    
+
+<!-- City版安装代码已完成 -->
 </main>
             <!-- profile -->
             
@@ -918,7 +966,64 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
     
     
     
-    <div class="total-archive"> Total : 49 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 50 </div>
     
     <div class="post-archive">
     
@@ -950,12 +1055,17 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
         </li>
     
     
@@ -970,17 +1080,17 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
         </li>
     
     
@@ -1005,22 +1115,22 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
         </li>
     
     
@@ -1075,6 +1185,11 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
         </li>
     
@@ -1090,17 +1205,7 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2017/09/04/字符串常用方法/" >字符串常用方法</a>
         </li>
     
     
@@ -1110,17 +1215,22 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2017/09/04/字符串常用方法/" >字符串常用方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2017/09/03/多线程 锁的理解/" >多线程 锁的理解</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
         </li>
     
     
@@ -1136,6 +1246,11 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
     
         <li class="archive-post-item">
             <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/hello-world/" >Hello World</a>
         </li>
     
     
@@ -1163,17 +1278,12 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/hello-world/" >Hello World</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
         </li>
     
     
