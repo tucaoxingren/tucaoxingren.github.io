@@ -111,6 +111,36 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/21/menu/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Android menu</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+android menu若想使用菜单键需要覆写onCreatOptionsMenu方法
+直接创建123456789101112131415public boolean onCreateOptionsMenu(Menu menu) &#123;        //菜单组ID，菜单ID，排序，菜单名字        menu.add(0,1,1,R.string.exit);        menu.add(0,2,2,R.string.about);        return super.onCreateOptionsMenu(menu);    &#125;    @Override...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = Menu>Menu</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/21</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/21/note1/" >
                     <h2 class="abstract-title">
                         
@@ -131,36 +161,6 @@ AndroidActivity控件容器
                 <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-href = Android>Android</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/21</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/21/menu/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Android menu</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-android menu若想使用菜单键需要覆写onCreatOptionsMenu方法
-直接创建123456789101112131415public boolean onCreateOptionsMenu(Menu menu) &#123;        //菜单组ID，菜单ID，排序，菜单名字        menu.add(0,1,1,R.string.exit);        menu.add(0,2,2,R.string.about);        return super.onCreateOptionsMenu(menu);    &#125;    @Override...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Menu>Menu</a>
     
 </div>
                 
@@ -320,15 +320,22 @@ StringBuffer append(data);StringBuffer insert(index,data);
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/Java 变量存储理解/" >
+            <a class="content-show-full" href = "/2017/09/08/StringBuilder/" >
                     <h2 class="abstract-title">
                         
-                        <span>Java 变量存储理解</span>
+                        <span>Java StringBuilder</span>
                     </h2>
                 <div class="abstract-content">
                     
-Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保存的，不管其是基本类型的变量，还是引用类型的变量，都是存储在各自的方法栈区中；但引用类型变量所引用的对象（包括数组、普通Java对象）则总是存储在堆内存中。 
-&ensp;&ensp;引用变量本质上只是一个指针，只要程序通过引用变量访问属性，或者通过引用变量来调用方法，该引用变量将会由它所引用的对象代替。
+StringBuilderjdk1.5以后出现了功能和StringBuffer一模一样的对象。就是StringBuilder
+不同的是：
+
+StringBuffer是线程同步的。通常用于多线程。StringBuilder是线程不同步的。通常用于单线程。 它的出现提高效率。
+
+jdk升级：
+
+1.简化书写。2.提高效率。3.增加安全性。
+
 
                 </div>
             </a>
@@ -337,7 +344,7 @@ Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = Java>Java</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = StringBuilder>StringBuilder</a>
     
 </div>
                 
@@ -387,22 +394,15 @@ Java 单例设计模式设计模式   对问题行之有效的解决方式
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/StringBuilder/" >
+            <a class="content-show-full" href = "/2017/09/08/Java 变量存储理解/" >
                     <h2 class="abstract-title">
                         
-                        <span>Java StringBuilder</span>
+                        <span>Java 变量存储理解</span>
                     </h2>
                 <div class="abstract-content">
                     
-StringBuilderjdk1.5以后出现了功能和StringBuffer一模一样的对象。就是StringBuilder
-不同的是：
-
-StringBuffer是线程同步的。通常用于多线程。StringBuilder是线程不同步的。通常用于单线程。 它的出现提高效率。
-
-jdk升级：
-
-1.简化书写。2.提高效率。3.增加安全性。
-
+Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保存的，不管其是基本类型的变量，还是引用类型的变量，都是存储在各自的方法栈区中；但引用类型变量所引用的对象（包括数组、普通Java对象）则总是存储在堆内存中。 
+&ensp;&ensp;引用变量本质上只是一个指针，只要程序通过引用变量访问属性，或者通过引用变量来调用方法，该引用变量将会由它所引用的对象代替。
 
                 </div>
             </a>
@@ -411,7 +411,7 @@ jdk升级：
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = StringBuilder>StringBuilder</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = Java>Java</a>
     
 </div>
                 
@@ -1273,23 +1273,7 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-archive"> Total : 50 </div>
+    <div class="total-archive"> Total : 52 </div>
     
     <div class="post-archive">
     
@@ -1298,6 +1282,16 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href= "/2017/12/14/xml 标记语言浅析/" >xml 标记语言浅析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2017/12/12/JavaScript初识/" >JavaScript初识</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1311,12 +1305,17 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
         </li>
     
     
@@ -1331,11 +1330,6 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2017/10/12/大O记号/" >大O记号</a>
         </li>
     
@@ -1346,12 +1340,12 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
         </li>
     
     
@@ -1381,22 +1375,22 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
         </li>
     
     
@@ -1451,22 +1445,22 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
         </li>
     
     
@@ -1491,27 +1485,7 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
         </li>
     
     
@@ -1544,12 +1518,27 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1574,6 +1563,20 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2015 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2015/08/01/BlogEssay/" >Hello World</a>
         </li>
     
     </div>

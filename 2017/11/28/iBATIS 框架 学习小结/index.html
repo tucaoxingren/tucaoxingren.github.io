@@ -140,10 +140,44 @@
     <article class="article-entry">
         <p></p><p></p>
 <h1 id="iBATIS-框架-学习小结"><a href="#iBATIS-框架-学习小结" class="headerlink" title="iBATIS 框架 学习小结"></a>iBATIS 框架 学习小结</h1><h2 id="iBATIS简单查询语句"><a href="#iBATIS简单查询语句" class="headerlink" title="iBATIS简单查询语句"></a>iBATIS简单查询语句</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 查询一批数据的查询 --&gt;</span></div><div class="line"><span class="comment">&lt;!-- id: sql语句id parameterClass：参数集 resultClass：结果集--&gt;</span></div><div class="line"><span class="comment">&lt;!-- sql语句后不要写分号 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"get"</span> <span class="attr">parameterClass</span>=<span class="string">"map"</span> <span class="attr">resultClass</span>=<span class="string">"kf05Domain"</span>&gt;</span></div><div class="line">		SELECT </div><div class="line">		       a.aaz263 as aaz263,</div><div class="line">		  FROM kf05 a</div><div class="line">		 WHERE 1 = 1 <span class="comment">&lt;!-- 若要查询的参数未输入 则返回全部数据  --&gt;</span></div><div class="line">&lt;![CDATA[	   AND a.aaz263 = #aaz263#    ]]&gt; <span class="comment">&lt;!-- &lt;![CDATA[[ 可缺省参数 ]]&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="ibatis-Dynamic-ibatis使用安全的拼接语句，动态查询"><a href="#ibatis-Dynamic-ibatis使用安全的拼接语句，动态查询" class="headerlink" title="ibatis Dynamic(ibatis使用安全的拼接语句，动态查询)"></a>ibatis Dynamic(ibatis使用安全的拼接语句，动态查询)</h2><p>  1.示例</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectAllProducts"</span> <span class="attr">parameterClass</span>=<span class="string">"Product"</span> <span class="attr">resultMap</span>=<span class="string">"ProductResult"</span>&gt;</span> </div><div class="line">    select id,note from Product </div><div class="line">       <span class="tag">&lt;<span class="name">dynamic</span> <span class="attr">prepend</span>=<span class="string">"WHERE"</span>&gt;</span> </div><div class="line">       <span class="comment">&lt;!-- isNotNull判断参数是否存在,Integer类型 --&gt;</span> </div><div class="line">            <span class="tag">&lt;<span class="name">isNotNull</span> <span class="attr">property</span>=<span class="string">"id"</span>&gt;</span> </div><div class="line">                <span class="comment">&lt;!-- isGreaterThan判断参数是否大于compareValue,isGreaterEquals是大于等于 --&gt;</span> </div><div class="line">                <span class="tag">&lt;<span class="name">isGreaterThan</span> <span class="attr">prepend</span>=<span class="string">" and "</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">compareValue</span>=<span class="string">"0"</span>&gt;</span> </div><div class="line">                id = #id# </div><div class="line">                <span class="tag">&lt;/<span class="name">isGreaterThan</span>&gt;</span> </div><div class="line">            <span class="tag">&lt;/<span class="name">isNotNull</span>&gt;</span> </div><div class="line">            <span class="comment">&lt;!-- isNotEmpty判断字串不为空,isEmpty可以判断字串为空 --&gt;</span> </div><div class="line">            <span class="tag">&lt;<span class="name">isNotEmpty</span> <span class="attr">prepend</span>=<span class="string">" and "</span> <span class="attr">property</span>=<span class="string">"note"</span>&gt;</span> </div><div class="line">            <span class="comment">&lt;!-- 模糊查询不能用#,#在是用prepareStatement的?插入参数,$是文本替换 --&gt;</span> </div><div class="line">            note like '%$note$%' </div><div class="line">            <span class="tag">&lt;/<span class="name">isNotEmpty</span>&gt;</span> </div><div class="line">        <span class="tag">&lt;/<span class="name">dynamic</span>&gt;</span> </div><div class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>  2.用Map传参数 或者用class传参</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectAllProducts"</span> <span class="attr">parameterClass</span>=<span class="string">"java.util.HashMap"</span> <span class="attr">resultMap</span>=<span class="string">"ProductResult"</span>&gt;</span> </div><div class="line">    select id,note from Product </div><div class="line">       <span class="tag">&lt;<span class="name">dynamic</span> <span class="attr">prepend</span>=<span class="string">"WHERE"</span>&gt;</span> </div><div class="line">       <span class="comment">&lt;!-- isPropertyAvailable判断属性是否有效 --&gt;</span> </div><div class="line">          <span class="tag">&lt;<span class="name">isPropertyAvailable</span> <span class="attr">property</span>=<span class="string">"id"</span>&gt;</span> </div><div class="line">            <span class="tag">&lt;<span class="name">isNotNull</span> <span class="attr">property</span>=<span class="string">"id"</span>&gt;</span> </div><div class="line">                <span class="comment">&lt;!-- isLessThan判断参数是否小于compareValue,isLessEquals是小于等于 --&gt;</span> </div><div class="line">                <span class="tag">&lt;<span class="name">isLessThan</span> <span class="attr">prepend</span>=<span class="string">" and "</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">compareValue</span>=<span class="string">"10"</span>&gt;</span> </div><div class="line">                id = #id# </div><div class="line">                <span class="tag">&lt;/<span class="name">isLessThan</span>&gt;</span> </div><div class="line">            <span class="tag">&lt;/<span class="name">isNotNull</span>&gt;</span> </div><div class="line">          <span class="tag">&lt;/<span class="name">isPropertyAvailable</span>&gt;</span> </div><div class="line">        <span class="tag">&lt;/<span class="name">dynamic</span>&gt;</span> </div><div class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>  3.动态SQL的参数 </p>
+<p>属性关键字–<br>含义</p>
+<p><code>&lt;isEqual&gt;</code><br>如果参数相等于值则查询条件有效。 </p>
+<p><code>&lt;isNotEqual&gt;</code><br>如果参数不等于值则查询条件有效。 </p>
+<p><code>&lt;isGreaterThan&gt;</code><br>如果参数大于值则查询条件有效。 </p>
+<p><code>&lt;isGreaterEqual&gt;</code><br>如果参数等于值则查询条件有效。 </p>
+<p><code>&lt;isLessEqual&gt;</code><br>如果参数小于值则查询条件有效 如下所示</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">isLessEqual</span> <span class="attr">prepend</span> = <span class="string">”AND”</span> <span class="attr">property</span> = <span class="string">”age”</span> <span class="attr">compareValue</span> = <span class="string">”18”</span> &gt;</span> </div><div class="line">　　ADOLESCENT = ‘TRUE’ </div><div class="line"><span class="tag">&lt;/<span class="name">isLessEqual</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>&lt;isPropertyAvailable&gt;</code><br>如果参数有使用则查询条件有效。 </p>
+<p><code>&lt;isNotPropertyAvailable&gt;</code><br>如果参数没有使用则查询条件有效。 </p>
+<p><code>&lt;isNull&gt;</code><br>如果参数为NULL则查询条件有效。 </p>
+<p><code>&lt;isNotNull&gt;</code><br>如果参数不为NULL则查询条件有效。 </p>
+<p><code>&lt;isEmpty&gt;</code><br>如果参数为空则查询条件有效。 </p>
+<p><code>&lt;isNotEmpty&gt;</code><br>如果参数不为空则查询条件有效。参数的数据类型为Collection、String 时参数不为NULL或“”。如下所示： </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">isNotEmpty</span> <span class="attr">prepend</span>=<span class="string">”AND”</span> <span class="attr">property</span>=<span class="string">”firstName”</span> &gt;</span></div><div class="line">    FIRST_NAME=#firstName#</div><div class="line"><span class="tag">&lt;/<span class="name">isNotEmpty</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>&lt;isParameterPresent&gt;</code><br>如果参数类不为NULL则查询条件有效。 </p>
+<p><code>&lt;isNotParameterPresent&gt;</code><br>对象不存在有效。示例:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">isNotParameterPresent</span> <span class="attr">prepend</span>=<span class="string">”AND”</span>&gt;</span></div><div class="line">    EMPLOYEE_TYPE = ‘DEFAULT’</div><div class="line"><span class="tag">&lt;/<span class="name">isNotParameterPresent</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>对应关系图</p>
+<p>参考连接<a href="http://blog.csdn.net/wanghuan203/article/details/8557659" target="_blank" rel="external">IBATIS动态标签</a></p>
 </blockquote>
-<p><img src="https://github.com/tucaoxingren/ProgramingNote/raw/master/img/image008.gif" alt="对应关系图"></p>
+<h2 id="Ibatis与Spring集成"><a href="#Ibatis与Spring集成" class="headerlink" title="Ibatis与Spring集成"></a>Ibatis与Spring集成</h2><ol>
+<li><p>对Ibatis工程引入Spring支持，即将Spring相关的jar包加入到类路径中，在/src目录下创建spring配置文件，在web.xml文件中指定spring配置文件并添加spring的WebContext启动监听器。</p>
+</li>
+<li><p>将对数据库的连接信息放交由spring管理，在spring配置文件中添加数据库连接信息</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 一般配置如下 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">”dataSource”</span> <span class="attr">class</span>=<span class="string">”org.apache.commons.dbcp.BasicDataSource”</span> <span class="attr">destroy-method</span>=<span class="string">”close”</span>&gt;</span> </div><div class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">”driverClassName”</span> <span class="attr">value</span>=<span class="string">”数据库驱动类”/</span>&gt;</span> </div><div class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">”url”</span> <span class="attr">value</span>=<span class="string">”数据库连接URL”/</span>&gt;</span> </div><div class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">”username”</span> <span class="attr">value</span>=<span class="string">”数据库连接用户名”/</span>&gt;</span></div><div class="line">       <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">”password”</span> <span class="attr">value</span>=<span class="string">”数据库连接密码”/</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 也可用.properties 文件为整个工程配置好数据库后 用下面的语句引用工程配置好的数据库 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"sqlExecutor"</span> <span class="attr">class</span>=<span class="string">"com.yinhai.sysframework.persistence.ibatis.LimitSqlExecutor"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dialect"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"com.yinhai.sysframework.persistence.ibatis.OracleDialect"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>在spring配置文件中添加对ibatis的支持</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"sqlMapClient"</span> <span class="attr">class</span>=<span class="string">"org.springframework.orm.ibatis.SqlMapClientFactoryBean"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"configLocations"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">list</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>classpath:/resource/SqlmapConfig-system.xml<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- 引入sql语句xml文件 --&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>classpath:/resource/SqlmapConfig-cfg-include.xml<span class="tag">&lt;/<span class="name">value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">list</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"dataSourceProxy"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>servlet 与 iBatis对应关系图</p>
+</blockquote>
+<p><img src="https://github.com/tucaoxingren/ProgramingNote/raw/master/img/image008.gif" alt="servlet 与 iBatis对应关系图"></p>
 <blockquote>
 <p>参考文章<br><a href="https://www.ibm.com/developerworks/cn/java/j-lo-ibatis-principle/" target="_blank" rel="external">深入iBATIS</a></p>
 </blockquote>
@@ -153,17 +187,17 @@
     <ul class="post-pager">
         
             <li class="previous">
-                <a href= "/2017/12/01/Action 配置/" title= Action 配置 >
+                <a href= "/2017/11/28/PLSQL/" title= PL/SQL >
                     <span>Previous Post</span>
-                    <span>Action 配置</span>
+                    <span>PL/SQL</span>
                 </a>
             </li>
         
         
             <li class="next">
-                <a href= "/2017/11/28/PLSQL/" title= PL/SQL >
+                <a href= "/2017/11/22/README/" title=  >
                     <span>Next Post</span>
-                    <span>PL/SQL</span>
+                    <span>[Untitled Post]</span>
                 </a>
             </li>
         
@@ -1004,23 +1038,7 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-archive"> Total : 50 </div>
+    <div class="total-archive"> Total : 52 </div>
     
     <div class="post-archive">
     
@@ -1029,6 +1047,16 @@
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href= "/2017/12/14/xml 标记语言浅析/" >xml 标记语言浅析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2017/12/12/JavaScript初识/" >JavaScript初识</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1042,12 +1070,17 @@
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
         </li>
     
     
@@ -1062,11 +1095,6 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2017/10/12/大O记号/" >大O记号</a>
         </li>
     
@@ -1077,12 +1105,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
         </li>
     
     
@@ -1112,22 +1140,22 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
         </li>
     
     
@@ -1182,22 +1210,22 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
         </li>
     
     
@@ -1222,27 +1250,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
         </li>
     
     
@@ -1275,12 +1283,27 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1305,6 +1328,20 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2015 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2015/08/01/BlogEssay/" >Hello World</a>
         </li>
     
     </div>
