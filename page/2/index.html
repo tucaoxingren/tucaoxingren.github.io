@@ -116,6 +116,95 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/10/12/大O记号/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>大O记号</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+大O记号定义T(n) = O(f(n)) if &exist; c &gt; 0,当n &gt;&gt; 2 后，有 T(n) &lt; c*f(n)
+例子
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = 大O>大O</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/12</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/10/09/List遍历：for，foreach还是Iterator/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>List遍历：for，foreach还是Iterator</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+转载自http://blog.csdn.net/nazir2513/article/details/51168345
+List遍历：for，foreach还是Iterator先说现象：如果是ArrayList，用三种方式遍历的速度是for&gt;Iterator&gt;foreach，但基本上属于同一个速度级别；如果是LinkedList，则三种方式遍历的差距很大了，用for遍历的效率远远落后于foreach和Iterator，Iterator&gt;foreach&gt;&gt;&gt;for；模拟50000条数据，放入ArrayList和LinkedList，对两个List分别用三...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = list>list</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/09</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/10/08/Java正则表达式/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Java正则表达式</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+Java正则表达式简单运用12345678910111213141516171819202122232425//匹配手机号码是否正确。 String tel = "15800001111";String regex = "1[34578]\\d&#123;9&#125;";//  \\d&#123;9&#125; 匹配9位数字//.* 匹配任意字符String str = "abdc你45.java";String reg = ".*.java";//字符串以 特定字符串或字符结尾System.out.println(str.endsWith(".java"));//字符串以 特定字符...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = 正则表达式>正则表达式</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/08</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/10/08/InputStream和Reader的根本差异/" >
                     <h2 class="abstract-title">
                         
@@ -153,35 +242,6 @@ String,StringBuffer与StringBuilder的区别String 字符串常量StringBuffer �
             </a>
             <div class="abstract-post-meta">
                 <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/08</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/10/08/Java正则表达式/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Java正则表达式</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Java正则表达式简单运用12345678910111213141516171819202122232425//匹配手机号码是否正确。 String tel = "15800001111";String regex = "1[34578]\\d&#123;9&#125;";//  \\d&#123;9&#125; 匹配9位数字//.* 匹配任意字符String str = "abdc你45.java";String reg = ".*.java";//字符串以 特定字符串或字符结尾System.out.println(str.endsWith(".java"));//字符串以 特定字符...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = 正则表达式>正则表达式</a>
-    
-</div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
@@ -274,36 +334,6 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/29/Handle初识(3)/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Handler初识(3)</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Handler与线程Handle 其实并没有真正的启动一个线程,Handle.post(Thread);只是调用了线程的run方法
-HandlerThread真正开启了新线程12345678910111213141516171819202122232425262728293031323334353637383940414243protected void onCreate(Bundle savedInstanceState) &#123;    ...    //HandlerThread    //输出    // com.example.handleactivity I/Syste...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = handler>handler</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/29</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/29/Android 调试/" >
                     <h2 class="abstract-title">
                         
@@ -333,45 +363,15 @@ Log.d(String tag,String msg)tag-标签名,msg-日志信息
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/29/SQLite Android开发/" >
+            <a class="content-show-full" href = "/2017/09/29/Handle初识(3)/" >
                     <h2 class="abstract-title">
                         
-                        <span>SQLite Android开发</span>
+                        <span>Handler初识(3)</span>
                     </h2>
                 <div class="abstract-content">
                     
-SQLite小型关系型数据库
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = SQLite>SQLite</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/29</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/28/Handle初识(1)/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Handler初识(1)</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-HandlerWhat’s handlerAndroid程序实现多线程的方式
-How use创建Handle对象Handler handler = new Handler();将要执行的操作写在线程对象的run方法中12345678Runnable updateThread = new Runnable() &#123;    @Override    public void run() &#123;        //要执行的动作        //延迟2000ms再加载updateThread线程        //handler.postDelayed(updateThread,...
+Handler与线程Handle 其实并没有真正的启动一个线程,Handle.post(Thread);只是调用了线程的run方法
+HandlerThread真正开启了新线程12345678910111213141516171819202122232425262728293031323334353637383940414243protected void onCreate(Bundle savedInstanceState) &#123;    ...    //HandlerThread    //输出    // com.example.handleactivity I/Syste...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -385,7 +385,7 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/28</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/29</span>
                 </div>
             </div>
         </article>
@@ -393,7 +393,7 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/">#PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">#NEXT</a>
+        <a class="extend prev" rel="prev" href="/">#PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">#NEXT</a>
     </nav>
     
 </main>
@@ -1267,23 +1267,7 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-archive"> Total : 50 </div>
+    <div class="total-archive"> Total : 52 </div>
     
     <div class="post-archive">
     
@@ -1292,6 +1276,16 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href= "/2017/12/14/xml 标记语言浅析/" >xml 标记语言浅析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2017/12/12/JavaScript初识/" >JavaScript初识</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1305,12 +1299,17 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
         </li>
     
     
@@ -1325,11 +1324,6 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2017/10/12/大O记号/" >大O记号</a>
         </li>
     
@@ -1340,12 +1334,12 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
         </li>
     
     
@@ -1375,22 +1369,22 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
         </li>
     
     
@@ -1445,22 +1439,22 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
         </li>
     
     
@@ -1485,27 +1479,7 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
         </li>
     
     
@@ -1538,12 +1512,27 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1568,6 +1557,20 @@ How use创建Handle对象Handler handler = new Handler();将要执行的操作�
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2015 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2015/08/01/BlogEssay/" >Hello World</a>
         </li>
     
     </div>

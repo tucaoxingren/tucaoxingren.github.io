@@ -111,6 +111,83 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/20/Git操作/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Git命令</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+Git命令Git分支操作查看分支：git branch
+创建分支：git branch &lt;name&gt;
+切换分支：git checkout &lt;name&gt;
+创建+切换分支：git checkout -b &lt;name&gt;
+合并某分支到当前分支：git merge &lt;name&gt;
+删除分支：git branch -d &lt;name&gt;
+更新与合并要更新你的本地仓库至最新改动，执行：
+git pull
+以在你的工作目录中 获取（fetch） 并 合并（merge） 远端的改动
+要合并其他分支到你的当前分支（例如 master），执行：
+git ...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = Git>Git</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/20</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/12/Collection-集合类/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Collection-集合类</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+Collection-集合类集合类的由来：对象用于封装特有数据，对象多了需要存储，如果对象的个数不确定。就使用集合容器进行存储。
+集合特点：1.用于存储对象的容器。2.集合的长度是可变的。3.集合中不可以存储基本数据类型值。
+
+集合容器因为内部的数据结构不同，有多种具体容器。不断的向上抽取，就形成了集合框架。
+
+框架的顶层Collection接口
+Collection的常见方法：1.添加。boolean add(Object obj):
+boolean addAll(Collection coll):    
+2.删除。boolean remove(object obj):
+boole...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = collection>collection</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/12</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/11/linux/" >
                     <h2 class="abstract-title">
                         
@@ -180,15 +257,22 @@ StringBuffer append(data);StringBuffer insert(index,data);
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/Java 变量存储理解/" >
+            <a class="content-show-full" href = "/2017/09/08/StringBuilder/" >
                     <h2 class="abstract-title">
                         
-                        <span>Java 变量存储理解</span>
+                        <span>Java StringBuilder</span>
                     </h2>
                 <div class="abstract-content">
                     
-Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保存的，不管其是基本类型的变量，还是引用类型的变量，都是存储在各自的方法栈区中；但引用类型变量所引用的对象（包括数组、普通Java对象）则总是存储在堆内存中。 
-&ensp;&ensp;引用变量本质上只是一个指针，只要程序通过引用变量访问属性，或者通过引用变量来调用方法，该引用变量将会由它所引用的对象代替。
+StringBuilderjdk1.5以后出现了功能和StringBuffer一模一样的对象。就是StringBuilder
+不同的是：
+
+StringBuffer是线程同步的。通常用于多线程。StringBuilder是线程不同步的。通常用于单线程。 它的出现提高效率。
+
+jdk升级：
+
+1.简化书写。2.提高效率。3.增加安全性。
+
 
                 </div>
             </a>
@@ -197,7 +281,7 @@ Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = Java>Java</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = StringBuilder>StringBuilder</a>
     
 </div>
                 
@@ -247,22 +331,15 @@ Java 单例设计模式设计模式   对问题行之有效的解决方式
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/08/StringBuilder/" >
+            <a class="content-show-full" href = "/2017/09/08/Java 变量存储理解/" >
                     <h2 class="abstract-title">
                         
-                        <span>Java StringBuilder</span>
+                        <span>Java 变量存储理解</span>
                     </h2>
                 <div class="abstract-content">
                     
-StringBuilderjdk1.5以后出现了功能和StringBuffer一模一样的对象。就是StringBuilder
-不同的是：
-
-StringBuffer是线程同步的。通常用于多线程。StringBuilder是线程不同步的。通常用于单线程。 它的出现提高效率。
-
-jdk升级：
-
-1.简化书写。2.提高效率。3.增加安全性。
-
+Java 变量存储理解&ensp;&ensp;所有局部变量都是放在栈内存里保存的，不管其是基本类型的变量，还是引用类型的变量，都是存储在各自的方法栈区中；但引用类型变量所引用的对象（包括数组、普通Java对象）则总是存储在堆内存中。 
+&ensp;&ensp;引用变量本质上只是一个指针，只要程序通过引用变量访问属性，或者通过引用变量来调用方法，该引用变量将会由它所引用的对象代替。
 
                 </div>
             </a>
@@ -271,7 +348,7 @@ jdk升级：
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = StringBuilder>StringBuilder</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = Java>Java</a>
     
 </div>
                 
@@ -368,89 +445,6 @@ String类示例代码12345678910111213141516171819202122232425262728293031323334
                 <!-- date  -->
                 <div class="abstract-date">
                     <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/04</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/03/多线程 锁的理解/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>多线程 锁的理解</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-多线程 锁的理解什么是锁
-顾名思义锁可以理解为一个占用标记，持有锁的线程可以访问数据，而没有锁的线程无法访问数据
-
-为什么要加锁
-多个线程同时访问一个共享数据时，可能会造成此数据同时被多个线程访问甚至修改，进而可能会导致程序逻辑错误等
-
-如何加锁
-同步
-
-同步代码块Object obj = new Object();synchronized(obj){code…(需要同步的代码)}
-
-–
-
-同步函数public synchronized void method(){}
-
-实现Lock接口,JDK1.8示例如下：12345678910111213141516171819202122232...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = java线程锁>java线程锁</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/03</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/02/停止线程的三种方式/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>停止线程的两种方式</span>
-                    </h2>
-                <div class="abstract-content">
-                    停止线程的两种方式
-stop方法调用Runable接口中的stop()方法
-run方法结束怎么控制线程的任务结束呢?
-
-任务中都会有循环结构，只要控制住循环就可以结束任务。
-
-控制循环通常使用定义标记标记来完成。
-但是如果线程处于了冻结状态，无法读取标记。如何结束呢？
-
-可以使用interrupt()方法将线程从冻结状态强制恢复到运行状态中来，让线程具备cpu的执行资格。但是强制动作会发生InterruptedException异常，记得要处理
-
-Demo代码如下：12345678910111213141516171819202122232425262728293031323334353...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = java线程>java线程</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/02</span>
                 </div>
             </div>
         </article>
@@ -1277,23 +1271,7 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-archive"> Total : 50 </div>
+    <div class="total-archive"> Total : 52 </div>
     
     <div class="post-archive">
     
@@ -1302,6 +1280,16 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href= "/2017/12/14/xml 标记语言浅析/" >xml 标记语言浅析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2017/12/12/JavaScript初识/" >JavaScript初识</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1315,12 +1303,17 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
         </li>
     
     
@@ -1335,11 +1328,6 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2017/10/12/大O记号/" >大O记号</a>
         </li>
     
@@ -1350,12 +1338,12 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
         </li>
     
     
@@ -1385,22 +1373,22 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
         </li>
     
     
@@ -1455,22 +1443,22 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
         </li>
     
     
@@ -1495,27 +1483,7 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
         </li>
     
     
@@ -1548,12 +1516,27 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1578,6 +1561,20 @@ Demo代码如下：1234567891011121314151617181920212223242526272829303132333435
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2015 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2015/08/01/BlogEssay/" >Hello World</a>
         </li>
     
     </div>

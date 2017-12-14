@@ -111,6 +111,50 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/03/多线程 锁的理解/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>多线程 锁的理解</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+多线程 锁的理解什么是锁
+顾名思义锁可以理解为一个占用标记，持有锁的线程可以访问数据，而没有锁的线程无法访问数据
+
+为什么要加锁
+多个线程同时访问一个共享数据时，可能会造成此数据同时被多个线程访问甚至修改，进而可能会导致程序逻辑错误等
+
+如何加锁
+同步
+
+同步代码块Object obj = new Object();synchronized(obj){code…(需要同步的代码)}
+
+–
+
+同步函数public synchronized void method(){}
+
+实现Lock接口,JDK1.8示例如下：12345678910111213141516171819202122232...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = java线程锁>java线程锁</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/03</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/09/02/多线程小结/" >
                     <h2 class="abstract-title">
                         
@@ -125,6 +169,45 @@
 2.jvm中的多线程体现。
 –主线程，垃圾回收线程，自定义线程。以及他们运行的代码的位置。创建线程的方式
 123456789101112131415161718192021222324252627282930313233343536class PrimeThread extends Thread &#123;         long minPrime;...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = java线程>java线程</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/02</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/09/02/停止线程的三种方式/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>停止线程的两种方式</span>
+                    </h2>
+                <div class="abstract-content">
+                    停止线程的两种方式
+stop方法调用Runable接口中的stop()方法
+run方法结束怎么控制线程的任务结束呢?
+
+任务中都会有循环结构，只要控制住循环就可以结束任务。
+
+控制循环通常使用定义标记标记来完成。
+但是如果线程处于了冻结状态，无法读取标记。如何结束呢？
+
+可以使用interrupt()方法将线程从冻结状态强制恢复到运行状态中来，让线程具备cpu的执行资格。但是强制动作会发生InterruptedException异常，记得要处理
+
+Demo代码如下：12345678910111213141516171819202122232425262728293031323334353...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -240,14 +323,48 @@
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/08/01/BlogEssay/" >
+            <a class="content-show-full" href = "/2017/08/01/字节流复制文件/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>字节流复制文件</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+字节流复制文件直接复制12345678910111213FileInputStream fis = new FileInputStream("smile.mp3");     FileOutputStream fos = new FileOutputStream(".\\music\\smile.mp3");byte[] buf = new byte[1024];int len = 0;while((len=fis.read(buf))!=-1)&#123;    fos.write(buf,0,len);&#125;fos.close();fis.close();
+使用缓冲区复制12...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = io流>io流</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/08/01</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/08/01/hello-world/" >
                     <h2 class="abstract-title">
                         
                         <span>Hello World</span>
                     </h2>
                 <div class="abstract-content">
                     
-
+Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new "My New Post"
+More info: Writing
+Run server1$ hexo server
+Mor...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -296,63 +413,6 @@ Android 蓝牙通信Android 常用蓝牙API Bluetooth Adapter
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/08/01/hello-world/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Hello World</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-Mor...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/08/01</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/08/01/字节流复制文件/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>字节流复制文件</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-字节流复制文件直接复制12345678910111213FileInputStream fis = new FileInputStream("smile.mp3");     FileOutputStream fos = new FileOutputStream(".\\music\\smile.mp3");byte[] buf = new byte[1024];int len = 0;while((len=fis.read(buf))!=-1)&#123;    fos.write(buf,0,len);&#125;fos.close();fis.close();
-使用缓冲区复制12...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = io流>io流</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/08/01</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
             <a class="content-show-full" href = "/2017/04/20/阿里巴巴校招编程试题/" >
                     <h2 class="abstract-title">
                         
@@ -379,45 +439,10 @@ Mor...
             </div>
         </article>
     
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2016/12/06/常用Markdown语法/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>常用Markdown 语法</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-常用Markdown 语法各级标题# 一级标题## 二级标题…###### 六级标题
-正文如下这里是正文这里是正文
-引用（&gt; 可实现引用效果，如下）
-This is a blockquote.
-This is the second paragraph in the blockquote.
-
-斜体（英文状态下 用两个  *或_  围住文字）Some of these words *are emphasized*.Some of these words are emphasized.Some of these words _are emphasized also_.Some of t...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Markdown>Markdown</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2016/12/06</span>
-                </div>
-            </div>
-        </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/4/">#PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span>
+        <a class="extend prev" rel="prev" href="/archives/page/4/">#PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/6/">#NEXT</a>
     </nav>
     
 </main>
@@ -1236,23 +1261,7 @@ This is the second paragraph in the blockquote.
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-archive"> Total : 50 </div>
+    <div class="total-archive"> Total : 52 </div>
     
     <div class="post-archive">
     
@@ -1261,6 +1270,16 @@ This is the second paragraph in the blockquote.
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href= "/2017/12/14/xml 标记语言浅析/" >xml 标记语言浅析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/12</span><a class="archive-post-title" href= "/2017/12/12/JavaScript初识/" >JavaScript初识</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1274,12 +1293,17 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
         </li>
     
     
@@ -1294,11 +1318,6 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记(2)/" >Oracle学习笔记(2)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2017/10/12/大O记号/" >大O记号</a>
         </li>
     
@@ -1309,12 +1328,12 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >String,StringBuffer与StringBuilder的区别</a>
         </li>
     
     
@@ -1344,22 +1363,22 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(1)/" >Handler初识(1)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2017/09/28/Handle初识(2)/" >Handler初识(2)</a>
         </li>
     
     
@@ -1414,22 +1433,22 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java 变量存储理解/" >Java 变量存储理解</a>
         </li>
     
     
@@ -1454,27 +1473,7 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
         </li>
     
     
@@ -1507,12 +1506,27 @@ This is the second paragraph in the blockquote.
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/BlogEssay/" >Hello World</a>
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
         </li>
     
     
@@ -1537,6 +1551,20 @@ This is the second paragraph in the blockquote.
     
         <li class="archive-post-item">
             <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2016/12/06/常用Markdown语法/" >常用Markdown 语法</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2015 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2015/08/01/BlogEssay/" >Hello World</a>
         </li>
     
     </div>
