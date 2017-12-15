@@ -116,6 +116,72 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/11/21/Oracle学习笔记/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Oracle学习笔记</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+Oracle特殊用户sys用户是超级用户，具有最高权限，具有sysdba角色，有 create database的权限    默认密码是 chang_on_install
+system用户是管理操作员，权限也很大。具有sysoper角色，没有 create database的权限    默认的密码是 manager
+特殊角色dba      数据库管理员角色sysdba    系统管理员角色sysoper    系统操作员角色
+角色权限比较sysdba &gt; sysoper &gt; dba
+sys用户     具有 dba sysdba sysoper角色system用户    ...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = oracle>oracle</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/21</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/11/21/SSI框架/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Oracle学习笔记</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+SSI框架
+Java SSI 为 Struts+Spring+Ibatis的一个集成框架，也是目前较流行的一种Web应用程序开源框架。
+
+Struts2Struts2主要来源于webwork框架，与Struts1相比，在数据传递方面，Struts2提供了更加强大OGNL标签功能，使其能够通过在action中定义变量来直接与jsp页面中的数据进行相互传值，省去了Struts1中的formbean；而在跳转控制方面，Struts2简化了配置文件的信息量，使页面和action之间的交换更加的简洁和直观，便于开发人员的管理。
+SpringSpring功能非常的强大，比如它的控制反转/依赖注入机...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = oracle>oracle</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/21</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/10/12/大O记号/" >
                     <h2 class="abstract-title">
                         
@@ -205,15 +271,15 @@ Java正则表达式简单运用12345678910111213141516171819202122232425//匹配
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/10/08/InputStream和Reader的根本差异/" >
+            <a class="content-show-full" href = "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >
                     <h2 class="abstract-title">
                         
-                        <span>InputStream和Reader的根本差异</span>
+                        <span>String,StringBuffer与StringBuilder的区别</span>
                     </h2>
                 <div class="abstract-content">
                     
-转载自http://www.importnew.com/11537.html
-InputStream和Reader都是抽象类，并不直接地从文件或者套接字（socket）中读取数据。然而，它们之间的主要差别在于：InputStream用于读取二进制数据（字节流方式，译者注），Reader用于读取文本数据（字符流方式，译者注），准确地说，Unicode字符。那么，二进制数据和文本数据的区别是什么呢？当然，所有读取的东西本质上是字节，然后需要一套字符编码方案，把字节转换成文本。Reader类使用字符编码来解码字节，并返回字符给调用者。Reader类要么使用运行Java程序平台的默认字符编码，...
+转载自http://blog.csdn.net/rmn190/article/details/1492013
+String,StringBuffer与StringBuilder的区别String 字符串常量StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全） 简要的说， String 类型和 StringBuffer 类型的主要性能区别其实在于 String是不可变的对象,因此在每次对String类型进行改变的时候其实都等同于生成了一个新的String 对象，然后将指针指向新的String对象，所以经常改变内容的字符串最好不要用 Stri...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -229,15 +295,15 @@ InputStream和Reader都是抽象类，并不直接地从文件或者套接字（
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >
+            <a class="content-show-full" href = "/2017/10/08/InputStream和Reader的根本差异/" >
                     <h2 class="abstract-title">
                         
-                        <span>String,StringBuffer与StringBuilder的区别</span>
+                        <span>InputStream和Reader的根本差异</span>
                     </h2>
                 <div class="abstract-content">
                     
-转载自http://blog.csdn.net/rmn190/article/details/1492013
-String,StringBuffer与StringBuilder的区别String 字符串常量StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全） 简要的说， String 类型和 StringBuffer 类型的主要性能区别其实在于 String是不可变的对象,因此在每次对String类型进行改变的时候其实都等同于生成了一个新的String 对象，然后将指针指向新的String对象，所以经常改变内容的字符串最好不要用 Stri...
+转载自http://www.importnew.com/11537.html
+InputStream和Reader都是抽象类，并不直接地从文件或者套接字（socket）中读取数据。然而，它们之间的主要差别在于：InputStream用于读取二进制数据（字节流方式，译者注），Reader用于读取文本数据（字符流方式，译者注），准确地说，Unicode字符。那么，二进制数据和文本数据的区别是什么呢？当然，所有读取的东西本质上是字节，然后需要一套字符编码方案，把字节转换成文本。Reader类使用字符编码来解码字节，并返回字符给调用者。Reader类要么使用运行Java程序平台的默认字符编码，...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -327,65 +393,6 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
                 <!-- date  -->
                 <div class="abstract-date">
                     <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/05</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/29/Android 调试/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Android 日志</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Java输出流在开发工具的Android Monitor标签处可以查看System.out.print();
-Log调试信息–DEBUG
-Log.d(String tag,String msg)tag-标签名,msg-日志信息
-错误信息–ERRORLog.e(String tag,String msg)
-警告信息–WARNINGLog.w(String tag,String msg)
-普通信息–INFOLog.i(String tag,String msg)
-
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/29</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/09/29/Handle初识(3)/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Handler初识(3)</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Handler与线程Handle 其实并没有真正的启动一个线程,Handle.post(Thread);只是调用了线程的run方法
-HandlerThread真正开启了新线程12345678910111213141516171819202122232425262728293031323334353637383940414243protected void onCreate(Bundle savedInstanceState) &#123;    ...    //HandlerThread    //输出    // com.example.handleactivity I/Syste...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = handler>handler</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/09/29</span>
                 </div>
             </div>
         </article>
@@ -1267,7 +1274,43 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
     
-    <div class="total-archive"> Total : 52 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 54 </div>
     
     <div class="post-archive">
     
@@ -1276,6 +1319,21 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2017/12/15/简单Spring项目理解Spring的依赖注入/" >简单Spring项目理解Spring的依赖注入</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2017/12/15/iBATIS 框架 配置详解/" >iBATIS 框架 配置详解</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href= "/2017/12/14/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1299,11 +1357,6 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
@@ -1314,12 +1367,12 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
         </li>
     
     
@@ -1334,7 +1387,7 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
         </li>
     
     
@@ -1344,7 +1397,7 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
@@ -1369,12 +1422,12 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
@@ -1414,12 +1467,12 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
         </li>
     
     
@@ -1439,17 +1492,12 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1459,12 +1507,12 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2017/09/04/字符串常用操作/" >字符串常用操作</a>
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
         </li>
     
     
@@ -1474,12 +1522,47 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2017/09/04/字符串常用操作/" >字符串常用操作</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2017/09/03/多线程 锁的理解/" >多线程 锁的理解</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1509,36 +1592,6 @@ HandlerThread真正开启了新线程1234567891011121314151617181920212223242526
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
-        </li>
     
     
         <li class="archive-post-item">

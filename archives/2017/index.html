@@ -111,6 +111,77 @@
     
     
         <article class="index-post">
+            <a class="content-show-full" href = "/2017/12/15/iBATIS 框架 配置详解/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>iBATIS 框架 配置详解</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+iBATIS 框架 配置详解sqlmap-config.xml一个简单的配置文件如下123456789101112131415161718&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;!DOCTYPE sqlMapConfig PUBLIC    "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd"&gt;    &lt;sqlMapConfig&gt;&lt;!-- cacheM...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/15</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/12/15/简单Spring项目理解Spring的依赖注入/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>简单Spring项目理解Spring的依赖注入</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+简单Spring项目理解Spring的依赖注入项目结构图如下：
+依赖jar包：
+HelloWorld.java123456789101112131415161718192021222324package com.tutorialspoint;public class HelloWorld &#123;   private String message;   public void setMessage(String message)&#123;      this.message  = message;   &#125;   /*   public void setMessage(St...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/15</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017/12/14/iBATIS 框架 学习小结/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>iBATIS 框架 学习小结</span>
+                    </h2>
+                <div class="abstract-content">
+                    
+iBATIS 框架 学习小结iBATIS简单查询语句12345678910&lt;!-- 查询一批数据的查询 --&gt;&lt;!-- id: sql语句id parameterClass：参数集 resultClass：结果集--&gt;&lt;!-- sql语句后不要写分号 --&gt;&lt;select id="get" parameterClass="map" resultClass="kf05Domain"&gt;		SELECT 		       a.aaz263 as aaz263,		  FROM kf05 a		 WHERE 1 = 1 &lt;!-- 若要查询的...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/14</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
             <a class="content-show-full" href = "/2017/12/14/xml 标记语言浅析/" >
                     <h2 class="abstract-title">
                         
@@ -247,29 +318,6 @@ PL/SQLPL/SQL基本语法12345678910DECLARE    声明 - 定义对象的可选部�
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/11/28/iBATIS 框架 学习小结/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>iBATIS 框架 学习小结</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-iBATIS 框架 学习小结iBATIS简单查询语句12345678910&lt;!-- 查询一批数据的查询 --&gt;&lt;!-- id: sql语句id parameterClass：参数集 resultClass：结果集--&gt;&lt;!-- sql语句后不要写分号 --&gt;&lt;select id="get" parameterClass="map" resultClass="kf05Domain"&gt;		SELECT 		       a.aaz263 as aaz263,		  FROM kf05 a		 WHERE 1 = 1 &lt;!-- 若要查询的...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/28</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
             <a class="content-show-full" href = "/2017/11/22/README/" >
                     <h2 class="abstract-title">
                         
@@ -286,39 +334,6 @@ iBATIS 框架 学习小结iBATIS简单查询语句12345678910&lt;!-- 查询一�
                 <!-- date  -->
                 <div class="abstract-date">
                     <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/22</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/11/21/SSI框架/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Oracle学习笔记</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-SSI框架
-Java SSI 为 Struts+Spring+Ibatis的一个集成框架，也是目前较流行的一种Web应用程序开源框架。
-
-Struts2Struts2主要来源于webwork框架，与Struts1相比，在数据传递方面，Struts2提供了更加强大OGNL标签功能，使其能够通过在action中定义变量来直接与jsp页面中的数据进行相互传值，省去了Struts1中的formbean；而在跳转控制方面，Struts2简化了配置文件的信息量，使页面和action之间的交换更加的简洁和直观，便于开发人员的管理。
-SpringSpring功能非常的强大，比如它的控制反转/依赖注入机...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = oracle>oracle</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/21</span>
                 </div>
             </div>
         </article>
@@ -352,43 +367,10 @@ Oracle学习笔记(2)常用函数123456789101112131415161718192021222324-- date 
             </div>
         </article>
     
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/11/21/Oracle学习笔记/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Oracle学习笔记</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Oracle特殊用户sys用户是超级用户，具有最高权限，具有sysdba角色，有 create database的权限    默认密码是 chang_on_install
-system用户是管理操作员，权限也很大。具有sysoper角色，没有 create database的权限    默认的密码是 manager
-特殊角色dba      数据库管理员角色sysdba    系统管理员角色sysoper    系统操作员角色
-角色权限比较sysdba &gt; sysoper &gt; dba
-sys用户     具有 dba sysdba sysoper角色system用户    ...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = oracle>oracle</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/21</span>
-                </div>
-            </div>
-        </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2017/page/5/">5</a><a class="extend next" rel="next" href="/archives/2017/page/2/">#NEXT</a>
+        <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2017/page/6/">6</a><a class="extend next" rel="next" href="/archives/2017/page/2/">#NEXT</a>
     </nav>
     
 </main>
@@ -1207,7 +1189,43 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     
     
-    <div class="total-archive"> Total : 52 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 54 </div>
     
     <div class="post-archive">
     
@@ -1216,6 +1234,21 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2017/12/15/简单Spring项目理解Spring的依赖注入/" >简单Spring项目理解Spring的依赖注入</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2017/12/15/iBATIS 框架 配置详解/" >iBATIS 框架 配置详解</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href= "/2017/12/14/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1239,11 +1272,6 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
@@ -1254,12 +1282,12 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
         </li>
     
     
@@ -1274,7 +1302,7 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
         </li>
     
     
@@ -1284,7 +1312,7 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
@@ -1309,12 +1337,12 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
@@ -1354,12 +1382,12 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
         </li>
     
     
@@ -1379,17 +1407,12 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1399,12 +1422,12 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2017/09/04/字符串常用操作/" >字符串常用操作</a>
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
         </li>
     
     
@@ -1414,12 +1437,47 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2017/09/04/字符串常用操作/" >字符串常用操作</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2017/09/03/多线程 锁的理解/" >多线程 锁的理解</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1449,36 +1507,6 @@ sys用户     具有 dba sysdba sysoper角色system用户    ...
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
-        </li>
     
     
         <li class="archive-post-item">

@@ -200,15 +200,15 @@ Java正则表达式简单运用12345678910111213141516171819202122232425//匹配
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/10/08/InputStream和Reader的根本差异/" >
+            <a class="content-show-full" href = "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >
                     <h2 class="abstract-title">
                         
-                        <span>InputStream和Reader的根本差异</span>
+                        <span>String,StringBuffer与StringBuilder的区别</span>
                     </h2>
                 <div class="abstract-content">
                     
-转载自http://www.importnew.com/11537.html
-InputStream和Reader都是抽象类，并不直接地从文件或者套接字（socket）中读取数据。然而，它们之间的主要差别在于：InputStream用于读取二进制数据（字节流方式，译者注），Reader用于读取文本数据（字符流方式，译者注），准确地说，Unicode字符。那么，二进制数据和文本数据的区别是什么呢？当然，所有读取的东西本质上是字节，然后需要一套字符编码方案，把字节转换成文本。Reader类使用字符编码来解码字节，并返回字符给调用者。Reader类要么使用运行Java程序平台的默认字符编码，...
+转载自http://blog.csdn.net/rmn190/article/details/1492013
+String,StringBuffer与StringBuilder的区别String 字符串常量StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全） 简要的说， String 类型和 StringBuffer 类型的主要性能区别其实在于 String是不可变的对象,因此在每次对String类型进行改变的时候其实都等同于生成了一个新的String 对象，然后将指针指向新的String对象，所以经常改变内容的字符串最好不要用 Stri...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -224,15 +224,15 @@ InputStream和Reader都是抽象类，并不直接地从文件或者套接字（
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/10/08/String,StringBuffer与StringBuilder的区别/" >
+            <a class="content-show-full" href = "/2017/10/08/InputStream和Reader的根本差异/" >
                     <h2 class="abstract-title">
                         
-                        <span>String,StringBuffer与StringBuilder的区别</span>
+                        <span>InputStream和Reader的根本差异</span>
                     </h2>
                 <div class="abstract-content">
                     
-转载自http://blog.csdn.net/rmn190/article/details/1492013
-String,StringBuffer与StringBuilder的区别String 字符串常量StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全） 简要的说， String 类型和 StringBuffer 类型的主要性能区别其实在于 String是不可变的对象,因此在每次对String类型进行改变的时候其实都等同于生成了一个新的String 对象，然后将指针指向新的String对象，所以经常改变内容的字符串最好不要用 Stri...
+转载自http://www.importnew.com/11537.html
+InputStream和Reader都是抽象类，并不直接地从文件或者套接字（socket）中读取数据。然而，它们之间的主要差别在于：InputStream用于读取二进制数据（字节流方式，译者注），Reader用于读取文本数据（字符流方式，译者注），准确地说，Unicode字符。那么，二进制数据和文本数据的区别是什么呢？当然，所有读取的东西本质上是字节，然后需要一套字符编码方案，把字节转换成文本。Reader类使用字符编码来解码字节，并返回字符给调用者。Reader类要么使用运行Java程序平台的默认字符编码，...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -1144,7 +1144,43 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
     
-    <div class="total-archive"> Total : 52 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 54 </div>
     
     <div class="post-archive">
     
@@ -1153,6 +1189,21 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2017/12/15/简单Spring项目理解Spring的依赖注入/" >简单Spring项目理解Spring的依赖注入</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2017/12/15/iBATIS 框架 配置详解/" >iBATIS 框架 配置详解</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href= "/2017/12/14/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1176,11 +1227,6 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/iBATIS 框架 学习小结/" >iBATIS 框架 学习小结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/28</span><a class="archive-post-title" href= "/2017/11/28/PLSQL/" >PL/SQL</a>
         </li>
     
@@ -1191,12 +1237,12 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/SSI框架/" >Oracle学习笔记</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/Oracle学习笔记/" >Oracle学习笔记</a>
         </li>
     
     
@@ -1211,7 +1257,7 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
         </li>
     
     
@@ -1221,7 +1267,7 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/InputStream和Reader的根本差异/" >InputStream和Reader的根本差异</a>
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017/10/08/Java正则表达式/" >Java正则表达式</a>
         </li>
     
     
@@ -1246,12 +1292,12 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Android 调试/" >Android 日志</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2017/09/29/Handle初识(3)/" >Handler初识(3)</a>
         </li>
     
     
@@ -1291,12 +1337,12 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/note1/" >Android Activity</a>
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2017/09/21/menu/" >Android menu</a>
         </li>
     
     
@@ -1316,17 +1362,12 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuffer/" >Java StringBuffer</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/StringBuilder/" >Java StringBuilder</a>
         </li>
     
     
@@ -1336,12 +1377,12 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/Java单例设计模式/" >Java 单例设计模式</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2017/09/04/字符串常用操作/" >字符串常用操作</a>
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/String类/" >String类</a>
         </li>
     
     
@@ -1351,12 +1392,47 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/04</span><a class="archive-post-title" href= "/2017/09/04/字符串常用操作/" >字符串常用操作</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2017/09/03/多线程 锁的理解/" >多线程 锁的理解</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/多线程小结/" >多线程小结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
         </li>
     
     
@@ -1386,36 +1462,6 @@ Java IO流输入流FileReader123456789101112131415161718192021/* * 在创建读�
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/02</span><a class="archive-post-title" href= "/2017/09/02/停止线程的三种方式/" >停止线程的两种方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/01</span><a class="archive-post-title" href= "/2017/09/01/线程间通信-等待唤醒机制/" >线程间通信-等待唤醒机制</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2017/08/29/成员变量与局部变量理解及static变量/" >成员变量与局部变量理解及static变量</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2017/08/23/阿里巴巴校招编程试题2/" >阿里巴巴校招编程试题2</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/Android 蓝牙通信/" >Android 蓝牙通信</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/字节流复制文件/" >字节流复制文件</a>
-        </li>
     
     
         <li class="archive-post-item">
