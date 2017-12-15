@@ -38,6 +38,7 @@ END; - 表示程序块的结束
 > m_name VARCHAR(15);
 > 
 > cont BOOLEAN;
+> 参数变量 p_  程序变量 v_  游标变量 cur_  异常变量 e_  记录类型 t_
 
 ## 常量
 >示例 `变量名 CONSTANT 数据类型 := 赋值`
