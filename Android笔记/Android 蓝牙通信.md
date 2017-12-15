@@ -2,7 +2,7 @@
 title: Android 蓝牙通信
 date: 2017-08-01
 time: 21:41:05
-categories: andro
+categories: Android
 toc: true
 tag: 蓝牙
 ---
