@@ -1,0 +1,4 @@
+String aae360 = us.getUser().getUserId();//经办人编号
+String aae360 = us.getUser().getUserName();//经办人名字
+String baa001 = us.getUser().getOwnerFzxOrgId();//分中心编码
+String aaa027 = pHelper.getValue("aaa027");//统筹区编码

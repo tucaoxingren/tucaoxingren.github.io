@@ -1,0 +1,2 @@
+<xui:selectInput property="akj032" collection="AKJ032" displayFields="0,1" valueField="0,1"
+                             key="县区初审同意联网级别" data="1,一级|2,二级" isRequired="true"/>

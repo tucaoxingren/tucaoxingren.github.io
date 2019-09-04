@@ -1,0 +1,70 @@
+action中的常用方法
+
+/**
+ * 获取年度
+ * 
+ * @param request
+ * @param us
+ * @param dto
+ */
+protected void filterYear(HttpServletRequest request, UserSession us,DTO dto) {
+	List yearList = ynsicp3Dao.queryForList("filterYear", dto);
+	request.setAttribute("AAE001LIST", yearList);
+}
+
+
+// 获取系统时间
+String date = ynsicp3Dao.getSysStrDate(); // 获取系统时间
+Calendar calendar = Calendar.getInstance();// 系统时间
+//calendar.setTime(ynsicp3Dao.getSysDate());
+
+// 空值校验
+if (ValidateUtil.isEmpty(selectedList)) {
+	super.setAddScript(request,"alert('没有获取到勾选的数据，请重试');Tab.setActiveTab('tabs','tab1');");
+	return mapping.findForward(super.getJspView());
+}
+// 向前台注入js
+setAddScript(request, "Base.hideObj('baa001');")
+
+//设置前台组件属性值
+PropertyUtils.getPropertyUtils(request).setMProperty4Id(组件ID, 属性名, 属性值);
+//myTestbutt为组件的ID
+pHelper.=PropertyUtils.getPropertyUtils(request).
+p.getTagProperty("myTestbutt").getPropertyObject().addProperty("key", "通过Action改变Type");
+//通过Id设置页面组件的mode，myTestpanel1为容器组件，设置为ReadOnly之后，所有的子组件在自身没有设置mode属性的情况下，默认集成ReadOnly模式。
+p.setFieldModeById("myTestpanel1", FormUtils.MODE_READONLY, request);
+//通过property设置页面组件的mode
+p.setFieldModeByProp("aac004", FormUtils.MODE_READONLY, request);
+//设置表单内第几位mode值生效，如mode="E,H,E"，p.setFormMode(1)，则"H"生效
+p.setFormMode(1);
+
+//获取页面数据的两种方式
+//1
+String bke059 = cForm.getDtoAsString("bke059");
+//2
+String bke059 = inputDto.getParameter().getAsString("bke059");
+
+// 设置只读属性
+super.setAddScript(request, "Base.setReadOnly('bjslx',true);");
+
+// 初始化设置保存按钮不可用
+super.setAddScript(request, "Base.disabledButton('btn_export');");
+
+// 获取当前用户的登录数据
+String baa001=us.getUser().getOwnerFzxOrgId();
+
+// 获取统筹区编码等其他数据
+String aaa027=pHelper.getValue("aaa027")
+
+// jsp中的属性获取方法
+InputDTO inputDto = cForm.getInputDTO(us);
+String bac002 = inputDto.getParameter().getAsString("bac002");
+
+// 查询数据
+InputDto inputDto = cForm.getDtoObject(us);
+super.collectionQuery4Dev(sqlID,组件ID, inputDto.getParameter(), ynsicp3Dao);
+DTO inDto = cForm.getDtoObject();
+DTO dto = (DTO) ynsicp3Dao.queryForObject("getTaa02Info", inDto);
+
+// 校验数据工具类
+ValidateUtil.areEqual(baa001, Ynsicp3Constants.K_BAA001_ALL)
