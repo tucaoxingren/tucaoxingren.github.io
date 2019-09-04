@@ -1,0 +1,117 @@
+ta2项目配置
+
+1.无事务的sqlmap配置（即查询语句）
+
+平行的功能配置在一个 功能名.xml的文件
+然后在 config/common/SqlMapConfigCommon.xml中引入路径
+如下
+<!--DRGs业务组的SQL语句映射配置 -->
+<sqlMap resource="com/yinhai/sicp3/employee/medicalagencybalance/drgs/apps/dao/sqlmap/DRGs.xml" />
+DRGs.xml中包含所有与DRGs业务相关的sql语句
+DRGs.xml中功能的sql语句示例如下
+id是sql语句的唯一标识 action中可以直接通过id调用sql语句
+	id需要在同一命名空间中唯一 示例的命名空间为DRGs
+	如果整个项目所有id都是唯一的，只通过id即可指定sql，如果不是，则需要指定namespace
+sql语句中parameterClass是输入参数
+	resultClass是输出参数，resultClass可以是dto对象 也可以是domain对象
+		如果是domain对象，应指定domain的路径
+		domain是数据表的Dao类，包含数据表中的所有字段 
+		使用银海代码自动生成工具生成domain时，会自动生成 数据表对应的xml文件以及一些常用方法
+		数据表名.xml 包含一些常用sql语句
+	
+DRGs.xml部分代码如下
+<!-- DRGs业务组的SQL语句映射配置 -->
+<sqlMap namespace="DRGs">
+	<!--如果在resultClass中返回是dto或map,则用resultClass="dto" -->
+	<typeAlias alias="dto" type="com.yinhai.sysframework.app.dto.BaseDTO" />
+	<typeAlias alias="kc6kDomain"
+		type="com.yinhai.sicp3.employee.medicalagencybalance.drgs.apps.dao.domain.kc6kDomain" />
+	...
+	<!-- 通过医疗服务机构编号进行查询 -->
+	<select id="getKc6kListInfo" parameterClass="map" resultClass="kc6kDomain">
+		SELECT
+		a.baz507 as baz507,   <!-- DRGs分组器接口分组结果ID -->
+			...
+		FROM kc6k a
+		WHERE 1 = 1 
+		  and a.aae036 >= to_date(to_char(#start#),'yyyy-mm-dd') <!-- 经办时间开始日期（前台传入了number的时期格式） -->
+		  and a.aae036 <![CDATA[<=]]>
+		  	  to_date(to_char(#end#),'yyyy-mm-dd') + 0.99999 <!-- 经办时间结束日期 -->
+		  <isNotEmpty prepend="and" property="akb020">   <!-- 医疗服务机构编号 -->
+			a.akb020 = #akb020:VARCHAR#
+		  </isNotEmpty>
+		order by a.akb020
+	</select>
+</sqlMap>
+
+action中的简单查询方法如下
+public ActionForward querymedicalInfo(BaseActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response, UserSession us) throws Exception {
+		// 获取form数据
+		CommonActionForm cForm = (CommonActionForm) form;
+		// 获取dto中的数据
+		InputDTO inputDto = cForm.getInputDTO(us);
+		// 执行查询					sql语句id		  前台列表id
+		super.collectionQuery4Dev("getKc6kListInfo", "medicalInfoList", inputDto.getParameter(), ynsicp3Dao);
+		IPropertyUtils p = PropertyUtils.getPropertyUtils(request);
+		p.setFormMode(FormUtils.FORM_CREATE_MODE);
+		return mapping.findForward(super.getJspView());
+	}
+
+2.有事务的sqlmap配置（增删改）
+
+首先在config/yncip-config.xml 中添加 模块的sql语句的xml文件的声明
+例如：
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- 银海构件化集成平台配置文件 -->
+<yhcip-config>
+	<!-- 加载服务配置文件 -->
+	<services>
+	...其他服务声明
+		<serviceConfig module="职工Service" resource="config/employee/Yhcip.xml"
+			desc="职工Service" />。
+	</services>
+</yhcip-config>		
+onfig/employee/Yhcip.xml 内容如下
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- 职工子系统服务配置文件 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!-- 配置事务代理的基类,如果子类需要事务处理，一般建议继承该代理，可以将很多通用的方法 -->
+	<bean id="baseTransactionProxy.ynsicp3"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager">
+			<ref bean="ynsicp3TransactionManager" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">
+					PROPAGATION_REQUIRED,-AppException,-PrcException
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- DRGs -->
+	<bean id="DRGsService" parent="baseTransactionProxy.ynsicp3">
+		<property name="transactionAttributes">
+			<props>
+				<prop key="saveGroup">PROPAGATION_REQUIRED,-AppException,-PrcException</prop>
+				<prop key="saveGroupConfirm">PROPAGATION_REQUIRED,-AppException,-PrcException</prop>
+			</props>
+		</property>
+		<property name="target">
+		<!-- service实现类路径 -->
+			<bean class="com.yinhai.sicp3.employee.medicalagencybalance.drgs.apps.service.impl.DRGsServiceImpl">
+				<property name="ynsicp3Dao">
+					<ref bean="ynsicp3Dao" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	...其他服务声明
+</beans>

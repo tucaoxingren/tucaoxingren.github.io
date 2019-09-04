@@ -1,0 +1,10 @@
+// 查询详细
+        function queryDetail(o) {
+            var akb021 = o['akb021'];
+            var aae011 = o['aae011'];
+            var aae036 = o['aae036'];
+            var name = encodeURI(encodeURI(akb021));
+            var context = '<%=request.getContextPath() %>';
+            showDialog(context + '/ynsicp3/commonbusiness/medicalagency/basicdata/medicalAgencyDataPrintAction.do?' +
+            'reqCode=queryKj09Ae57DetailInfo&akb021='+name+"&aae011="+aae011+"&aae036="+aae036, 780, 420);
+        }

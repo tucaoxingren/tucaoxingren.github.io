@@ -1,0 +1,16 @@
+kmsicp3 DRGs结算报表制作 使用两个参数的运算值作为新值显示时有两种表达：
+
+1. 直接在所需单元格的Textfield expression处写入表达式
+
+2. 新建变量值在变量编辑窗口的 Initial value expression处写入表达式
+
+注意：变量编辑窗口的 Variable expression处只能写关于field(报表字段)的表达式，并在上方选择表达式的运算法则
+
+
+kmyb2016
+
+数据库中的data类型数据 在java中Timestamp aae036Timestamp = map.getAsTimestamp("aae036");
+
+接收数据
+
+timestamp map.getAsTimestamp
