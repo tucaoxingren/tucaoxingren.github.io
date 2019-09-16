@@ -1,23 +1,23 @@
-ĞèÒª¸øÓÃ»§ÊÚÈ¨ grant select any dictionary to xjsi_p_cz;
---COMMAND_TYPE ´úÂëÖµ
+éœ€è¦ç»™ç”¨æˆ·æˆæƒ grant select any dictionary to xjsi_p_cz;
+--COMMAND_TYPE ä»£ç å€¼
 SELECT * FROM v$sqlcommand;
 
---exesqltext ½«°ó¶¨±äÁ¿¸³ÖµÔÚsql½Å±¾ÖĞ
+--exesqltext å°†ç»‘å®šå˜é‡èµ‹å€¼åœ¨sqlè„šæœ¬ä¸­
 select sql_text,
        sql_fulltext,
        sql_id,
        --sql_arg,
        fun_sql_BindArg(sql_arg,sql_fulltext) as exesqltext,
-       "Ö´ĞĞÊ±¼ä'S'",
-       "Ö´ĞĞ´ÎÊı",
+       "æ‰§è¡Œæ—¶é—´'S'",
+       "æ‰§è¡Œæ¬¡æ•°",
        "COST",
        SORTS,
        MODULE,
-       "ÎïÀí¶Á",
-       "ÎïÀíĞ´",
-       "·µ»ØĞĞÊı",
-       "´ÅÅÌ¶Á",
-       "Ö±½ÓÂ·¾¶Ğ´",
+       "ç‰©ç†è¯»",
+       "ç‰©ç†å†™",
+       "è¿”å›è¡Œæ•°",
+       "ç£ç›˜è¯»",
+       "ç›´æ¥è·¯å¾„å†™",
        PARSING_SCHEMA_NAME,
        COMMAND_TYPE,
        LAST_ACTIVE_TIME
@@ -33,19 +33,19 @@ SELECT S.SQL_TEXT,
                ELSE
                 EXECUTIONS
              END),
-             2) "Ö´ĞĞÊ±¼ä'S'",
-       S.EXECUTIONS "Ö´ĞĞ´ÎÊı",
+             2) "æ‰§è¡Œæ—¶é—´'S'",
+       S.EXECUTIONS "æ‰§è¡Œæ¬¡æ•°",
        S.OPTIMIZER_COST "COST",
        S.SORTS,
-       S.MODULE, --Á¬½ÓÄ£Ê½£¨JDBC THIN CLIENT£º³ÌĞò£©
+       S.MODULE, --è¿æ¥æ¨¡å¼ï¼ˆJDBC THIN CLIENTï¼šç¨‹åºï¼‰
        -- S.LOCKED_TOTAL,
-       S.PHYSICAL_READ_BYTES "ÎïÀí¶Á",
-       -- S.PHYSICAL_READ_REQUESTS "ÎïÀí¶ÁÇëÇó",
-       S.PHYSICAL_WRITE_REQUESTS "ÎïÀíĞ´",
-       -- S.PHYSICAL_WRITE_BYTES "ÎïÀíĞ´ÇëÇó",
-       S.ROWS_PROCESSED      "·µ»ØĞĞÊı",
-       S.DISK_READS          "´ÅÅÌ¶Á",
-       S.DIRECT_WRITES       "Ö±½ÓÂ·¾¶Ğ´",
+       S.PHYSICAL_READ_BYTES "ç‰©ç†è¯»",
+       -- S.PHYSICAL_READ_REQUESTS "ç‰©ç†è¯»è¯·æ±‚",
+       S.PHYSICAL_WRITE_REQUESTS "ç‰©ç†å†™",
+       -- S.PHYSICAL_WRITE_BYTES "ç‰©ç†å†™è¯·æ±‚",
+       S.ROWS_PROCESSED      "è¿”å›è¡Œæ•°",
+       S.DISK_READS          "ç£ç›˜è¯»",
+       S.DIRECT_WRITES       "ç›´æ¥è·¯å¾„å†™",
        S.PARSING_SCHEMA_NAME,
        S.COMMAND_TYPE,
        S.LAST_ACTIVE_TIME
@@ -56,13 +56,13 @@ SELECT S.SQL_TEXT,
                ELSE
                 EXECUTIONS
              END),
-             2) > 2 --100 0000Î¢Ãë=1S
+             2) > 2 --100 0000å¾®ç§’=1S
    AND S.PARSING_SCHEMA_NAME = USER
    AND S.MODULE='JDBC Thin Client'
    AND TO_CHAR(S.LAST_ACTIVE_TIME, 'YYYY-MM-DD') =
        TO_CHAR( SYSDATE, 'YYYY-MM-DD' )
    AND S.COMMAND_TYPE IN (2 , 3, 5, 6 ,7 , 189) )
- ORDER BY "Ö´ĞĞÊ±¼ä'S'" DESC;
+ ORDER BY "æ‰§è¡Œæ—¶é—´'S'" DESC;
  
 SELECT S.SQL_TEXT,
        S.SQL_FULLTEXT,
@@ -75,19 +75,19 @@ SELECT S.SQL_TEXT,
                ELSE
                 EXECUTIONS
              END),
-             2) "Ö´ĞĞÊ±¼ä'S'",
-       S.EXECUTIONS "Ö´ĞĞ´ÎÊı",
+             2) "æ‰§è¡Œæ—¶é—´'S'",
+       S.EXECUTIONS "æ‰§è¡Œæ¬¡æ•°",
        S.OPTIMIZER_COST "COST",
        S.SORTS,
-       S.MODULE, --Á¬½ÓÄ£Ê½£¨JDBC THIN CLIENT£º³ÌĞò£©
+       S.MODULE, --è¿æ¥æ¨¡å¼ï¼ˆJDBC THIN CLIENTï¼šç¨‹åºï¼‰
        -- S.LOCKED_TOTAL,
-       S.PHYSICAL_READ_BYTES "ÎïÀí¶Á",
-       -- S.PHYSICAL_READ_REQUESTS "ÎïÀí¶ÁÇëÇó",
-       S.PHYSICAL_WRITE_REQUESTS "ÎïÀíĞ´",
-       -- S.PHYSICAL_WRITE_BYTES "ÎïÀíĞ´ÇëÇó",
-       S.ROWS_PROCESSED      "·µ»ØĞĞÊı",
-       S.DISK_READS          "´ÅÅÌ¶Á",
-       S.DIRECT_WRITES       "Ö±½ÓÂ·¾¶Ğ´",
+       S.PHYSICAL_READ_BYTES "ç‰©ç†è¯»",
+       -- S.PHYSICAL_READ_REQUESTS "ç‰©ç†è¯»è¯·æ±‚",
+       S.PHYSICAL_WRITE_REQUESTS "ç‰©ç†å†™",
+       -- S.PHYSICAL_WRITE_BYTES "ç‰©ç†å†™è¯·æ±‚",
+       S.ROWS_PROCESSED      "è¿”å›è¡Œæ•°",
+       S.DISK_READS          "ç£ç›˜è¯»",
+       S.DIRECT_WRITES       "ç›´æ¥è·¯å¾„å†™",
        S.PARSING_SCHEMA_NAME,
        S.LAST_LOAD_TIME,
        S.LAST_ACTIVE_TIME
@@ -98,36 +98,36 @@ SELECT S.SQL_TEXT,
                ELSE
                 EXECUTIONS
              END),
-             2) > 2 --100 0000Î¢Ãë=1S
+             2) > 2 --100 0000å¾®ç§’=1S
    AND S.PARSING_SCHEMA_NAME = USER
    AND TO_CHAR(S.LAST_LOAD_TIME, 'YYYY-MM-DD') =
        TO_CHAR( SYSDATE, 'YYYY-MM-DD' )
    --AND S.COMMAND_TYPE IN (2 , 3, 5, 6 ,7, 189)
- ORDER BY "Ö´ĞĞÊ±¼ä'S'" DESC;
+ ORDER BY "æ‰§è¡Œæ—¶é—´'S'" DESC;
 
- --¿ÉÒÔ»ñÈ¡µ½sql_idµÄÖ´ĞĞÖ÷»ú
+ --å¯ä»¥è·å–åˆ°sql_idçš„æ‰§è¡Œä¸»æœº
  select * from dba_hist_active_sess_history where sql_id ='dd13sr39vjzm3';
  
- --»ñÈ¡ÀúÊ·ĞÅÏ¢
+ --è·å–å†å²ä¿¡æ¯
  select * from v$active_session_history;
  
  
 
-ORACLE »ñÈ¡°ó¶¨±äÁ¿Öµ
+ORACLE è·å–ç»‘å®šå˜é‡å€¼
 
---- ²é¿´½ø³ÌÕıÔÚÖ´ĞĞµÄSQL
+--- æŸ¥çœ‹è¿›ç¨‹æ­£åœ¨æ‰§è¡Œçš„SQL
 select p.SPID,sql.SQL_TEXT,sql.SQL_FULLTEXT,sql.sql_id,s.* from gv$process p , gv$session s,gv$sqlarea sql 
 where p.ADDR=s.PADDR and p.INST_ID=s.INST_ID  and sql.INST_ID=s.INST_ID
 and sql.ADDRESS=s.SQL_ADDRESS
 
 
--- ORACLE »ñÈ¡°ó¶¨±äÁ¿Öµ£º
+-- ORACLE è·å–ç»‘å®šå˜é‡å€¼ï¼š
 
 SELECT SQL_ID,NAME, POSITION, value_string, ANYDATA.accesstimestamp(value_anydata)
   From gV$sql_Bind_Capture A
  Where sql_id='aqfcs7drzzcfw';
 
-Ê±¼ä±äÁ¿Í¨¹ı ANYDATA.accesstimestamp(value_anydata)ÏÔÊ¾¡£
+æ—¶é—´å˜é‡é€šè¿‡ ANYDATA.accesstimestamp(value_anydata)æ˜¾ç¤ºã€‚
 
 
 
@@ -183,16 +183,16 @@ select sql_text,
        sql_id,
        --sql_arg,
        --fun_sql_BindArg(sql_arg,sql_fulltext) as exesqltext,
-       "Ö´ĞĞÊ±¼ä'S'",
-       "Ö´ĞĞ´ÎÊı",
+       "æ‰§è¡Œæ—¶é—´'S'",
+       "æ‰§è¡Œæ¬¡æ•°",
        "COST",
        SORTS,
        MODULE,
-       "ÎïÀí¶Á",
-       "ÎïÀíĞ´",
-       "·µ»ØĞĞÊı",
-       "´ÅÅÌ¶Á",
-       "Ö±½ÓÂ·¾¶Ğ´",
+       "ç‰©ç†è¯»",
+       "ç‰©ç†å†™",
+       "è¿”å›è¡Œæ•°",
+       "ç£ç›˜è¯»",
+       "ç›´æ¥è·¯å¾„å†™",
        PARSING_SCHEMA_NAME,
        LAST_ACTIVE_TIME
    from (
@@ -207,19 +207,19 @@ SELECT S.SQL_TEXT,
                ELSE
                 EXECUTIONS
              END),
-             2) "Ö´ĞĞÊ±¼ä'S'",
-       S.EXECUTIONS "Ö´ĞĞ´ÎÊı",
+             2) "æ‰§è¡Œæ—¶é—´'S'",
+       S.EXECUTIONS "æ‰§è¡Œæ¬¡æ•°",
        S.OPTIMIZER_COST "COST",
        S.SORTS,
-       S.MODULE, --Á¬½ÓÄ£Ê½£¨JDBC THIN CLIENT£º³ÌĞò£©
+       S.MODULE, --è¿æ¥æ¨¡å¼ï¼ˆJDBC THIN CLIENTï¼šç¨‹åºï¼‰
        -- S.LOCKED_TOTAL,
-       S.PHYSICAL_READ_BYTES "ÎïÀí¶Á",
-       -- S.PHYSICAL_READ_REQUESTS "ÎïÀí¶ÁÇëÇó",
-       S.PHYSICAL_WRITE_REQUESTS "ÎïÀíĞ´",
-       -- S.PHYSICAL_WRITE_BYTES "ÎïÀíĞ´ÇëÇó",
-       S.ROWS_PROCESSED      "·µ»ØĞĞÊı",
-       S.DISK_READS          "´ÅÅÌ¶Á",
-       S.DIRECT_WRITES       "Ö±½ÓÂ·¾¶Ğ´",
+       S.PHYSICAL_READ_BYTES "ç‰©ç†è¯»",
+       -- S.PHYSICAL_READ_REQUESTS "ç‰©ç†è¯»è¯·æ±‚",
+       S.PHYSICAL_WRITE_REQUESTS "ç‰©ç†å†™",
+       -- S.PHYSICAL_WRITE_BYTES "ç‰©ç†å†™è¯·æ±‚",
+       S.ROWS_PROCESSED      "è¿”å›è¡Œæ•°",
+       S.DISK_READS          "ç£ç›˜è¯»",
+       S.DIRECT_WRITES       "ç›´æ¥è·¯å¾„å†™",
        S.PARSING_SCHEMA_NAME,
        S.LAST_ACTIVE_TIME
   FROM GV$SQLAREA S
@@ -229,7 +229,7 @@ SELECT S.SQL_TEXT,
                ELSE
                 EXECUTIONS
              END),
-             2) >=0 --100 0000Î¢Ãë=1S
+             2) >=0 --100 0000å¾®ç§’=1S
    AND S.PARSING_SCHEMA_NAME = USER
    --AND S.MODULE='JDBC Thin Client'
    AND TO_CHAR(S.LAST_ACTIVE_TIME, 'YYYY-MM-DD') =
@@ -246,7 +246,7 @@ SELECT S.SQL_TEXT,
  group by to_char(sample_time,'yyyymmdd hh24:mi:ss');
  
 
-v$sql command_type¸÷Êı×ÖËù´ú±íµÄº¬Òå
+v$sql command_typeå„æ•°å­—æ‰€ä»£è¡¨çš„å«ä¹‰
 1
 CREATE TABLE
 2
