@@ -1,5 +1,5 @@
 ---
-title: 常用Markdown 语法  #在此处添加你的标题。
+title: Markdown 语法  #在此处添加你的标题。
 date: 2016-12-06
 time: 21:15:02   #在此处输入你编辑这篇文章的时间。
 categories: Exercise   #在此处输入这篇文章的分类。
@@ -8,7 +8,7 @@ tag: Markdown
 ---
 </p>
 
-常用Markdown 语法
+Markdown 语法
 ===
 ## 各级标题
 `# 一级标题`
@@ -19,6 +19,7 @@ __...__
 ## 正文如下
 __`这里是正文`__
 这里是正文
+
 ## 引用（> 可实现引用效果，如下）
 > This is a blockquote.
 > 
