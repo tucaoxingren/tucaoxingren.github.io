@@ -1,4 +1,61 @@
+---
+title: 常用Markdown 语法  #在此处添加你的标题。
+date: 2016-12-06
+time: 21:15:02   #在此处输入你编辑这篇文章的时间。
+categories: Exercise   #在此处输入这篇文章的分类。
+toc: true  #在此处设定是否开启目录，需要主题支持。
+tag: Markdown
+
+---
+
+</p>
+
+Markdown 语法
+===
+
+## 各级标题
+
+`# 一级标题`
+`## 二级标题`
+__...__
+`###### 六级标题`
+
+## 正文如下
+
+__`这里是正文`__
+这里是正文
+
+## 引用（> 可实现引用效果，如下）
+
+> This is a blockquote.
+>
+> This is the second paragraph in the blockquote.
+
+## 4个空格 或 一个 tab （效果如下）
+
+    With multiple paragraphs.
+
+## 空行（网页换行符 /p）
+
+` </p> `
+</p>
+## 链接
+ `This is an [example link](http://example.com/ "With a Title").`
+This is an [example link](http://example.com/"With a Title").
+
+## 图片
+
+`![alt text](/avatar/kumamon.png"七七")`
+![alt text](/avatar/kumamon.png "七七")
+
+## code (``)
+
+> I strongly recommend against using any `<blink>` tags.
+> I wish SmartyPants used named entities like `&mdash;`
+> instead of decimal-encoded entites like `&#8212;`.
+
 ## 段落格式
+
 ### 字体
 `*斜体文本*`  *斜体文本*
 
@@ -93,6 +150,7 @@
 > > 引用嵌套
 ```
 > 引用示例
+>
 > > 引用嵌套
 
 ***
