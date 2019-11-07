@@ -33,7 +33,7 @@ public void setDemoDean(DependencyBean dependencyBean){
 private DependencyBean dependencyBean;
 ```
 
-## 注解配置 与 配置文件方式 不能同时存在
+**注解配置 与 配置文件方式 不能同时存在**
 
 ## @Autowired 与 @Resource
 
