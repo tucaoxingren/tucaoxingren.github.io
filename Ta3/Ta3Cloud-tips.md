@@ -1,4 +1,35 @@
-# TA3Cloud tips
+## Ta3 4.0.1 组件问题记录
+
+### issue
+
+#### onChange
+`onChange` 触发条件为键盘输入后失去焦点时触发
+
+若想点击月份后触发 可以使用`onBlur`失去焦点触发 例如
+```js
+<body>
+<ta:fieldset cols="3">
+    <ta:issue id="aae002" key="期号" onBlur="fnAae002Blur()"/>
+</ta:fieldset>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("body").taLayout();
+        aae002Cur = Base.getValue('aae002');
+    });
+    // 存储期号值 全局变量
+    var aae002Cur;
+
+    function fnAae002Blur() {
+        // console.log('失去焦点');
+        var aae002 = Base.getValue('aae002');
+        if (aae002Cur !== aae002) {
+            aae002Cur = aae002;
+            //TODO something
+        }
+    }
+</script>
+```
 
 ## 获取服务器绝对路径
 ### JS
@@ -9,11 +40,6 @@
 ## Exception
 `PrcException`引入路径为`com.yinhai.sisp3.his.common.exception.PrcException`，引入其它`PrcException`无法捕获
 
-## 登录信息的获取
-```java
-ParamDTO dto = getDto();
-dto.put("akb020", dto.getAsString("akb020"));//医院编码默认为当前登录医院
-```
 ## ExcelFileUtils工具类
 只可以处理xls格式，不能处理xlsx格式
 
@@ -70,3 +96,11 @@ console.log(result);
 `Base.idcard218(sId)`
 
 身份证15to18 本身就是18位直接返回
+
+## fileUpload
+### onUploadSuccess无法进入回调
+ta3 4.0.1版本 在chrome83以上版本 `fileUpload`组件的`onUploadSuccess`属性无法正确进入回调 解决办法
+修改ta3cloud.js 第31291行 
+`var iframe = toElement('<iframe src="javascript:false;" name="' + id + '" />');`
+修改为
+`var iframe = toElement('<iframe src="about:blank;" name="' + id + '" />');`

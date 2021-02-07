@@ -13,3 +13,76 @@
 <!-- 可以包含html代码 -->
 <p>Using v-html directive: <span v-html="rawHtml"></span></p>
 ```
+
+### click 获取当前元素
+```html
+<body id="app">
+  <ul>
+    <li v-on:click="say('hello!', $event)">点击当前行文本</li>
+    <li>li2</li>
+    <li>li3</li>
+  </ul>
+  <script>
+   new Vue({
+       el: '#app',
+       data: {
+        message: 'Hello Vue.js!'
+       },
+       methods: {
+        say: function(msg, event) {
+           //获取点击对象      
+           var el = event.currentTarget;
+           alert("当前对象的内容："+el.innerHTML);
+        }
+    }
+   })
+  </script>
+ </body>
+```
+
+### 数据更新后 视图没有重新渲染
+1. watch监听到数据的变化但页面没有刷新
+
+在数据改动的代码后加  this.$forceUpdate();
+
+添加this.$forceUpdate();进行强制渲染，效果实现。因为数据层次太多，render函数没有自动更新，需手动强制刷新。
+
+
+
+2. 没有监听到数据的变化
+
+例如：改变了数组中的某一项或者改变了对象中的某个元素时，监听则未生效。
+
+数组若要触发监听，下面方法即可触发
+
+如：splice()，push() 等js方法
+
+当然了，也可以使用vue中的方法 this.$set(object, index, new)
+
+this.$set()方法是vue自带的可对数组和对象进行赋值，并触发监听的方法。
+
+第一个参数为你要改变的数组或对象
+
+第二个参数为下标，或者元素名称
+
+第三个参数为新值
+
+
+
+3. new Date()对象
+
+   ```javascript
+   date: {
+       date: new Date();
+   }
+   method: {
+       方法: function (){
+           var temp = // Date对象改变操作后的新Date对象
+           this.date = null;
+           this.date = temp;
+       }
+   }
+   ```
+
+   
+

@@ -8,6 +8,8 @@ tag: Markdown
 
 ---
 
+[TOC]
+
 </p>
 
 Markdown 语法
@@ -196,3 +198,62 @@ This is an [example link](http://example.com/"With a Title").
 示例
 
 使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑
+
+### 流程图
+```
+graph TD 从上到下
+graph LR 从左到右
+基本图形
+id + [文字描述]矩形
+id + (文字描述)圆角矩形
+id + >文字描述]不对称的矩形
+id + {文字描述}菱形
+id + ((文字描述))圆形
+```
+```mermaid
+graph LR
+    start[开始] --> input[输入A,B,C]
+    input --> conditionA{A是否大于B}
+    conditionA -- YES --> conditionC{A是否大于C}
+    conditionA -- NO --> conditionB{B是否大于C}
+    conditionC -- YES --> printA[输出A]
+    conditionC -- NO --> printC[输出C]
+    conditionB -- YES --> printB[输出B]
+    conditionB -- NO --> printC[输出C]
+    printA --> stop[结束]
+    printC --> stop
+    printB --> stop
+```
+
+```mermaid
+graph LR
+    A[A] --> B[B] 
+    A1[A] --- B1[B] 
+    A4[A] -.- B4[B] 
+    A5[A] -.-> B5[B] 
+    A7[A] ==> B7[B] 
+    A2[A] -- 描述 --- B2[B] 
+    A3[A] -- 描述 --> B3[B] 
+    A6[A] -. 描述 .-> B6[B] 
+    A8[A] == 描述 ==> B8[B] 
+```
+
+```mermaid
+graph TD
+    root[bisp-root] -- 依赖 --> branch[bisp-common-branch]
+    root[bisp-root] -- 依赖 --> center[bisp-common-center]
+    root[bisp-root] -- 依赖 --> public[bisp-common-public]
+    center -- 依赖 --> app[bisp-manage-front-app]
+    app -- 依赖 --> backend[bisp-manage-backend]
+    app -- 依赖 --> websource[bisp-manage-websource]
+    backend -- 依赖 --> core[bisp-common-core]
+
+    branch -- 依赖 --> core
+    center -- 依赖 --> core
+    public -- 依赖 --> core
+
+    core -- 依赖 --> dependencies[bisp-dependencies]
+
+    dependencies -- 依赖 --> ta3[bisp-dependencies-ta3]
+    dependencies -- 依赖 --> thirdparty[bisp-dependencies-thirdparty]
+```
