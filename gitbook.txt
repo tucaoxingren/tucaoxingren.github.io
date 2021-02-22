@@ -1,9 +1,17 @@
 {
+	"title" : "编程笔记",
+	"theme-default": {
+		"showLevel": true
+	},
+	"plugins": ["summary", "toggle-chapters", "expandable-chapters", "theme-comscore"]
+}
+
+{
     "title": "编程笔记", 
     "author": "Zhang ChangHao", 
     "links": {
         "sidebar": {
-            "本书地址": "https://tucaoxingrenzch.gitee.io/note/"
+            "本书地址": "https://tucaoxingren.github.io/"
         }
     }, 
     "theme-default": {
@@ -13,7 +21,7 @@
     "plugins": [
         "code", 
         "anchors", 
-        "chapter-fold",
+        "toggle-chapters", 
         "theme-comscore"
     ], 
     "pluginsConfig": {
