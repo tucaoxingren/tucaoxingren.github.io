@@ -1,0 +1,7 @@
+{
+	"title" : "编程笔记",
+	"theme-default": {
+		"showLevel": true
+	},
+	"plugins": ["summary", "expandable-chapters", "theme-comscore"]
+}
