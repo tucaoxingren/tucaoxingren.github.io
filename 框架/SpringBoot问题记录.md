@@ -1,3 +1,5 @@
+## 错误记录
+
 ### The field file exceeds its maximum permitted size of 1048576 bytes
 
 Spring Boot做文件上传时出现了The field file exceeds its maximum permitted size of 1048576 bytes.错误，显示文件的大小超出了允许的范围。查看了官方文档，Spring Boot工程嵌入的tomcat限制了请求的文件大小，这一点在Spring Boot的官方文档中有说明，原文如下
@@ -20,7 +22,7 @@ spring.servlet.multipart.max-request-size=100MB
 
 ### 日期格式化
 
-Spring Boot默认使用 `jsackson` 作为Bean序列化为Json格式字符串的工具
+Spring Boot默认使用 `jackson` 作为Bean序列化为Json格式字符串的工具
 
 格式化Date型数据示例：
 
@@ -29,7 +31,7 @@ Spring Boot默认使用 `jsackson` 作为Bean序列化为Json格式字符串的�
 private Date date;
 ```
 
-### WebMvcConfigurer
+## WebMvcConfigurer
 
 实现此接口后可以自定义消息转换器`HttpMessageConverter`等MVC配置
 

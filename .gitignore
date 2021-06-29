@@ -49,3 +49,6 @@ Temporary Items
 # Self
 node_modules
 _book
+/.idea/
+/ProgramingNote.iml
+/build.bat
