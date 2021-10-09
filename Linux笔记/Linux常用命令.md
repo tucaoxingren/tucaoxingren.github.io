@@ -37,6 +37,8 @@ make
 | grep MemFree /proc/meminfo      | 查看空闲内存量 |
 | uptime                   | 查看系统运行时间、用户数、负载 |
 | cat /proc/loadavg        | 查看系统负载 |
+| ls -lht | 查看当前目录下文件夹或文件详细信息 文件大小自动单位 |
+| ls -ll | 查看当前目录下文件夹或文件详细信息 |
 
 ## 磁盘和分区
 | 命令 | 命令说明 |
@@ -83,6 +85,7 @@ make
 ## 程序
 | 命令 | 命令说明 |
 | --- | --- |
+| rpm -F xxxx.rpm | 更新rpm包 |
 | sudo apt-get update      | 更新软件列表 |
 | sudo apt-get upgrade     | 更新软件 |
 | rpm -qa                  | 查看所有安装的软件包 |
