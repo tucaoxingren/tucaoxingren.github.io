@@ -1,3 +1,5 @@
+# Metricbeat
+
 ## 安装说明
 
 ### windows
@@ -16,7 +18,7 @@ rpm -ivf xxx.rpm
 
 ### redis模块
 
-```conf
+```yml
 # Module: redis
 # Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.x/metricbeat-module-redis.html
 
@@ -44,7 +46,7 @@ rpm -ivf xxx.rpm
 
 ### nginx模块
 
-```
+```yml
 # Module: nginx
 # Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.x/metricbeat-module-nginx.html
 
@@ -68,7 +70,7 @@ rpm -ivf xxx.rpm
 
 ### kibana模块
 
-```
+```yml
 # Module: kibana
 # Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.x/metricbeat-module-kibana.html
 
@@ -86,7 +88,7 @@ rpm -ivf xxx.rpm
 
 ### oracle模块
 
-```
+```yml
 # Module: oracle
 # Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.x/metricbeat-module-oracle.html
 
@@ -99,38 +101,6 @@ rpm -ivf xxx.rpm
   # username: ""
   # password: ""
 ```
-
-### elasticsearch
-
-```
-# Module: elasticsearch
-# Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.x/metricbeat-module-elasticsearch.html
-
-- module: elasticsearch
-  #metricsets:
-  #  - node
-  #  - node_stats
-  period: 10s
-  hosts: ["http://192.168.5.6:9200"]
-  #username: "user"
-  #password: "secret"
-```
-
-新版本使用 xpack 时配置此模块 elasticsearch-xpack
-
-```
-# Module: elasticsearch
-# Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.x/metricbeat-module-elasticsearch.html
-
-- module: elasticsearch
-  xpack.enabled: true
-  period: 10s
-  hosts: ["http://192.168.5.6:9200"]
-  #username: "user"
-  #password: "secret"
-```
-
-
 
 下载oracle oci
 
@@ -146,7 +116,7 @@ host=["oracle:ip:host/sid"]
 
 2. 配置环境变量 vim /etc/profile
 
-   ```
+   ```shell
    export ora_home=/usr/lib
    export PATH=$PATH:$ora_home/instantclient版本号
    export ORACLE_BASE=$ora_home
@@ -159,9 +129,39 @@ host=["oracle:ip:host/sid"]
 
 4. systemctl restart metricbeat
 
-#### windows
+### elasticsearch
 
-1. 
+```yml
+# Module: elasticsearch
+# Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.x/metricbeat-module-elasticsearch.html
+
+- module: elasticsearch
+  #metricsets:
+  #  - node
+  #  - node_stats
+  period: 10s
+  hosts: ["http://192.168.5.6:9200"]
+  #username: "user"
+  #password: "secret"
+```
+
+### elasticsearch-xpack
+
+新版本使用 xpack 时配置此模块 elasticsearch-xpack
+
+```yml
+# Module: elasticsearch
+# Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.x/metricbeat-module-elasticsearch.html
+
+- module: elasticsearch
+  xpack.enabled: true
+  period: 10s
+  hosts: ["http://192.168.5.6:9200"]
+  #username: "user"
+  #password: "secret"
+```
+
+
 
 ## 配置说明
 
