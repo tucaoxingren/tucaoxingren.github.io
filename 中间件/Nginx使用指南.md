@@ -134,6 +134,14 @@ http {
         # 主机名，用于匹配http请求的host部分
         # _ 表示不限制主机名，可以指定主机名或用通配符或正则表达式
         server_name  _;
+        
+        location /download {
+            root /u01/var/download;
+            autoindex on;
+            autoindex_exact_size off;
+            autoindex_localtime on;
+            charset utf-8,gbk;
+        }
 
         # 本地静态资源的例子
         # location 指定匹配路径，下面用的是前缀模式；也可以使用正则表达式等

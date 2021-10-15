@@ -16,8 +16,6 @@ rpm -ivf xxx.rpm
 
 ## 常见问题
 
-### Metricbeat
-
 ### 索引没有每天自动生成新索引
 
 配置文件 新增 `setup.ilm.enabled: false`
