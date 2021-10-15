@@ -20,6 +20,12 @@ PUT _template/delete-30-days
 
 
 
+## 设置密码
+
+`./bin/elasticsearch-setup-passwords interactive`
+
+
+
 ## 配置说明
 
 elasticsearch.yml
@@ -107,3 +113,4 @@ discovery.zen.minimum_master_nodes: 2              # 为了避免脑裂，集群
 > vm.max_map_count=262144
 
 执行命令`sysctl -p`生效
+
