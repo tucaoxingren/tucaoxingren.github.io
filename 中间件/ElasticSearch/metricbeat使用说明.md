@@ -168,6 +168,3 @@ host=["oracle:ip:host/sid"]
 
 
 ## 配置说明
-
-1. `setup.dashboards.enabled: true` 默认为`false`,设置为`true`  `metricbeat.exe setup`时只初始化enable的模块的仪表板
-
