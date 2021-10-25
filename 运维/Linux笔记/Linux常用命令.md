@@ -19,7 +19,7 @@ make
 | 命令 | 命令说明 |
 | --- | --- |
 | uname -a | 查看内核/操作系统/CPU信息 |
-| head -n 1 /etc/issue | 查看操作系统版本 |
+| head -n 1 /etc/issue cat /etc/os-release | 查看操作系统版本 |
 | cat /proc/cpuinfo | 查看CPU信息 |
 | hostname | 查看计算机名 |
 | lspci -tv | 列出所有PCI设备 |
@@ -58,6 +58,7 @@ make
 | netstat -lntp            | 查看所有监听端口 |
 | netstat -antp            | 查看所有已经建立的连接 |
 | netstat -s               | 查看网络统计信息 |
+| vi /etc/resolv.conf | 配置DNS nameserver dns地址 |
 
 ## 进程
 | 命令 | 命令说明 |
@@ -94,3 +95,12 @@ make
 | 命令 | 命令说明 |
 | --- | --- |
 | ftp ip      | 连接ftp 如果FTP 允许匿名用户，那么用户名要输入anonymous,密码任意。 不能直接敲回车。 |
+
+## 时间服务
+
+| 命令                          | 命令说明                                              |
+| ----------------------------- | ----------------------------------------------------- |
+| date                          | 查看当前时间                                          |
+| date -R                       | 查看当前时间 并展示时区 最后的例如 +0800 即东八区时间 |
+| TZ='Asia/Shanghai'; export TZ | 修改当前时区为 中国上海时区                           |
+| ntpdate IP/域名               | 修改时钟服务                                          |

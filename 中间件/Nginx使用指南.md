@@ -18,6 +18,35 @@
 
 在`header`下增加配置`underscores_in_headers on;` 在windows上似乎无效
 
+### 重定向端口丢失
+
+```nginx
+proxy_set_header Host $http_host;
+# 关键需要在此处添加端口号变量,或者直接使用端口号
+proxy_set_header X-Forwarded-Host $host:$server_port;
+```
+
+### 最大连接数的配置
+
+最大并发连接数=worker_processes * events.worker_connections
+
+```nginx
+#工作进程数，auto表示按CPU核数启动工作线程，如果服务器不是专门给nginx使用，那需要根据具体需要来指定工作线程数
+worker_processes auto;
+
+events {
+    # 每个工作进程最大支持的连接数，注意同时会受到文件句柄数的限制 windows最大1024
+    worker_connections  1024;
+    # 启用多路复用模式，如果关闭就和Apache一样，一个请求一个进程
+    multi_accept on;
+    # 使用Linux epoll，它是Linux内核为处理大批量文件操作符而优化的多路复用IO接口，
+	# 相对于应用自己的实现，性能更高	（但只有Linux可用）
+    #use epoll;
+}
+```
+
+
+
 ## 安装手册
 
 ### Linux
