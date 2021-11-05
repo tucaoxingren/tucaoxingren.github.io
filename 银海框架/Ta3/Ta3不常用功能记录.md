@@ -27,7 +27,7 @@ function openWindow(id, title, url, parameter, width, height, onLoad, onClose, u
 
 ta3Cloud.js 5394行
 
-![img](../img/clip_image002.jpg)
+![img](../../img/clip_image002.jpg)
 
 # 公用部分（菜单点击区域 退出区域等）与功能部分jsp代码交换数据
 
@@ -130,7 +130,7 @@ function *fnFormatXQ*(row,cell,value,columnDef,dataContext) {
 
 在前台表格分组 groupingBy="要分组的列id"
 
-![img](../img/clip_image003.png)
+![img](../../img/clip_image003.png)
 
 # fit方法修改（所有Ta组件fit属性的实现方法）
 

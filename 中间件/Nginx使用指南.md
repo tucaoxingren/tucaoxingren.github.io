@@ -121,7 +121,9 @@ events {
 # 针对http的配置，同理还有https配置等
 http {
     log_format  main  '$remote_addr [$time_local] "$request" ' '$status $body_bytes_sent' '"$http_user_agent"' '$upstream_addr';
-    access_log  logs/access.log  main;
+    #access_log  logs/access.log  main;
+    # 不记录access_log时 必须明确指定 off
+    access_log off;
 
     server_tokens     off;
     sendfile          on;
@@ -151,10 +153,11 @@ http {
     client_max_body_size 1m;
 
     # 负载均衡配置
-    #upstream nacos {
-    #    server 127.0.0.1:8848;
-    #    check interval=3000 rise=2 fail=5 timeout=1000;
-    #}
+    upstream nacos {
+        server 127.0.0.1:8848;
+        # 需要安装Nginx Upstream Check模块
+        check interval=3000 rise=2 fail=5 timeout=1000;
+    }
 
     # http配置下可以有若干个server，他们可能是端口不同，也可以端口相同但主机名不同
     server {
@@ -164,6 +167,7 @@ http {
         # _ 表示不限制主机名，可以指定主机名或用通配符或正则表达式
         server_name  _;
         
+        # 本地静态资源的例子
         location /download {
             root /u01/var/download;
             autoindex on;
@@ -171,37 +175,36 @@ http {
             autoindex_localtime on;
             charset utf-8,gbk;
         }
-
-        # 本地静态资源的例子
+        
         # location 指定匹配路径，下面用的是前缀模式；也可以使用正则表达式等
-        #location /UP {
-        #    # 指定静态资源目录
-        #    # http://127.0.0.1:80/UP/index.html => //home/ybapp/UP/index.html
-        #    alias /home/ybapp/UP;
-        #    index  index.html;
-        #    # 设置对html文件不缓存，避免前端打包的前端工程替换后无法使用
-        #    # location ~ \.html {
-        #    #     add_header Cache-Control no-cache;
-        #    # }
-        #}
+        location /UP {
+            # 指定静态资源目录
+            # http://127.0.0.1:80/UP/index.html => //home/ybapp/UP/index.html
+            alias /home/ybapp/UP;
+            index  index.html;
+            # 设置对html文件不缓存，避免前端打包的前端工程替换后无法使用
+            # location ~ \.html {
+            #     add_header Cache-Control no-cache;
+            # }
+        }
 
         # 代理后端资源的例子
-        #location /nacos {
-        #    proxy_pass http://nacos;
-        #    proxy_set_header Host $host;
-        #    # proxy_set_header Host $host:$server_port;
-        #    proxy_set_header X-Real-IP $remote_addr;
-        #    proxy_set_header X-Forwarded-Port $server_port;
-        #    proxy_set_header X-Forwarded-Proto $scheme;
-        #    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        #    proxy_pass_header Content-Type;
-        #    # WebSocket增加配置
-        #    # proxy_http_version 1.1;
-        #    # proxy_set_header Upgrade $http_upgrade;
-        #    # proxy_set_header Connection "upgrade";
-        #    # 后端响应超时，默认60s，根据需要调整
-        #    # proxy_read_timeout 60;
-        #}
+        location /nacos {
+            proxy_pass http://nacos;
+            proxy_set_header Host $host;
+            # proxy_set_header Host $host:$server_port;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-Port $server_port;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass_header Content-Type;
+            # WebSocket增加配置
+            # proxy_http_version 1.1;
+            # proxy_set_header Upgrade $http_upgrade;
+            # proxy_set_header Connection "upgrade";
+            # 后端响应超时，默认60s，根据需要调整
+            # proxy_read_timeout 60;
+        }
 
         # 负载均衡节点监测报告，生产环境最好换到独立的内部端口
         location /_check {
@@ -209,7 +212,7 @@ http {
             access_log off;
         }
         
-        # 开启请求记录
+        # 开启请求记录，生产环境最好换到独立的内部端口
         location /server-status {
             stub_status on;
             access_log nginxstatus.log;
