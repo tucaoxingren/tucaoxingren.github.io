@@ -1,3 +1,11 @@
+## 安装
+
+### rpm安装
+
+`rpm -ivh kibana-xxx.rpm`
+
+
+
 ## 身份验证
 
 kibana本身无身份验证 依托于elasticsearch的验证
