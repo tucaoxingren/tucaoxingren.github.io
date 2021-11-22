@@ -1,3 +1,104 @@
+## 安装
+
+### linux
+
+以搭建一个拥有三个节点的es集群为例，三台机器的ip如下: 
+
+`machine1： 192.168.70.100 `
+
+`machine2： 192.168.70.101` 
+
+`machine3： 192.168.70.102 `
+
+步骤如下: 
+
+1. 在第一台机器上，解压`elasticsearch`安装包  
+
+创建`elasticsearch `运行用户，执行命令（windows跳过） 
+
+`adduser es`
+
+`passwd es`
+
+输入密码，创建成功。 
+
+2. 然后修改`elasticsearch`目录访问权限（windows跳过） 
+
+`chown -R es:es elasticsearch-*.*.* `
+
+再修改索引文件目录和日志文件目录的访问权限（如果使用默认路径可略过这 一步,windows跳过） 
+
+再切换账号到新用户(windows跳过) 
+
+`su es`
+
+3. 进入主目录下`config`目录，编辑`elasticsearch.yml`（也可以提前修改好） 
+
+`cd elasticsearch-*.*.*/config` 
+
+`vim elasticsearch.yml` 
+
+参考配置如下: 
+
+```properties
+#集群的名称 
+cluster.name: escluster 
+#节点名称,其余两个节点分别为node-2 和node-3(每个节点的名称不同) 
+node.name: node-1 
+#指定该节点是否有资格被选举成为master节点，默认是true，es是默认集群中的第一台机器为master，如果这台机挂了就会重新选举master 
+node.master: true 
+#允许该节点存储数据(默认开启) 
+node.data: true 
+#索引数据的存储路径（elasticsearch运行用户必须有该目录的访问权限，不配置使用默认路径elasticsearch/data）#索引数据的存储路径（elasticsearch运行用户必须有该目录的访问权限，不配置使用默认路径elasticsearch/data） 
+path.data: /usr/local/elk/elasticsearch/data 
+#日志文件的存储路径（elasticsearch运行用户必须有该目录的访问权限，不配置使用默认路径elasticsearch/logs） 
+path.logs: /usr/local/elk/elasticsearch/logs 
+#设置为true来锁住内存。因为内存交换到磁盘对服务器性能来说是致命的，当jvm开始swapping时es的效率会降低，所以要保证它不swap 
+bootstrap.memory_lock: true 
+#绑定的ip地址 
+network.host: 0.0.0.0 
+#设置对外服务的http端口，默认为9200 
+http.port: 9200 
+# 设置节点间交互的tcp端口,默认是9300 
+transport.tcp.port: 9300 
+#Elasticsearch 集群种子节点IP地址列表 
+discovery.seed_hosts: ["192.168.70.100", "192.168.70.101", "192.168.70.102"] 
+#引导启动集群的主节点 
+cluster.initial_master_nodes: ["node-1", "node-2"] 
+#允许通过http端口访问 elasticsearch api 
+http.cors.enabled: true 
+http.cors.allow-origin: /.*/ 
+```
+
+
+
+编辑`es安装目录/config/jvm.options`修改jvm参数，一般只需要调整最小/最大内存参数 
+
+```
+-Xms4g 
+-Xmx4g
+```
+
+
+
+4. 在另外两台机器上重复步骤1-3 
+
+5. 把所有es节点都启动起来， 
+
+linux 下采用后台启动的方式 
+
+`chmod +x modules/x-pack-ml/platform/linux-x86_64/bin/controller`
+
+`chmod +x bin/elasticsearch`
+
+`bin/elasticsearch -d`
+
+然后找其中一台输入查看节点数是否正确 
+
+`curl 127.0.0.1:9200/_cluster/health?pretty`
+
+
+
 ## 索引自动删除
 
 使用索引模板与索引生命周期策略实现

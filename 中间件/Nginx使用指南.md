@@ -54,21 +54,33 @@ events {
 #### 源码安装
 
 1. [源码下载]([nginx: download](http://nginx.org/en/download.html))
+
 2. 解压源码 `tar -xzvf nginx-xxx.tar.gz -C /usr/local/src/`
+
 3. 创建程序根目录 `mkdir /usr/local/nginx`
+
 4. 进入源码目录 准备编译 `cd /usr/local/src/nginx-xxx`
+
 5. 指定安装目录编译 `./configure --prefix=/usr/local/nginx`
-6. `cd /usr/local/nginx`
-6. 打上nginx_upstream_check_module模块补丁，注意补丁文件对应了nginx的不同版本，需要选择正确的版本
-patch -p1 < ../nginx_upstream_check_module-master/check_1.20.1+.patch
-6. 配置编译环境，注意加上nginx_upstream_check_module模块
-./configure --add-module=../nginx_upstream_check_module-master
-6. 如果没有安装上面提到的zlib-devel和pcre-devel 需要禁用对应模块进行编译
-6. ./configure --add-module=../nginx_upstream_check_module-master --without-http_gzip_module --without-http_rewrite_module
-7. 编译安装 `make install`
-8. 配置 `nginx.conf`
-9. 启动 `./sbin/nginx`
-10. 重启 `./sbin/nginx -s reload`
+
+6. (可选) 打上`nginx_upstream_check_module`模块补丁，注意补丁文件对应了nginx的不同版本，需要选择正确的版本
+  `patch -p1 < ../nginx_upstream_check_module-master/check_1.20.1+.patch`
+
+  配置编译环境，注意加上`nginx_upstream_check_module`模块
+  `./configure --add-module=../nginx_upstream_check_module-master`
+
+7. 如果没有安装上面提到的zlib-devel和pcre-devel 需要禁用对应模块进行编译
+
+8. `./configure --add-module=../nginx_upstream_check_module-master --without-http_gzip_module --without-http_rewrite_module`
+
+9. 编译安装 `make install`
+
+10. 配置 `nginx.conf`
+
+11. 启动 `./sbin/nginx`
+
+12. 重启 `./sbin/nginx -s reload`
+
 11. 停止 `./sbin/nginx -s stop`
 
 ```shell
@@ -156,7 +168,7 @@ http {
     upstream nacos {
         server 127.0.0.1:8848;
         # 需要安装Nginx Upstream Check模块
-        check interval=3000 rise=2 fail=5 timeout=1000;
+        check interval=3000 rise=2 fall=5 timeout=1000;
     }
 
     # http配置下可以有若干个server，他们可能是端口不同，也可以端口相同但主机名不同
@@ -220,4 +232,10 @@ http {
     }
 }
 ```
+
+### 问题记录
+
+#### http upstream check module can not find any check server, make sure you've added the check servers
+
+使用`nginx_upstream_check_module`模块时要注意 编译安装时必须打补丁(patch) 否则访问负载监控页面时就会报错
 
