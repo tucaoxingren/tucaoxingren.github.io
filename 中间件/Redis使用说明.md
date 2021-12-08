@@ -31,12 +31,12 @@ daemonize yes
 
 没有安装gcc
 
-### jemalloc/jemalloc.h: No such file or directory
+#### jemalloc/jemalloc.h: No such file or directory
 
 清理上次编译残留文件，重新编译
 
 ```shell
-make distclean  && make
+make distclean && make
 ```
 
 ### windows
@@ -61,7 +61,7 @@ net start redis
 
 
 
-## redis.conf说明
+## redis.conf 说明
 
 1. `daemonize`  `yes`-后端启动 `no`-前端启动 `Windows`系统不支持
 2. `requirepass` 密码 默认无密码
@@ -77,7 +77,7 @@ net start redis
 
 
 
-## *配置主从同步
+## 配置主从同步
 
 从机设置 `replicaof`和`masterauth`
 
