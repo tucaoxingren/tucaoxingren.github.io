@@ -64,7 +64,7 @@ events {
 5. 指定安装目录编译 `./configure --prefix=/usr/local/nginx`
 
 6. (可选) 打上`nginx_upstream_check_module`模块补丁，注意补丁文件对应了nginx的不同版本，需要选择正确的版本
-  `patch -p1 < ../nginx_upstream_check_module-master/check_1.20.1+.patch`
+    `patch -p1 < ../nginx_upstream_check_module-master/check_1.20.1+.patch`
 
   配置编译环境，注意加上`nginx_upstream_check_module`模块
   `./configure --add-module=../nginx_upstream_check_module-master`
@@ -232,6 +232,8 @@ http {
     }
 }
 ```
+
+
 
 ### 问题记录
 
