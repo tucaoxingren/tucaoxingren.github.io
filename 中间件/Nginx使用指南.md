@@ -104,6 +104,10 @@ yum install zlib-devel pcre-devel patch openssl-devel
 ### Nginx Upstream Check模块
 1. 访问https://github.com/yaoweibin/nginx_upstream_check_module 下载仓库（建议下载当前的master分支）
 
+### ngx_dynamic_upstream 动态管理负载均衡模块
+
+[yaoweibin/nginx_upstream_check_module: Health checks upstreams for nginx (github.com)](https://github.com/yaoweibin/nginx_upstream_check_module)
+
 ## 配置手册
 
 ### conf示例

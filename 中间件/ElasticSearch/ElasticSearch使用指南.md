@@ -215,3 +215,19 @@ discovery.zen.minimum_master_nodes: 2              # 为了避免脑裂，集群
 
 执行命令`sysctl -p`生效
 
+
+
+### system call filters failed to ``install``; check the logs and fix your configuration or disable system call filters at your own risk
+
+出现错误的原因：是因为centos6.x操作系统不支持SecComp，而elasticsearch 5.5.2默认bootstrap.system_call_filter为true进行检测，所以导致检测失败，失败后直接导致ES不能启动。
+
+在elasticsearch.yml中添加配置项：bootstrap.system_call_filter为false：
+
+```yml
+# ----------------------------------- Memory -----------------------------------
+bootstrap.memory_lock: false
+bootstrap.system_call_filter: false
+```
+
+
+
