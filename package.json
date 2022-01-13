@@ -1,0 +1,21 @@
+{
+    "name": "programingnote",
+    "version": "1.0.0",
+    "description": "日常笔记",
+    "scripts": {
+        "dev": "vuepress dev docs",
+        "build": "vuepress build docs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://gitee.com/tucaoxingrenzch/ProgramingNote.git"
+    },
+    "keywords": [
+        "notes"
+    ],
+    "author": "zhangch",
+    "license": "ISC",
+    "devDependencies": {
+        "vuepress": "^1.9.5"
+    }
+}
