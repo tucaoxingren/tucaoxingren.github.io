@@ -16,7 +16,13 @@
 
 ### 带下划线的header参数无法转发
 
-在`header`下增加配置`underscores_in_headers on;` 在windows上似乎无效
+```nginx
+server {
+	underscores_in_headers on;
+}
+```
+
+
 
 ### 重定向端口丢失
 
