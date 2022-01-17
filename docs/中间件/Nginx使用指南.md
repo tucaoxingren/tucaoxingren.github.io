@@ -251,3 +251,14 @@ http {
 
 使用`nginx_upstream_check_module`模块时要注意 编译安装时必须打补丁(patch) 否则访问负载监控页面时就会报错
 
+
+
+#### upstream sent invalid chunked response while reading upstream
+
+```nginx
+location /nacos {
+    # 增加此配置
+    proxy_http_version 1.1
+}
+```
+
