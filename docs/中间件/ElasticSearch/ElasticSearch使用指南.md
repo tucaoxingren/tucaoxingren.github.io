@@ -131,7 +131,7 @@ PUT _template/delete-30-days
 
 elasticsearch.yml
 
-```
+```yml
 cluster.name: my-els                               # 集群名称
 node.name: els-node1                               # 节点名称，仅仅是描述名称，用于在日志中区分
 
