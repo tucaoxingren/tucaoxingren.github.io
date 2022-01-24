@@ -10,13 +10,13 @@
 
 3. 添加环境变量 ` vi /etc/profile` (可选)
 
-   ```
-   export JAVA_HOME=/usr/local/jdk1.8.0_301
-   export PATH=$JAVA_HOME/bin:$PATH
-   export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-   ```
+```bash
+export JAVA_HOME=/usr/local/jdk1.8.0_301
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+```
 
-   刷新环境变量 `source /etc/profile`
+刷新环境变量 `source /etc/profile`
 
 ### Windows
 

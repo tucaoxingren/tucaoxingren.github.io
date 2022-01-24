@@ -4,9 +4,11 @@
 
 [Using the WebLogic Scripting Tool (oracle.com)](https://docs.oracle.com/cd/E13222_01/wls/docs90/config_scripting/using_WLST.html#1080667)
 
+[weblogic.Deployer Command-Line Reference](https://docs.oracle.com/middleware/1212/wls/DEPGD/wldeployer.htm#DEPGD351)
 
 
-## Windows
+
+## Windows 命令行更新部署模板
 
 ```powershell
 rem 设置临时环境变量
@@ -40,7 +42,7 @@ java -cp %Weblogic_LIB_Home%weblogic.jar weblogic.Deployer -adminurl t3://%Weblo
 
 
 
-## Linux
+## Linux 命令行更新部署模板
 
 ```bash
 # 设置临时环境变量

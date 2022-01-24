@@ -17,8 +17,8 @@
 如果你有几个简单的数据库查询语句,你可以把它们整合到一个查询中(即使它们之间没有关系) 
 7. 删除重复记录 
 最高效的删除重复记录方法 ( 因为使用了 ROWID)
-``` 
-DELETE FROM EMP E 
+``` sql
+DELETE FROM EMP E
 WHERE E.ROWID > (SELECT MIN(X.ROWID)  
 FROM EMP X 
 WHERE X.EMP_NO = E.EMP_NO); 
