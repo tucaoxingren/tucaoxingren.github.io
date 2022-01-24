@@ -1,7 +1,7 @@
 # Nginx使用指南
 
 ## Nginx的操作
-```shell
+```bash
 # 启动nginx
 /usr/local/nginx/sbin/nginx
 # 重读配置文件
@@ -89,7 +89,7 @@ events {
 
 11. 停止 `./sbin/nginx -s stop`
 
-```shell
+```bash
 # 安装编译工具
 yum install make gcc gcc-c++
 # 安装其他编译依赖包

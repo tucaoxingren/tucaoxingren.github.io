@@ -8,7 +8,7 @@ https://download.docker.com/linux/static/stable/x86_64/
 
 ### 镜像操作
 
-```shell
+```bash
 # 导出镜像
 docker save -o 导出镜像文件名.tar image_name:tag;
 # 导入镜像
@@ -25,7 +25,7 @@ docker rmi 镜像id
 
 ### 容器操作
 
-```shell
+```bash
 # 查看容器
 docker ps -a
 # 删除容器

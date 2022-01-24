@@ -23,7 +23,7 @@
 1. exe安装
 2. 设置环境变量
 
-```bat
+```powershell
 setx JAVA_HOME "C:\Program Files\Java\jdk1.8.0_301"
 setx CLASSPATH ".;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;"
 ```

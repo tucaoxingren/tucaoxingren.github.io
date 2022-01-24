@@ -6,7 +6,7 @@
 
 [Redis](https://redis.io/download)
 
-```shell
+```bash
 # 解压安装包
 tar zxf redis-x.x.x.tar.gz
 cd redis-x.x.x/
@@ -35,7 +35,7 @@ daemonize yes
 
 清理上次编译残留文件，重新编译
 
-```shell
+```bash
 make distclean && make
 ```
 
@@ -49,7 +49,7 @@ redis官方无windows版
 
 [Releases · microsoftarchive/redis (github.com)](https://github.com/microsoftarchive/redis/releases)
 
-```shell
+```bash
 # 下载压缩包
 解压
 配置conf

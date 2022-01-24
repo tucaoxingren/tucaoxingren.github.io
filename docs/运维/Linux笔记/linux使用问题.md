@@ -86,7 +86,7 @@ sudo dpkg --add-architecture i386
 
 ## vim 新建文件
 `vi /dir/filename`
-```shell
+```bash
 :w   保存文件但不退出vi
 :w file 将修改另外保存到file中，不退出vi
 :w!   强制保存，不推出vi
@@ -100,7 +100,7 @@ q:  不保存文件，退出vi
 ##  新建快捷方式
 `sudo vi /usr/share/applications/app.desktop`(app : 软件名)
 app.desketop 文件内容如下
-```shell
+```bash
 [Desktop Entry]
 Type=Application #不可更改
 Name=Eclipse #软件名

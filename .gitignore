@@ -47,9 +47,10 @@ Temporary Items
 .apdisk
 
 # Self
-node_modules
-_book
-/.idea/
+/node_modules
+/_book
+/.idea
 /ProgramingNote.iml
 /build.bat
-pushGitHub.bat
+/pushGitHub.bat
+/.vscode

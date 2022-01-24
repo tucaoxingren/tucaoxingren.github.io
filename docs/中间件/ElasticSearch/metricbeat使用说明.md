@@ -120,7 +120,7 @@ host=["oracle:ip:host/sid"]
 
 2. 配置环境变量 vim /etc/profile
 
-   ```shell
+   ```bash
    export ora_home=/usr/lib
    export PATH=$PATH:$ora_home/instantclient版本号
    export ORACLE_BASE=$ora_home

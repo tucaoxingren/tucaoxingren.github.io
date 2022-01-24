@@ -58,7 +58,7 @@ public class HowToReadFileInJava {
 
 **输出**
 
-```shell
+```bash
 4157532d416d617a6f6e205765622053657276696365da474f4f472d476f6f676c65da4150504c2d4170706c65da47532d476f6c646d616e205361636873
 AWS-Amazon Web Service
 GOOG-Google

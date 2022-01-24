@@ -8,7 +8,7 @@
 
 ## Windows
 
-```cmd
+```powershell
 rem 设置临时环境变量
 rem Weblogic安装目录
 set Weblogic_Home=C:\Weblogic\weblogic11g\wlserver_10.3\
@@ -31,7 +31,7 @@ java -cp %Weblogic_LIB_Home%weblogic.jar weblogic.Deployer -adminurl t3://%Weblo
 rem 安装部署（会自动启动）
 java -cp %Weblogic_LIB_Home%weblogic.jar weblogic.Deployer -adminurl t3://%Weblogic_Manage_URL% -user %Weblogic_Manage_USER% -password %Weblogic_Manage_PWD% -name %APP_NAME% -targets %APP_SERVERS% -deploy %APP_LOCAL_PATH% 
 
-rem 停止部署 立即停止 -graceful   -adminmode
+rem 停止部署 等待请求结束后停止 -graceful   -adminmode
 java -cp %Weblogic_LIB_Home%weblogic.jar weblogic.Deployer -adminurl t3://%Weblogic_Manage_URL% -user %Weblogic_Manage_USER% -password %Weblogic_Manage_PWD% -name %APP_NAME% -stop -graceful
 
 rem 启动部署
@@ -42,7 +42,7 @@ java -cp %Weblogic_LIB_Home%weblogic.jar weblogic.Deployer -adminurl t3://%Weblo
 
 ## Linux
 
-```sh
+```bash
 # 设置临时环境变量
 # Weblogic安装目录
 export Weblogic_Home=/Weblogic/weblogic11g/wlserver_10.3
@@ -65,7 +65,7 @@ java -cp $Weblogic_LIB_Home/weblogic.jar weblogic.Deployer -adminurl t3://$Weblo
 # 安装部署（会自动启动）
 java -cp $Weblogic_LIB_Home/weblogic.jar weblogic.Deployer -adminurl t3://$Weblogic_Manage_URL -user $Weblogic_Manage_USER -password $Weblogic_Manage_PWD -name $APP_NAME -targets $APP_SERVERS -deploy $APP_LOCAL_PATH
 
-# 停止部署 立即停止 -graceful
+# 停止部署 等待请求结束后停止 -graceful
 java -cp $Weblogic_LIB_Home/weblogic.jar weblogic.Deployer -adminurl t3://$Weblogic_Manage_URL -user $Weblogic_Manage_USER -password $Weblogic_Manage_PWD -name $APP_NAME -stop -adminmode -graceful
 
 # 启动部署

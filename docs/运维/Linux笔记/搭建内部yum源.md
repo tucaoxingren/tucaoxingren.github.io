@@ -8,7 +8,7 @@
 > 1. 假定镜像文件上传位置为: /opt/yum.repo/CentOS-7-x86_64-Everything-1804.iso
 > 2. 如果云平台将镜像作为光驱挂载到服务器，也可以mount光驱来使用
 2. 挂载该镜像到本地，由于yum源本身不需要一直在线，这里就不修改 __fstab__ 文件，如果发生机器重启，重新挂载镜像即可
-```shell
+```bash
 # 挂载目录可以根据情况修改，但务必和下面yum源配置中的baseurl部分以及nginx的配置保持一致
 mkdir /mnt/cdrom
 mount -t iso9660 -o loop /opt/yum.repo/CentOS-7-x86_64-Everything-1804.iso /mnt/cdrom
@@ -36,11 +36,11 @@ enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 ```
 4. 刷新本地yum源缓存
-```shell
+```bash
 yum makecache
 ```
 5. 安装Nginx（正常安装），修改配置文件，将yum源发布出去给其他机器使用
-```shell
+```bash
 location /cdrom {
     root   /mnt;
     autoindex on;
@@ -71,6 +71,6 @@ enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 ```
 2. 刷新本地yum源缓存
-```shell
+```bash
 yum makecache
 ```
