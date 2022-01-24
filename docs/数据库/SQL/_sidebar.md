@@ -1,4 +1,5 @@
 - [返回上一级 [数据库]](数据库/)
 - [SQL](数据库/SQL/)
-  - [Oracle 触发器](数据库/SQL/Oracle 触发器.md)
+  - [Oracle 触发器](数据库/SQL/Oracle触发器.md)
   - [不常用sql](数据库/SQL/不常用sql.md)
+  - [SQL优化](数据库/SQL/SQL优化.md)

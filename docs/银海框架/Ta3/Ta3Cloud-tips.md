@@ -6,7 +6,7 @@
 `onChange` 触发条件为键盘输入后失去焦点时触发
 
 若想点击月份后触发 可以使用`onBlur`失去焦点触发 例如
-```js
+```html
 <body>
 <ta:fieldset cols="3">
     <ta:issue id="aae002" key="期号" onBlur="fnAae002Blur()"/>
@@ -92,7 +92,7 @@ console.log(result);
 /********************************************************/
 ```
 
-###idcard218
+### idcard218
 `Base.idcard218(sId)`
 
 身份证15to18 本身就是18位直接返回

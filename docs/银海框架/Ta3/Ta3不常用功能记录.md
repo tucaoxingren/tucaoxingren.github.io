@@ -1,4 +1,4 @@
-# openwindow 默认最大化
+## openwindow 默认最大化
 
 ```javascript
 /**
@@ -23,13 +23,13 @@ function openWindow(id, title, url, parameter, width, height, onLoad, onClose, u
 
 ```
 
-# 修改alert框字体 以及 框尺寸
+## 修改alert框字体 以及 框尺寸
 
 ta3Cloud.js 5394行
 
 ![img](../../img/clip_image002.jpg)
 
-# 公用部分（菜单点击区域 退出区域等）与功能部分jsp代码交换数据
+## 公用部分（菜单点击区域 退出区域等）与功能部分jsp代码交换数据
 
 父页面(html1)可以通过getElementById("ifram1").contentWindow获取子页面的window对象；
 
@@ -47,7 +47,7 @@ window.parent.IndexTabCsi.addTab(
   });
 ```
 
-# boxComponent使用
+## boxComponent使用
 
 jsp部分示例
 
@@ -66,24 +66,23 @@ js中 按钮的click或其他事件触发显示
 
 ```js
 // 三目 聚焦事件 显示 ka20 BoxComponent
-
-  function showKa20(){
-      var target=event.srcElement?event.srcElement:event.target;
-      Base.showBoxComponent("ka20",target);
-      var param={"dto['ake002']":Base.getValue("ake002")};
-      Base.submit(null,"injuryAppealController!queryKa20.do",param);
-  }
+function showKa20(){
+    var target=event.srcElement?event.srcElement:event.target;
+    Base.showBoxComponent("ka20",target);
+    var param={"dto['ake002']":Base.getValue("ake002")};
+    Base.submit(null,"injuryAppealController!queryKa20.do",param);
+}
 ```
 
-# dataGrid
+## dataGrid
 
-## dataGridItem的formatter属性
+### dataGridItem的formatter属性
 
 对列进行渲染时使用此属性
 
 必须return 此单元格的值 如果不是对值进行修改 直接return value;
 
-#### 实现类似合并单元格的效果
+### 实现类似合并单元格的效果
 
 ```js
 /**
@@ -115,7 +114,7 @@ function fnIdCardQNFormatter(row, cell, value, columnDef, dataContext) {
 
 ```
 
-#### 对值进行渲染
+### 对值进行渲染
 
 对整个单元格进行渲染 需要使用css选择器进行操作 参考[前台框架不支持采用原生或其他框架记录.md](./前台框架不支持采用原生或其他框架记录.md "点我跳转")
 
@@ -132,7 +131,7 @@ function *fnFormatXQ*(row,cell,value,columnDef,dataContext) {
 
 ![img](../../img/clip_image003.png)
 
-# fit方法修改（所有Ta组件fit属性的实现方法）
+## fit方法修改（所有Ta组件fit属性的实现方法）
 
 方法名fitForm
 
@@ -144,10 +143,6 @@ ta3Cloud.js 7315行修改如下
 
 
 
-# SelectInput
+## SelectInput
 ## setSelectInputList
 `[{id:'', name: '', px: ''}]`
-
-
-
- 
