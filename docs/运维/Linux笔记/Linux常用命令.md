@@ -9,7 +9,7 @@ tag: Linux
 
 
 # 编译命令
-```sh
+```bash
 mkdir build
 cd build
 qmake ..

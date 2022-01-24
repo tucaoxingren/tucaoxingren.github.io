@@ -29,7 +29,7 @@ kibana本身无身份验证 依托于elasticsearch的验证
 
 ### 新增索引模板
 
-```shell
+```bash
 PUT _template/delete-30-days
 {
   "order": 1,

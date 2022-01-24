@@ -52,7 +52,7 @@ tag: Linux 备份与恢复
 /*
 `# tar cvpjf backup.tar.bz2 –exclude=/proc –exclude=/lost+found –exclude=/backup.tar.bz2 –exclude=/mnt –exclude=/sys /`
 */
-```shell
+```bash
 tar cvpjf backup.tar.bz2 –exclude=/proc –exclude=/lost+found –exclude=/backup.tar.bz2 –exclude=/mnt –exclude=/sys –exclude=/media –exclude=/home/laoke/下载  –exclude=/home/laoke/program media/laoke/文档/备份/debian/tarDebian
 ```
 
@@ -75,7 +75,7 @@ tar cvpjf backup.tar.bz2 –exclude=/proc –exclude=/lost+found –exclude=/bac
 执行恢复命令之前请再确认一下你所键入的命令是不是你想要的，执行恢复命令可能需要一段不短的时间。
 
 恢复命令结束时，你的工作还没完成，别忘了重新创建那些在备份时被排除在外的目录：
-```shell
+```bash
 # mkdir proc
 # mkdir lost+found
 # mkdir mnt

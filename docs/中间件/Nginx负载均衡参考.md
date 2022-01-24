@@ -151,7 +151,7 @@ upstream模块server指令的其它参数和详细配置说明，请参考[官�
 1. 下载fair模块源码
    下载地址：https://github.com/xyang0917/nginx-upstream-fair
 
-```shell
+```bash
 cd /opt
 wget https://github.com/xyang0917/nginx-upstream-fair/archive/master.zip
 unzip master.zip
@@ -162,7 +162,7 @@ unzip master.zip
 2. 重新编译nginx，将fair模块添加到编译参数
    我的nginx源码目录在/opt/nginx-1.10.0
 
-```shell
+```bash
 cd /opt/nginx-nginx-1.10.0
 ./configure --prefix=/opt/nginx --add-module=/opt/nginx-upstream-fair-master
 make
@@ -173,7 +173,7 @@ make
 3. 将新编译的nginx可执行程序拷贝到/opt/nginx/sbin/目录下，覆盖之前安装的nginx
    编译后的nginx执行程序，放在nginx源码的objs目录下
 
-```shell
+```bash
 ps -aux | grep nginx
 kill -9 nginx进程ID  # 停止nginx服务
 cp /opt/nginx-1.10.0/objs/nginx /opt/nginx/sbin/  # 覆盖旧的nginx
