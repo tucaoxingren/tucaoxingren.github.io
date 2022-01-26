@@ -10,7 +10,6 @@
   - [Java字节字符转换流](Java笔记/Java字节字符转换流.md)
   - [Java正则表达式](Java笔记/Java正则表达式.md)
   - [List遍历：for，foreach还是Iterator](Java笔记/List遍历：for，foreach还是Iterator.md)
-  - [maven打包](Java笔记/maven打包.md)
   - [Service的配置](Java笔记/Service的配置.md)
   - [String,StringBuffer与StringBuilder的区别](Java笔记/String,StringBuffer与StringBuilder的区别.md)
   - [StringBuffer](Java笔记/StringBuffer.md)
