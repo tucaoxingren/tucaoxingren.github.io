@@ -14,7 +14,8 @@ mkdir /mnt/cdrom
 mount -t iso9660 -o loop /opt/yum.repo/CentOS-7-x86_64-Everything-1804.iso /mnt/cdrom
 ```
 3. 配置本地yum源（提前备份CentOS-Base.repo），主要是下面 __baseurl__ 要指向 镜像挂载的目录
-```conf
+
+```repo
 # CentOS-Base.repo
 #
 # The mirror system uses the connecting IP address of the client and the
@@ -35,11 +36,15 @@ gpgcheck=0
 enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 ```
+
 4. 刷新本地yum源缓存
+
 ```bash
 yum makecache
 ```
+
 5. 安装Nginx（正常安装），修改配置文件，将yum源发布出去给其他机器使用
+
 ```bash
 location /cdrom {
     root   /mnt;
@@ -48,8 +53,10 @@ location /cdrom {
 ```
 
 ## 三、其他服务器应用该yum源（root）
+
 1. 配置本地yum源（提前备份CentOS-Base.repo），主要是下面 __baseurl__ 要指向 yum源服务器
-```conf
+
+```repo
 # CentOS-Base.repo
 #
 # The mirror system uses the connecting IP address of the client and the
@@ -70,7 +77,9 @@ gpgcheck=0
 enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 ```
+
 2. 刷新本地yum源缓存
+
 ```bash
 yum makecache
 ```

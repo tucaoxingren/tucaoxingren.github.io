@@ -8,3 +8,5 @@
   - [LVM扩容](运维/Linux笔记/LVM扩容.md)
   - [WSL](运维/Linux笔记/WSL.md)
   - [搭建内部yum源](运维/Linux笔记/搭建内部yum源.md)
+  - [SFTP搭建](运维/Linux笔记/SFTP搭建.md)
+
