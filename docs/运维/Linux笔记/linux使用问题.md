@@ -112,3 +112,33 @@ Categories=Development;IDE;Java; #标签
 ```
 
 
+
+## 运行shell脚本No such file or directory错误的解决办法
+
+1. 在Windows下转换： 
+
+利用一些编辑器如UltraEdit或EditPlus等工具先将脚本编码转换，再放到Linux中执行。转换方式如下（UltraEdit）：File-->Conversions-->DOS->UNIX即可。 
+
+2. 在Linux下转换 
+
+用vim打开该sh文件，输入：
+`:set ff `
+回车，显示`fileformat=dos`，重新设置下文件格式：
+`:set ff=unix `
+保存退出: 
+`:wq `
+再执行，竟然可以了 
+
+3. 在Linux中的权限转换 
+
+也可在Linux中转换： 
+
+首先要确保文件有可执行权限 
+
+\#chmod u+x filename 
+
+然后修改文件格式 
+
+\#vi filename 
+
+三种方法都可以方便快速的解决关于Linux执行.sh文件，提示No such file or directory这个问题了
