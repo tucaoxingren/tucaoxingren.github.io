@@ -36,3 +36,13 @@
    > 1. 页面间的跳转、传参不要使用 mdlife开发文档->窗口系统中的接口  `removeLaunchView` 、`removeOnClickDelay` 除外 。`execScript`建议使用消息事件代替
    > 2. mdlife生命周期由node代替
 
+
+
+## 问题记录
+
+### 在页面底部的input输入框被输入法遮挡
+
+修改`config.json`
+
+`appSetting.statusBarAppearance=true`
+

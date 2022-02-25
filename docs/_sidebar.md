@@ -134,6 +134,7 @@
     - [Windows-SSH](运维/Windows/Windows-SSH.md)
   - [Spug使用说明](运维/Spug使用说明.md)
   - [JDK安装](运维/JDK安装.md)
+  - [漏洞修复](运维/漏洞修复.md)
 - [银海框架](银海框架/)
   - [MDLife记录](银海框架/MDLife记录.md)
   - [银海统一存储平台使用说明](银海框架/银海统一存储平台使用说明.md)

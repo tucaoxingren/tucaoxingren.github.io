@@ -3,6 +3,7 @@
   - [arthas](运维/arthas/)
     - [简单使用](运维/arthas/简单使用.md)
   - [JDK安装](运维/JDK安装.md)
+  - [漏洞修复](运维/漏洞修复.md)
   - [Linux笔记](运维/Linux笔记/)
     - [linux使用问题](运维/Linux笔记/linux使用问题.md)
     - [Linux备份](运维/Linux笔记/Linux备份.md)
