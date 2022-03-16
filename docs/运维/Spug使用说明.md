@@ -20,3 +20,20 @@
 
 1. 不支持 su 命令 如需切换账户 建议在创建主机时直接输入需要切换的账户
 2. 所有会弹出输入的命令都无法批量执行或在应用自定义发布中流程中执行 所以在批量执行或在应用自定义发布中流程必须测试 保证不会弹出输入命令 例如 删除文件 `rm 文件` 必须写成 `rm -f 文件`
+
+
+
+## 账户被锁定
+
+
+
+```
+docker -it 容器id /bin/bash
+
+mysql -u root
+
+mysql > use spug;
+
+mysql > update users set is_supper='0', is_active='1' where id='1';
+```
+

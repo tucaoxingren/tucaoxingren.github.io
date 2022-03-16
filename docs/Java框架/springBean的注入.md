@@ -74,7 +74,7 @@ public class ServiceUtil {
 }
 ```
 
-2.  更推荐这张方式
+2.  更推荐这种方式
 
 ```java
 @Component
