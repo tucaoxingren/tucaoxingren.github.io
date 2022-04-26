@@ -142,3 +142,17 @@ Categories=Development;IDE;Java; #标签
 \#vi filename 
 
 三种方法都可以方便快速的解决关于Linux执行.sh文件，提示No such file or directory这个问题了
+
+## 磁盘挂载
+
+```sh
+mount 磁盘 挂载目录
+
+示例
+mount /dev/sda6 /u02
+
+永久挂载
+vi /etc/fstab
+新增一行
+/dev/sda6 /u02 ext3 defaults 0 0
+```

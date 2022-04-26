@@ -30,3 +30,29 @@ redolog文件
 
 mysql dump备份
 
+
+
+## 使用记录
+
+
+
+### 变量
+
+```mysql
+-- 查询全部变量
+show global variables;
+-- 变量搜索
+show variables like '%变量名%';
+-- 修改变量
+set global 变量名=变量值;
+```
+
+
+
+### 创建用户
+
+```mysql
+# 创建可以使用任何ip登录的用户
+create user 'medplatform'@'%' identified by 'med@35334cXsMr5R0';
+```
+
