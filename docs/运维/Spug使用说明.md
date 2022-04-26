@@ -34,6 +34,22 @@ mysql -u root
 
 mysql > use spug;
 
-mysql > update users set is_supper='0', is_active='1' where id='1';
+mysql > update users set is_active='1' where id='要解锁的账户id';
+```
+
+
+
+### 新增超级管理员账户
+
+在界面上新增账户
+
+```
+docker -it 容器id /bin/bash
+
+mysql -u root
+
+mysql > use spug;
+
+mysql > update users set is_super='1' where id='新增账号的id';
 ```
 

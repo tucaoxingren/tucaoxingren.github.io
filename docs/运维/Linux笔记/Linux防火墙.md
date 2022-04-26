@@ -26,7 +26,7 @@ Linux的防火墙一般是 iptables(老版本) 或 firewalld（新版本），�
 ### iptables 
 
 `service iptables stop`  # 关闭防火墙服务
-`systemctl iptables firewalld.service` # 禁用开机启动 
+`systemctl disable iptables.service` # 禁用开机启动 
 
 
 
@@ -41,6 +41,29 @@ Linux的防火墙一般是 iptables(老版本) 或 firewalld（新版本），�
 ### 查看防火墙是否开启了指定端口
 `firewall-cmd --permanent --query-port=1521/tcp`
 
+### 端口转发
+例如3306 -> 3336
+`firewall-cmd --permanent --zone=public --add-forward-port=port=3336:proto=tcp:toport=3306:toaddr=`
+
+### 开放端口
+```
+# 添加多个端口
+firewall-cmd --permanent --zone=public --add-port=8080-8083/tcp
+ 
+# 删除某个端口
+firewall-cmd --permanent --zone=public --remove-port=81/tcp
+ 
+# 针对某个 IP开放端口
+firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192.168.142.166" port protocol="tcp" port="6379" accept"
+firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192.168.0.233" accept"
+ 
+# 删除某个IP
+firewall-cmd --permanent --remove-rich-rule="rule family="ipv4" source address="192.168.1.51" accept"
+ 
+# 针对一个ip段访问
+firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192.168.0.0/16" accept"
+firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="192.168.1.0/24" port protocol="tcp" port="9200" accept"
+```
 
 
 ### 重新加载防火墙策略

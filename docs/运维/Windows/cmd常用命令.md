@@ -43,3 +43,6 @@ Set-ExecutionPolicy Unrestricted
 Set-ExecutionPolicy RemoteSigned 
 ```
 
+### 端口转发
+
+netsh interface portproxy add v4tov4 listenaddress=本机IP listenport=本机端口 connectaddress=远程IP connectport=远程端口
