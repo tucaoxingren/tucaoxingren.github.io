@@ -146,6 +146,24 @@ Categories=Development;IDE;Java; #标签
 ## 磁盘挂载
 
 ```sh
+#查看挂载信息
+lsblk
+# 查看未挂载的磁盘信息
+fdisk -l
+
+fdisk 磁盘名
+示例 fdisk /dev/sdb
+
+输入 n 一直回车 执行完成 输入 w 保存
+
+# 创建文件系统
+mke2fs -t ext4 磁盘名
+
+# 查看挂载信息
+$: lsblk
+```
+
+```sh
 mount 磁盘 挂载目录
 
 示例
@@ -154,5 +172,17 @@ mount /dev/sda6 /u02
 永久挂载
 vi /etc/fstab
 新增一行
-/dev/sda6 /u02 ext3 defaults 0 0
+/dev/sda6 /u02 ext4 defaults 0 0
+```
+
+## 配置DNS
+
+```
+vi /etc/resolv.conf
+
+新增一行
+nameserver 114.114.114.114
+
+保存后重启 network
+systemctl restart network 
 ```
