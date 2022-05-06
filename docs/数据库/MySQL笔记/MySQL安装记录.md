@@ -44,6 +44,7 @@ vi /etc/init.d.mysqld
 # 设置随机启动
 chkconfig --add mysqld
 chkconfig --level 3 mysqld on
+
 service mysqld start
 ```
 6. 设置环境变量
@@ -51,10 +52,18 @@ service mysqld start
 # 命令行配置
 vi /etc/profile
 # 在末尾添加以下内容
-# MYSQL_HOME=/usr/local/mysql
-# PATH=$MYSQL_HOME/bin:$PATH
-# export PATH
+MYSQL_HOME=/usr/local/mysql
+PATH=$MYSQL_HOME/bin:$PATH
+export PATH
 # 最好另外开一个窗口测试一下能否正常登录，并且mysql --version显示的版本号正确
 # 配置好后，我们可以使用以下方式直接连接mysql（会提示输入密码）
 mysql -u root -p
 ```
+
+7. 授权
+
+   ```sh
+   grant all privileges on *.* to root@'%' identified by 'your root password';
+   ```
+
+   
