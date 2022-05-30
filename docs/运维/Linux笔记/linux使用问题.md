@@ -185,4 +185,25 @@ nameserver 114.114.114.114
 
 保存后重启 network
 systemctl restart network 
+
+重启 network 后 resolv.conf 被重置 检查网卡配置中的DNS配置
+cd /etc/sysconfig/network-scripts/
+ifconfig 查看网卡名
+vi 网卡名
+
+配置 
+DNS1=114.114.114.114
+DNS2=8.8.8.8
 ```
+
+
+
+## 卸载网卡
+
+ifconfig 网卡名 down
+brctl delbr 网卡名
+
+
+
+网卡名 可使用ifconfig查看
+
