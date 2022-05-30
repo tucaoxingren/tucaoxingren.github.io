@@ -65,7 +65,7 @@ create user 'medplatform'@'%' identified by 'med@35334cXsMr5R0';
 2. 登录mysql后 
 ```mysql
 use 数据库名
-source < sql文件全路径
+source sql文件全路径
 ```
 
 #### 导出
