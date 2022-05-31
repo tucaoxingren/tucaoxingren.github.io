@@ -32,5 +32,7 @@ docker ps -a
 docker rm 容器id
 # 停止容器
 docker stop 容器id
+# 进入命令行
+docker exec -it 容器id /bin/bash
 ```
 
