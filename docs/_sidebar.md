@@ -26,6 +26,7 @@
   - [SSI框架学习小结](Java框架/SSI框架学习小结.md)
   - [Swagger使用指南](Java框架/Swagger使用指南.md)
   - [简单Spring项目理解Spring的依赖注入](Java框架/简单Spring项目理解Spring的依赖注入.md)
+  - [Mybatis-Plus使用说明](Java框架/Mybatis-Plus使用说明.md)
 - [Java笔记](Java笔记/)
   - [bean](Java笔记/bean.md)
   - [Collection-集合类](Java笔记/Collection-集合类.md)
