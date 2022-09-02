@@ -53,3 +53,17 @@ mysql > use spug;
 mysql > update users set is_super='1' where id='新增账号的id';
 ```
 
+
+
+## 验证失败 E02
+
+```sh
+vi /etc/ssh/sshd_config
+
+
+PubkeyAuthentication yes
+PubkeyAcceptedKeyTypes +ssh-rsa
+
+service sshd restart
+```
+
