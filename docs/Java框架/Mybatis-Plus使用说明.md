@@ -4,7 +4,7 @@
 
 ```java
 UpdateWrapper<FixmedinsInfoBDO> updateWrapper = new UpdateWrapper<>();
-updateWrapper.eq("FIXMEDINS_INFO_ID", "KM53429153");
+updateWrapper.eq("FIXMEDINS_INFO_ID", "666666");
 updateWrapper.set("MEMO", "");
 updateWrapper.set("ENDDATE", "");
 fixmedinsInfoBService.update(updateWrapper);
@@ -13,7 +13,6 @@ fixmedinsInfoBService.update(new FixmedinsInfoBDO(), updateWrapper);
 ```
 
 配置了全库都有例如更新时间字段的数据应禁止使用`update(Wrapper<T> updateWrapper)`
-
 
 
 ### 空值更新情况示例
@@ -31,7 +30,7 @@ fixmedinsInfoBService.update(new FixmedinsInfoBDO(), updateWrapper);
 
 // 1. update(Wrapper<T> updateWrapper)
 updateWrapper = new UpdateWrapper<>();
-updateWrapper.eq("FIXMEDINS_INFO_ID", "KM53429153");
+updateWrapper.eq("FIXMEDINS_INFO_ID", "666666");
 updateWrapper.set("ENDDATE", null);
 fixmedinsInfoBService.update(updateWrapper);// 抛出异常 参考 Oracle数据库配置jdbcTypeForNull
 
@@ -44,7 +43,6 @@ updateDictDO.setMemo(null);// 字符型 不更新
 updateDictDO.setMemo("");// 字符型 更新
 dataDicAService.updateById(updateDictDO);
 ```
-
 
 
 ### Oracle数据库配置jdbcTypeForNull
@@ -66,9 +64,6 @@ mybatis-config.xml
 ```
 
 
-
-
-
 ## select
 
 1. 针对空字符串作为查询条件 绝大部分业务场景是不需要的 解决办法
@@ -86,29 +81,31 @@ mybatis-config.xml
 // null 查询
 QueryWrapper<FixmedinsInfoBDO> queryWrapper = new QueryWrapper<>();
 List<FixmedinsInfoBDO> list = new ArrayList<>();
-queryWrapper.eq("FIXMEDINS_INFO_ID", "KM53429153");
+queryWrapper.eq("FIXMEDINS_INFO_ID", "666666");
 queryWrapper.eq("FIXMEDINS_CODE", null);// 抛出异常
 list = fixmedinsInfoBService.list(queryWrapper);
 
-queryWrapper.eq("FIXMEDINS_INFO_ID", "KM53429153");
-queryWrapper.eq(StingUtils.isNotEmpty(""), "", "FIXMEDINS_CODE", "");
-list = fixmedinsInfoBService.list(queryWrapper);// list.size() = 1
-
 // 空字符串查询
+// sql: where FIXMEDINS_INFO_ID = '666666'
+queryWrapper.eq("FIXMEDINS_INFO_ID", "666666");
+queryWrapper.eq(StingUtils.isNotEmpty(""), "FIXMEDINS_CODE", "");
+list = fixmedinsInfoBService.list(queryWrapper);'666666'
+
+// sql: where FIXMEDINS_INFO_ID = '666666' and FIXMEDINS_CODE = ''
 QueryWrapper<FixmedinsInfoBDO> queryWrapper = new QueryWrapper<>();
 List<FixmedinsInfoBDO> list = new ArrayList<>();
-queryWrapper.eq("FIXMEDINS_INFO_ID", "KM53429153");
-queryWrapper.eq("FIXMEDINS_CODE", "");// 查询结果错误 正确结果list.size()=1 实际是list.size()=0
+queryWrapper.eq("FIXMEDINS_INFO_ID", "666666");
+queryWrapper.eq("FIXMEDINS_CODE", "");
 list = fixmedinsInfoBService.list(queryWrapper);
 
+// sql: where FIXMEDINS_INFO_ID = '666666' and FIXMEDINS_CODE = ''
 queryWrapper = new QueryWrapper<>();
-queryDO.setFixmedinsInfoId("KM53429153");
+queryDO.setFixmedinsInfoId("666666");
 queryDO.setFixmedinsCode("");
 queryWrapper.setEntity(queryDO);
-list = fixmedinsInfoBService.list(queryWrapper);// list.size() = 0
+list = fixmedinsInfoBService.list(queryWrapper);
 
 ```
-
 
 
 #### 字段验证策略 FieldStrategy.NOT_EMPTY
@@ -119,22 +116,26 @@ LambdaQueryWrapper<FixmedinsInfoBDO> lambdaQueryWrapper = new LambdaQueryWrapper
 List<FixmedinsInfoBDO> list = new ArrayList<>();
 FixmedinsInfoBDO queryDO = new FixmedinsInfoBDO();
 
-queryWrapper.eq("FIXMEDINS_INFO_ID", "KM53429153");
+// sql: where FIXMEDINS_INFO_ID = '666666' and FIXMEDINS_CODE = ''
+queryWrapper.eq("FIXMEDINS_INFO_ID", "666666");
 queryWrapper.eq("FIXMEDINS_CODE", "");
-list = fixmedinsInfoBService.list(queryWrapper);// list.size() = 0
+list = fixmedinsInfoBService.list(queryWrapper);
 
-queryWrapper.eq("FIXMEDINS_INFO_ID", "KM53429153");
+// sql: where FIXMEDINS_INFO_ID = '666666'
+queryWrapper.eq("FIXMEDINS_INFO_ID", "666666");
 queryWrapper.eq(StingUtils.isNotEmpty(""), "", "FIXMEDINS_CODE", "");
-list = fixmedinsInfoBService.list(queryWrapper);// list.size() = 1
+list = fixmedinsInfoBService.list(queryWrapper);
 
-lambdaQueryWrapper.eq(FixmedinsInfoBDO::getFixmedinsInfoId, "KM53429153");
+// sql: where FIXMEDINS_INFO_ID = '666666' and FIXMEDINS_CODE = ''
+lambdaQueryWrapper.eq(FixmedinsInfoBDO::getFixmedinsInfoId, "666666");
 lambdaQueryWrapper.eq(FixmedinsInfoBDO::getFixmedinsCode, "");
-list = fixmedinsInfoBService.list(lambdaQueryWrapper);// list.size() = 0
+list = fixmedinsInfoBService.list(lambdaQueryWrapper);
 
+// sql: where FIXMEDINS_INFO_ID = '666666'
 queryWrapper = new QueryWrapper<>();
-queryDO.setFixmedinsInfoId("KM53429153");
+queryDO.setFixmedinsInfoId("666666");
 queryDO.setFixmedinsCode("");
 queryWrapper.setEntity(queryDO);
-list = fixmedinsInfoBService.list(queryWrapper);// list.size() = 1
+list = fixmedinsInfoBService.list(queryWrapper);
 ```
 
