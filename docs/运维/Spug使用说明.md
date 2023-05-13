@@ -67,3 +67,55 @@ PubkeyAcceptedKeyTypes +ssh-rsa
 service sshd restart
 ```
 
+
+
+## 应用部署示例
+
+### weblogic
+
+```text
+目标主机动作1 数据传输
+数据来源 发布时上传
+目标路径 /u01/war/hisservercct.war
+
+目标主机动作2 设置临时环境变量
+执行内容
+# Weblogic安装目录
+export Weblogic_Home=/u01/Middleware/wlserver_10.3
+export Weblogic_LIB_Home=$Weblogic_Home/server/lib
+# Weblogic管理URL
+export Weblogic_Manage_URL=127.0.0.1:7001
+export Weblogic_Manage_USER=weblogic
+export Weblogic_Manage_PWD=cdgllwzz#2403
+# 备份war
+export dirdate=`date +%Y%m%d`
+export time_cur=`date +%H%M%S`
+mkdir -p /u01/war/$dirdate/$time_cur
+cp /u01/war/hisservercct.war /u01/war/$dirdate/$time_cur/hisservercct.war
+
+目标主机动作3 设置部署信息
+执行内容
+# 部署名称
+export APP_NAME=hisservercct
+# 要部署的Server名称 多个Server以逗号分隔
+export APP_SERVERS=AppServer7003,AppServer7005,AppServer7007,AppServer7009,AppServer7011,AppServer7013
+# 部署包本地路径
+export APP_LOCAL_PATH=/u01/war/hisservercct.war
+
+目标主机动作4 停止原应用
+执行内容
+java -cp $Weblogic_LIB_Home/weblogic.jar weblogic.Deployer -adminurl t3://$Weblogic_Manage_URL -user $Weblogic_Manage_USER -password $Weblogic_Manage_PWD -name $APP_NAME -stop -graceful
+
+目标主机动作5 删除部署
+执行内容
+java -cp $Weblogic_LIB_Home/weblogic.jar weblogic.Deployer -adminurl t3://$Weblogic_Manage_URL -user $Weblogic_Manage_USER -password $Weblogic_Manage_PWD -name $APP_NAME -undeploy
+
+目标主机动作6 安装新部署
+执行内容
+java -cp $Weblogic_LIB_Home/weblogic.jar weblogic.Deployer -adminurl t3://$Weblogic_Manage_URL -user $Weblogic_Manage_USER -password $Weblogic_Manage_PWD -name $APP_NAME -targets $APP_SERVERS -deploy $APP_LOCAL_PATH
+
+目标主机动作7 启动部署
+执行内容
+java -cp $Weblogic_LIB_Home/weblogic.jar weblogic.Deployer -adminurl t3://$Weblogic_Manage_URL -user $Weblogic_Manage_USER -password $Weblogic_Manage_PWD -name $APP_NAME -start
+```
+

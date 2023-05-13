@@ -129,6 +129,11 @@ worker_processes  1;
 worker_rlimit_nofile 100000;
 
 error_log  logs/error.log warn;
+# error_log 不配置时默认为 logs/error.log
+# windows 关闭error_log
+# error_log null;
+# linux 关闭error_log
+# error_log /dev/null;
 pid        logs/nginx.pid;
 
 events {
