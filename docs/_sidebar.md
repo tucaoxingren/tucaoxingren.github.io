@@ -66,6 +66,7 @@
   - [Nginx负载均衡参考](中间件/Nginx负载均衡参考.md)
   - [Redis使用说明](中间件/Redis使用说明.md)
   - [Redis问题记录](中间件/Redis问题记录.md)
+  - [EhCache](中间件/EhCache.md)
   - [tomcat](中间件/tomcat/)
     - [Tomcat JNDI数据源](中间件/tomcat/TomcatJNDI数据源.md)
     - [tomcat内存设置](中间件/tomcat/tomcat内存设置.md)
