@@ -210,5 +210,5 @@ brctl delbr 网卡名
 ## ssh 互信
 
 1. 客户端 执行`ssh-keygen -t rsa` 全部使用默认值(一直回车即可)
-2. 将上一步生成的`id_rsa.pub`文件内容复制
-3. 粘贴到服务端 `/root/.ssh/authorized_keys` 文件中(文件不存在时创建一个即可)
+2. 将第一步生成的`id_rsa.pub`文件内容复制，粘贴到服务端 `/root/.ssh/authorized_keys` 文件中(文件不存在时创建一个即可)
+3. 快捷方式  执行命令`ssh-copy-id -i ~/.ssh/id_rsa.pub 用户名@ip`
