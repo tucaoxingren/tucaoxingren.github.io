@@ -127,6 +127,16 @@ PUT _template/delete-30-days
 
 
 
+## 浏览器插件
+
+[GitHub - liufengji/es-head](https://github.com/liufengji/es-head)
+
+
+
+[Elasticvue - Elasticsearch gui for the browser](https://elasticvue.com/)
+
+
+
 ## 配置说明
 
 elasticsearch.yml
@@ -151,6 +161,13 @@ transport.tcp.compress: true
 discovery.zen.ping.unicast.hosts: ["192.168.60.201", "192.168.60.202","192.168.60.203"]       
 # 集群个节点IP地址，也可以使用els、els.shuaiguoxia.com等名称，需要各节点能够解析
 discovery.zen.minimum_master_nodes: 2              # 为了避免脑裂，集群节点数最少为 半数+1
+
+# discovery.seed_hosts:  集群主机列表
+# discovery.seed_providers: 基于配置文件配置集群主机列表
+# cluster.initial_master_nodes: 启动时初始化的参与选主的node，生产环境必填
+# 单机配置 7.15.2
+discovery.seed_hosts: ["127.0.0.1"]
+cluster.initial_master_nodes: ["node-1"]
 ```
 
 
