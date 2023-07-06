@@ -11,7 +11,7 @@
   - [Redis使用说明](中间件/Redis使用说明.md)
   - [Redis问题记录](中间件/Redis问题记录.md)
   - [tomcat](中间件/tomcat/)
-    - [Tomcat JNDI数据源](中间件/tomcat/Tomcat JNDI数据源.md)
+    - [Tomcat JNDI数据源](中间件/tomcat/TomcatJNDI数据源.md)
     - [tomcat内存设置](中间件/tomcat/tomcat内存设置.md)
   - [weblogic](中间件/weblogic/)
     - [weblogic命令行操作](中间件/weblogic/weblogic命令行操作.md)
