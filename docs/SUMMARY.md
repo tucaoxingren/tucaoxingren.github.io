@@ -19,8 +19,8 @@
 	* [Collection 集合类](Java笔记/Collection-集合类.md)
 	* [DTO](Java笔记/DTO.md)
 	* [InputStream和Reader的根本差异](Java笔记/InputStream和Reader的根本差异.md)
-	* [Java IO流](Java笔记/Java IO流.md)
-	* [Java 变量存储理解](Java笔记/Java 变量存储理解.md)
+	* [Java IO流](Java笔记/JavaIO流.md)
+	* [Java 变量存储理解](Java笔记/Java变量存储理解.md)
 	* [Java单例设计模式](Java笔记/Java单例设计模式.md)
 	* [Java字节字符转换流](Java笔记/Java字节字符转换流.md)
 	* [Java正则表达式](Java笔记/Java正则表达式.md)
@@ -35,7 +35,7 @@
 	* [Web.Xml文件的配置简析](Java笔记/web.xml文件的配置简析.md)
 	* [事务配置](Java笔记/事务配置.md)
 	* [停止线程的三种方式](Java笔记/停止线程的三种方式.md)
-	* [多线程 锁的理解](Java笔记/多线程 锁的理解.md)
+	* [多线程 锁的理解](Java笔记/多线程锁的理解.md)
 	* [多线程小结](Java笔记/多线程小结.md)
 	* [字符串常用操作](Java笔记/字符串常用操作.md)
 	* [字符串常用方法](Java笔记/字符串常用方法.md)
@@ -44,14 +44,13 @@
 	* [成员变量与局部变量理解及Static变量](Java笔记/成员变量与局部变量理解及static变量.md)
 	* [线程间通信 等待唤醒机制](Java笔记/线程间通信-等待唤醒机制.md)
 	* [自定义的BufferedReader](Java笔记/自定义的BufferedReader.md)
-	* [Xml 标记语言浅析](xml/xml 标记语言浅析.md)
 
 * [Java框架](框架/README.md)
-	* [Action 配置](框架/Action 配置.md)
+	* [Action 配置](框架/Action配置.md)
 	* [Ibatis+Mybatis](框架/Ibatis+Mybatis/README.md)
-		* [IBATIS 框架 学习小结](框架/Ibatis+Mybatis/iBATIS 框架 学习小结.md)
-		* [IBATIS 框架 配置详解](框架/Ibatis+Mybatis/iBATIS 框架 配置详解.md)
-		* [Ibatis 映射文件中标签详解](框架/Ibatis+Mybatis/ibatis 映射文件中标签详解.md)
+		* [IBATIS 框架 学习小结](框架/Ibatis+Mybatis/iBATIS框架学习小结.md)
+		* [IBATIS 框架 配置详解](框架/Ibatis+Mybatis/iBATIS框架配置详解.md)
+		* [Ibatis 映射文件中标签详解](框架/Ibatis+Mybatis/ibatis映射文件中标签详解.md)
 	* [SSI框架学习小结](框架/SSI框架学习小结.md)
 	* [SpringBean的注入](框架/springBean的注入.md)
 	* [简单Spring项目理解Spring的依赖注入](框架/简单Spring项目理解Spring的依赖注入.md)
@@ -72,9 +71,9 @@
 ### 中间件
 
 * [Tomcat](中间件/tomcat/README.md)
-    * [Tomcat JNDI数据源](中间件/tomcat/Tomcat JNDI数据源.md)
+    * [Tomcat JNDI数据源](中间件/tomcat/TomcatJNDI数据源.md)
     * [Tomcat内存设置](中间件/tomcat/tomcat内存设置.md)
-	* [Tomcat Https 访问](服务器SSL/tomcat Https 访问.md)
+	* [Tomcat Https 访问](服务器SSL/tomcat-Https-访问.md)
 	
 * [Weblogic](中间件/weblogic/README.md)
     * [WebLogic问题记录](中间件/weblogic/WebLogic问题记录.md)
@@ -113,7 +112,8 @@
 	* [前台框架不支持采用原生或其他框架记录](Ta3/前台框架不支持采用原生或其他框架记录.md)
 
 * [Ta404](Ta404/README.md)
-	* [Ta404使用 问题记录](Ta404/ta404使用 问题记录.md)
+	* [Ta404 使用问题记录](Ta404/ta404使用问题记录.md)
+	* [Ta404 框架踩坑指南](Ta404/Ta404框架踩坑指南.md)
 
 ### 前端
 
@@ -144,7 +144,7 @@
 ### 开发工具
 
 * [IDEA](开发工具/IDEA.md)
-* [SQL Developer不常用功能记录](开发工具/SQL Developer不常用功能记录.md)
+* [SQL Developer不常用功能记录](开发工具/PLSQLDeveloper配置.md)
 
 ## 其它
 
