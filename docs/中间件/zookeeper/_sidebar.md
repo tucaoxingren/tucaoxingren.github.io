@@ -1,5 +1,0 @@
-- [返回上一级 [中间件]](中间件/)
-- [zookeeper](中间件/zookeeper/)
-  - [zookeeper使用记录](中间件/zookeeper/zookeeper使用记录.md)
-  - [zookeeper监控](中间件/zookeeper/zookeeper监控.md)
-  - [zookeeper集群配置](中间件/zookeeper/zookeeper集群配置.md)

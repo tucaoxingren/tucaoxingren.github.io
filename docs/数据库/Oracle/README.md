@@ -1,8 +1,0 @@
-- [返回上一级 [数据库]](数据库/)
-- [Oracle](数据库/Oracle/)
-  - [oracle培训](数据库/Oracle/oracle培训.md)
-  - [Oracle字符集问题记录](数据库/Oracle/Oracle字符集问题记录.md)
-  - [Oracle学习笔记(2)](数据库/Oracle/Oracle学习笔记(2).md)
-  - [Oracle学习笔记](数据库/Oracle/Oracle学习笔记.md)
-  - [Oracle表空间](数据库/Oracle/Oracle表空间.md)
-  - [PLSQL](数据库/Oracle/PLSQL.md)

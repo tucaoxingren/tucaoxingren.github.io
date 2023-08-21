@@ -1,5 +1,0 @@
-- [返回首页](/)
-- [开发工具](开发工具/)
-  - [IDEA](开发工具/IDEA.md)
-  - [PLSQL Developer配置](开发工具/PLSQLDeveloper配置.md)
-  - [远程调试](开发工具/远程调试.md)

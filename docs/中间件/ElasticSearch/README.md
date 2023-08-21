@@ -1,6 +1,0 @@
-- [返回上一级 [中间件]](中间件/)
-- [ElasticSearch](中间件/ElasticSearch/)
-  - [ElasticSearch使用指南](中间件/ElasticSearch/ElasticSearch使用指南.md)
-  - [Elasticsearch命令使用说明](中间件/ElasticSearch/Elasticsearch命令使用说明.md)
-  - [Kibana使用文档](中间件/ElasticSearch/Kibana使用文档.md)
-  - [metricbeat使用说明](中间件/ElasticSearch/metricbeat使用说明.md)

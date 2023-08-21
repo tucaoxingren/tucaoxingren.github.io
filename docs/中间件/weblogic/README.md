@@ -1,5 +1,0 @@
-- [返回上一级 [中间件]](中间件/)
-- [weblogic](中间件/weblogic/)
-  - [weblogic命令行操作](中间件/weblogic/weblogic命令行操作.md)
-  - [WebLogic问题记录](中间件/weblogic/WebLogic问题记录.md)
-  - [数据源连接池设置](中间件/weblogic/数据源连接池设置.md)
