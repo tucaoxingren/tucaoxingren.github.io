@@ -1,5 +1,0 @@
-- [返回上一级 [Java框架]](Java框架/)
-- [Ibatis+Mybatis](Java框架/Ibatis+Mybatis/)
-  - [ibatis 映射文件中标签详解](Java框架/Ibatis+Mybatis/ibatis映射文件中标签详解.md)
-  - [iBATIS 框架 学习小结](Java框架/Ibatis+Mybatis/iBATIS框架学习小结.md)
-  - [iBATIS 框架 配置详解](Java框架/Ibatis+Mybatis/iBATIS框架配置详解.md)

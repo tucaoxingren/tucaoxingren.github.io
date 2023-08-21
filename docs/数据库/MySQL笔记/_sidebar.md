@@ -1,5 +1,0 @@
-- [返回上一级 [数据库]](数据库/)
-- [MySQL笔记](数据库/MySQL笔记/)
-  - [MySQL与Oracle](数据库/MySQL笔记/MySQL与Oracle.md)
-  - [MySQL安装使用说明](数据库/MySQL笔记/MySQL安装使用说明.md)
-  - [MySQL安装记录](数据库/MySQL笔记/MySQL安装记录.md)

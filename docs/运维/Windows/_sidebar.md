@@ -1,5 +1,0 @@
-- [返回上一级 [运维]](运维/)
-- [Windows](运维/Windows/)
-  - [cmd常用命令](运维/Windows/cmd常用命令.md)
-  - [NTP时间对时服务启用](运维/Windows/NTP时间对时服务启用.md)
-  - [Windows-SSH](运维/Windows/Windows-SSH.md)

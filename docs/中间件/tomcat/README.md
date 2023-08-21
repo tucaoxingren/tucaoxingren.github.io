@@ -1,4 +1,0 @@
-- [返回上一级 [中间件]](中间件/)
-- [tomcat](中间件/tomcat/)
-  - [Tomcat JNDI数据源](中间件/tomcat/TomcatJNDI数据源.md)
-  - [tomcat内存设置](中间件/tomcat/tomcat内存设置.md)
