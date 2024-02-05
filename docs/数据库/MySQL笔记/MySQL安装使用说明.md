@@ -14,6 +14,15 @@ CPU核数要多
 
 内存要大 内存大小最好是能和经常使用的数据大小一致 MySQL建议把系统的80%的内存分配给MySQL的数据页
 
+## 配置说明
+
+[MySQL配置说明，点击此处下载](/docs/数据库/MySQL笔记/MySQL5.6系统变量，性能及查询优化的相关内容.xls ':ignore')
+
+### 配置参考
+
+[MySQL配置参考，点击此处下载](/docs/数据库/MySQL笔记/my.cnf ':ignore')
+
+[MySQL配置参考](./my.cnf ':include :type=code')
 
 
 ## 备份

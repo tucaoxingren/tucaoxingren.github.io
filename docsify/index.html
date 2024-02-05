@@ -19,13 +19,15 @@
     <div id="app"></div>
     <script>
         window.$docsify = {
+            basePath: '/',
             name: "Blog",
             // 导航
             // loadNavbar: true,
-            loadNavbar: 'navbar.md',
+            loadNavbar: 'docsify/navbar.md',
             // 侧边栏文档目录
             // loadSidebar: true,
-            loadSidebar: 'sidebar.md',
+            loadSidebar: 'docsify/sidebar.md',
+            relativePath: false,
 
             subMaxLevel: 2,
             alias: {
@@ -94,7 +96,7 @@
     <script src="./resource/npm/prismjs@1/components/prism-java.min.js"></script>
     <script src="./resource/npm/prismjs@1/components/prism-docker.min.js"></script>
     <script src="./resource/npm/prismjs@1/components/prism-nginx.min.js"></script>
-    <script src="./resource/npm/prismjs@1/components/prism-javascript.min.js"></script>
+    <!-- <script src="./resource/npm/prismjs@1/components/prism-javascript.min.js"></script> -->
     <script src="./resource/npm/prismjs@1/components/prism-cshtml.min.js"></script>
     <script src="./resource/npm/prismjs@1/components/prism-json.min.js"></script>
     <script src="./resource/npm/prismjs@1/components/prism-properties.min.js"></script>
@@ -114,7 +116,8 @@
 
     <script src="./resource/npm/docsify@4/lib/plugins/external-script.min.js"></script>
 
-    <script src="./resource/npm/docsify@4/lib/plugins/ga.min.js"></script>
+    <!-- 网络跟踪 see https://developers.google.cn/analytics/devguides/collection/gajs/gaTrackingTiming?hl=cs -->
+    <!-- <script src="./resource/npm/docsify@4/lib/plugins/ga.min.js"></script> -->
 
     <!-- 全文搜索 -->
     <script src="./resource/npm/docsify@4/lib/plugins/search.js"></script>

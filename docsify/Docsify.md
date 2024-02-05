@@ -2,7 +2,7 @@
 
 
 
-Docsify使用手册：[快速开始 (docsify.js.org)](https://docsify.js.org/#/zh-cn/quickstart)
+`Docsify`使用手册：[快速开始 (docsify.js.org)](https://docsify.js.org/#/zh-cn/quickstart)
 
 
 
@@ -20,8 +20,31 @@ Docsify使用手册：[快速开始 (docsify.js.org)](https://docsify.js.org/#/z
 
 
 
-## 预览
+## 预览(适用于docsify官方推荐配置)
 
-`docsify start 项目目录`
+`docsify start docsify`
 
 使用 `http://localhost:4000/docsify/index.html`访问
+
+## 预览(针对上述目录结构)
+
+使用`Nginx`预览
+
+nginx.conf 配置如下
+
+```conf
+server {
+	listen       7001;
+	server_name  _;
+	location / {
+		# 项目根目录
+		root   D:\ProgramingNote;
+		index  docsify/index.html;
+	}
+}
+```
+
+预览地址
+
+`http://localhost:7001/docsify/index.html#/`
+
