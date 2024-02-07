@@ -2,6 +2,7 @@
 - [版本控制](docsify/sidebar/版本控制/)
   - [Git](docsify/sidebar/版本控制/Git/)
     - [Git使用记录](docs/版本控制/Git/Git使用记录.md)
+    - [SVN迁移到Git](docs/版本控制/Git/SVN迁移到Git.md)
 - [Android笔记](docsify/sidebar/Android笔记/)
   - [activity-intent](docs/Android笔记/activity-intent.md)
   - [Activity布局](docs/Android笔记/Activity布局.md)

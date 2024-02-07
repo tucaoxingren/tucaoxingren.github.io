@@ -1,5 +1,69 @@
-# Git使用记录
-
-## 使用说明
+## 使用手册
 
 [Git使用手册](/docs/版本控制/Git/git文档.pdf ':ignore')
+
+
+
+[git 常用命令详解_51CTO博客_git常用命令](https://blog.51cto.com/JackieLion/6174807)
+
+
+
+## commit规范
+
+> [Commit message 和 Change log 编写指南 - 阮一峰的网络日志 (ruanyifeng.com)](https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+
+
+
+## Git使用前准备
+
+1. 下载git客户端
+
+   1. [git-for-windows_v2.43.0](https://jaist.dl.sourceforge.net/project/git-for-windows.mirror/v2.43.0.windows.1/Git-2.43.0-64-bit.exe)
+   2. [Git - Downloads (git-scm.com)](https://git-scm.com/downloads)
+
+2. 设置`user.name`与`user.emali`
+
+   ```bash
+   # --global 代表全局设置 没有此选项时只能在项目根目录下执行，即为当前项目指定
+   git --global config user.name 姓名（不要设置中文，公司项目请使用GitLab账号）
+   git --global config user.emali 邮箱地址（公司项目请使用公司邮箱）
+   ```
+
+   
+
+## 公司Git项目commit规范
+
+1. 禁止直接向`master`、`dev`分支`push`，已设置保护，除管理员外禁止`push`
+
+2. 新建个人分支，分支名称可以是开发者姓名或需求简述，新建分支有如下方法
+
+   1. 在云效平台->代码托管->分支->新建分支，最后在本地`pull`刚才新建的分支
+
+   2. 在`GitLab`平台->新建分支，最后在本地`pull`刚才新建的分支
+
+   3. 在本地创建分支，然后push到远程（不推荐）
+
+      ```bash
+      # 创建分支
+      git checkout -b 分支名称
+      # commit
+      # 推送分支
+      git push --set-upstream 远程git仓库标签 分支名称
+      ```
+
+3. 切换到个人分支
+
+   1. 本地创建分支，`push`到远程时，创建分支后已默认切换到个人分支
+
+   2. 远程创建分支，`pull`到本地后，需要手工切换分支`git checkout 远程git仓库标签 分支名称`
+
+4. 在个人分支`commit`并`push`到远程git仓库
+
+5. 新建合并请求，注意合并请求只能选择dev分支
+
+   1. 在云效平台->代码托管->合并请求->新建合并请求
+   2. 在`GitLab`平台->合并请求->新建合并请求
+
+6. 由对应开发人员审核合并到`dev`分支的合并请求
+
+7. 由管理员发起合并到`master`分支的合并请求
