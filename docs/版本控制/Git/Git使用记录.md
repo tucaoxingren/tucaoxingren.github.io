@@ -25,8 +25,8 @@
 
    ```bash
    # --global 代表全局设置 没有此选项时只能在项目根目录下执行，即为当前项目指定
-   git --global config user.name 姓名（不要设置中文，公司项目请使用GitLab账号）
-   git --global config user.emali 邮箱地址（公司项目请使用公司邮箱）
+   git config --global user.name 姓名（公司项目请使用GitLab账号的昵称即自己的名字）
+   git config --global user.email 邮箱地址（公司项目请使用公司邮箱，必须设置正确，否则Gitlab提交记录的作者信息将无法正确关联）
    ```
 
    
