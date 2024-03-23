@@ -94,3 +94,23 @@
     ```
 
     
+
+
+
+## 离线安装插件
+
+1. 插件下载地址：http://mirror.xmission.com/jenkins/plugins/
+2. 下载插件，必须是`hpi`类型的文件
+3. 安装插件"Manage Jenkins”--->“Manage Plugins”--->“Advanced”，拖到下面找到“Deploy Plugin”，上传.hpi类型的文件，点击Deploy安装插件
+
+
+
+## 离线安装指南
+
+### 官方指南
+
+[Offline Installations (jenkins.io)](https://www.jenkins.io/doc/book/installing/offline/)
+
+### 简单指南
+
+在通互联网的服务器上安装配置好后，直接将整个目录复制到目标服务器

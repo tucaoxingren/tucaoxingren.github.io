@@ -84,5 +84,86 @@ this.$set()方法是vue自带的可对数组和对象进行赋值，并触发监
    }
    ```
 
-   
+
+
+
+### 动态绑定`v-model`
+
+demo.vue
+
+```vue
+<template>
+  <div>
+    <template v-for="param in extraValueList">
+                <ta-form-item
+                  v-if="param.type === 'input'"
+                  :key="param.command"
+                  :label="param.label"
+                  :prop="param.command"
+                  :extra="param.desc"
+                >
+                  <!-- 关键点 $data 即 当前vue示例的data对象 -->
+                  <ta-input :key="param.command" :ref="param.command" v-model="$data.commandForm[param.command]" />
+                </ta-form-item>
+                <ta-form-item
+                  v-if="param.type === 'collection'"
+                  :key="param.command"
+                  :label="param.label"
+                  :prop="param.command"
+                  :extra="param.desc"
+                >
+                  <ta-select :key="param.command" :ref="param.command" v-model="$data.commandForm[param.command]" :options="param.collectionDataList" />
+                </ta-form-item>
+              </template>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'needlePrintDataInput',
+
+  data () {
+    return {
+      commandForm: {
+        // 指令
+        command: '',
+        // 指令值
+        value: '',
+      },
+      extraValueList: [{ desc: '根据打印机决定', command: 'leftSpace', label: '左边距', type: 'input', }, { desc: '根据打印机决定', command: 'size', label: '二维码大小', type: 'input', }],
+    }
+  },
+  methods: {
+    
+    fnAddCommand () {
+      this.$refs.commandForm.validate((success, values) => {
+        if (success) {
+          const command = { key: this.commandForm.command, value: this.commandForm.value, }
+          if (this.commandForm.command === 'qrCode') {
+            // 使用动态绑定的变量
+            if (!Base.isEmpty(this.commandForm.leftSpace)) {
+              command.leftSpace = this.commandForm.leftSpace
+            }
+            if (!Base.isEmpty(this.commandForm.size)) {
+              command.size = this.commandForm.size
+            }
+          }
+          this.self.value.push(command)
+        }
+      })
+    },
+  },
+}
+</script>
+
+<style type="text/less" lang="less">
+
+</style>
+
+```
+
+
+
+
 
