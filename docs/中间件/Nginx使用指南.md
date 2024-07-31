@@ -182,6 +182,8 @@ http {
     # 负载均衡配置
     upstream nacos {
         server 127.0.0.1:8848;
+        # 没有安装Nginx Upstream Check模块时默认配置为
+        # server 127.0.0.1:8848 max_fails=1 fail_timeout=10s;
         # 需要安装Nginx Upstream Check模块
         check interval=3000 rise=2 fall=5 timeout=1000;
     }
@@ -345,19 +347,31 @@ keepalive_timeout 60s;
 
 
 
-#### proxy_connect_timeout
+#### 代理超时时间
+
+https://nginx.org/en/docs/http/ngx_http_proxy_module.html
+
+默认值：60s
+
+##### proxy_connect_timeout
+
+与代理服务器建立连接的超时时间
 
 用于设置连接上游服务器的超时时间，单位为秒。当 Nginx 从客户端请求后，如果在规定时间内没有连接上游服务器，则会返回超时错误。这个超时时间也包含了建立连接的时间。这个参数通常用于配置反向代理，也可以用于配置负载均衡。
 
 
 
-#### proxy_read_timeout
+##### proxy_read_timeout
+
+与代理服务器响应的超时时间
 
 用于设置从上游服务器读取响应的超时时间，单位为秒。当 Nginx 连接上游服务器后，如果在规定时间内没有收到响应，则会返回超时错误。这个超时时间也包含了接收响应数据的时间。这个参数通常用于配置反向代理，也可以用于配置负载均衡。
 
 
 
-#### proxy_send_timeout
+##### proxy_send_timeout
+
+与代理服务器响应结束的超时时间
 
 用于设置向上游服务器发送请求的超时时间，单位为秒。当 Nginx 向上游服务器发送请求后，如果在规定时间内没有收到响应，则会返回超时错误。这个超时时间也包含了发送请求数据的时间。这个参数通常用于配置反向代理，也可以用于配置负载均衡。
 
@@ -369,7 +383,7 @@ keepalive_timeout 60s;
 
 合理设置超时时间：超时时间设置过短会导致误判，设置过长会增加服务器的负担。需要根据实际情况合理调整。
 
-超时时间的相互关系：有些超时配置之间存在相互关系，需要注意配置的先后顺序。例如，在配置反向代理时，proxy_read_timeout应该大于proxy_connect_timeout。
+超时时间的相互关系：有些超时配置之间存在相互关系，需要注意配置的先后顺序。例如，在配置反向代理时，proxy_send_timeout > proxy_read_timeout > proxy_connect_timeout。
 
 客户端超时设置：客户端也可能会设置超时时间，需要注意服务器端的超时配置是否会与客户端的超时配置冲突。
 
