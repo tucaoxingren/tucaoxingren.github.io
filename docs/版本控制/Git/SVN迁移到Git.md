@@ -90,7 +90,11 @@ svn账号=git账号<git账号邮箱>
 
 
 
-`git svn fetch --revision 起始版本号:结束版本号 SVN仓库地址 --authors-file=../userinfo.txt`
+`cd 本地文件目录名称`
+
+
+
+`git svn fetch --revision 起始版本号:结束版本号 --authors-file=../userinfo.txt`
 
 
 
