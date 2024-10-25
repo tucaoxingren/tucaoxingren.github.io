@@ -60,4 +60,4 @@ tomcat8
 
 2. 命令 `netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'` 观察到有大量的`close_wait`进程
 3. 尝试修改 `/etc/security/limits.conf` 文件打开数量限制 再次观察`close_wait`进程，未改善
-4. 经同事指点有可能是 apache httpClient导致的 搜索到了这篇文章[解决:HttpClient导致应用出现过多Close_Wait的问题 - jessezeng - 博客园](https://www.cnblogs.com/jessezeng/p/5616518.html) 按照最后一种方案解决(或httpClient.getHttpConnectionManager().closeIdleConnections(-1);)后，观察`close_wait`进程明显减少了
+4. 猜测可能是 apache httpClient导致的 搜索到了这篇文章[解决:HttpClient导致应用出现过多Close_Wait的问题 - jessezeng - 博客园](https://www.cnblogs.com/jessezeng/p/5616518.html) 按照最后一种方案解决(或httpClient.getHttpConnectionManager().closeIdleConnections(-1);)后，观察`close_wait`进程明显减少了
