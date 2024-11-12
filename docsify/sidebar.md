@@ -92,6 +92,7 @@
   - [前端开发问题记录](docs/前端/前端开发问题记录.md)
   - [微信小程序开发](docs/前端/微信小程序开发.md)
   - [微信公众号开发教程](docs/微信公众号/微信公众号开发教程.md)
+  - [NodeJS开发](docs/前端/NodeJS开发.md)
 - [数据库](docsify/sidebar/数据库/)
   - [MySQL笔记](docsify/sidebar/数据库/MySQL笔记/)
     - [MySQL与Oracle](docs/数据库/MySQL笔记/MySQL与Oracle.md)
