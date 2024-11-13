@@ -11,6 +11,8 @@
 
     <!-- 文件夹样式 -->
     <link rel="stylesheet" href="./resource/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
+    <!-- toc插件样式 注意和对应js配合使用 -->
+    <!-- <link rel="stylesheet" href="./resource/npm/docsify-plugin-toc@2.1.10/dist/light.css" /> -->
     <!-- 箭头样式 -->
     <!-- <link rel="stylesheet" href="./resource/npm/docsify-sidebar-collapse/dist/sidebar.min.css" /> -->
 </head>
@@ -27,8 +29,9 @@
             // 侧边栏文档目录
             // loadSidebar: true,
             loadSidebar: 'docsify/sidebar.md',
+            // 如果该选项设为 true ，那么链接会使用相对路径
             relativePath: false,
-
+            // 自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能
             subMaxLevel: 2,
             alias: {
                 "/.*/_sidebar.md": "/_sidebar.md",
@@ -42,10 +45,12 @@
             formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}',
             // PLUGINS
             // ----------------------------------------------------------------
-            // 页面右侧toc
+            // 页面右侧toc 文档内目录导航栏
             toc: {
                 tocMaxLevel: 6,
                 target: "h2, h3, h4, h5, h6",
+                // 文档内包含下列字符时 不生成文档内目录导航栏
+                ignoreHeaders: ["<!-- {docsify-ignore} -->", "<!-- {docsify-ignore-all} -->"],
             },
 
             // 全文搜索
@@ -114,6 +119,7 @@
     <!-- 底部 上一页下一页 -->
     <script src="./resource/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
 
+    <!-- 如果文档里的 script 是内联脚本，可以直接执行；而如果是外链脚本（即 js 文件内容由 src 属性引入），则需要使用此插件。 -->
     <script src="./resource/npm/docsify@4/lib/plugins/external-script.min.js"></script>
 
     <!-- 网络跟踪 see https://developers.google.cn/analytics/devguides/collection/gajs/gaTrackingTiming?hl=cs -->
@@ -133,6 +139,7 @@
 
     <!-- 页面右侧 TOC -->
     <script src="./resource/npm/docsify-plugin-toc@1.1.0/dist/docsify-plugin-toc.min.js"></script>
+    <!-- <script src="./resource/npm/docsify-plugin-toc@2.1.10/dist/docsify-plugin-toc.min.js"></script> -->
 
     <!-- emoji -->
     <script src="./resource/npm/docsify/lib/plugins/emoji.min.js"></script>
