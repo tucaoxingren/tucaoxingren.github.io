@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doc</title>
+    <link rel="stylesheet" href="./resources/layui/css/layui.css">
+    <script src="./resources/layui/layui.js"></script>
+    <script src="./resources/Vue/2.7.16/vue.min.js"></script>
+    <style>
+        /* 整体页面样式，设置背景颜色、字体等基础样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 210px;
+        }
+
+        /* 页面主体部分样式 */
+        .main-content {
+            /* width: 80%; */
+            flex-grow: 1;
+            padding: 0;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            /* 允许该容器根据内容自适应高度 */
+        }
+
+        /* 页面主体上半部分样式 */
+        .main-content-top {
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            /* flex: 1; */
+            /* 可以根据内容自适应高度，但不占满全部剩余空间 */
+            min-height: 100px;
+        }
+
+        /* 页面主体下半部分样式 */
+        .main-content-bottom {
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+            flex: 1;
+            /* 可以根据内容自适应高度，会自动填充满剩余空间 */
+            min-height: 0;
+        }
+
+        /* 响应式布局调整，针对不同屏幕宽度改变样式 */
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            nav {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .main-content {
+                width: 100%;
+            }
+
+            .main-content-top {
+                margin-top: 20px;
+            }
+
+            .main-content-bottom {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="vm main" v-cloak>
+        <!-- 导航栏 -->
+        <div class="sidebar">
+            <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
+                <li class="layui-nav-item"><a href="/docsify/index.html#">返回首页</a>
+                <template v-for="item in list">
+                    <li class="layui-nav-item"><a href="javascript:;">{{item.title}}</a>
+                        <dl class="layui-nav-child" v-if="item.children">
+                            <dd style="cursor: pointer;" v-for="item2 in item.children" @click="route(item2)">{{item2.title}}</dd>
+                        </dl>
+                    </li>
+                </template>
+            </ul>
+        </div>
+
+        <!-- 页面主体部分 -->
+        <div class="main-content">
+            <!-- 页面主体上半部分 -->
+            <div class="main-content-top">
+                <p>{{curPage.desc ? curPage.desc : curPage.title}}</p>
+            </div>
+            <!-- 页面主体下半部分 -->
+            <div class="main-content-bottom">
+                <iframe style="width: 100%;height: 100%;border: none;" :src="curPage.url" v-if="showIframe"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    layui.use('element', function () { });
+
+    let vm = new Vue({
+        el: '.vm',
+        data: {
+            showIframe: false,
+            curPage: {},
+            list: [
+                {
+                    title: 'ECharts',
+                    children: [
+                        { title: '3D地图示例', desc: '3D地图示例：多层 2D map series 错层 + 底层阴影 模拟3D效果', url: './demo/ECharts/3dMapDemo/index.html' },
+                        { title: '3D地图示例2', desc: '3D地图示例：上层 2D map series 下层 2D map geo（稍大一点）  模拟3D效果', url: './demo/ECharts/3dMapDemo2/index.html' },
+                        { title: '地图描边示例', desc: '亮边 + 阴影 富有科技感', url: './demo/ECharts/mapBorderDemo/index.html' },
+                        { title: '立体柱状图示例', url: './demo/ECharts/barDemo/index.html' }
+                    ]
+                }]
+        },
+        methods: {
+            route: function (page) {
+                this.showIframe = false;
+                this.curPage = page;
+                this.showIframe = true;
+            }
+        }
+    });
+    
+</script>
+
+</html>

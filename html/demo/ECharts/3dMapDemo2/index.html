@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Echarts Map Stereo Effect</title>
+	<!-- 引入Echarts核心库 -->
+	<!-- <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script> -->
+	<!-- <script src="../EchartsJS/3.7.2/echarts.min.js"></script> -->
+	<script src="../../../resources/EchartsJS/5.4.0/echarts.min.js"></script>
+	<script src="../../../resources/EchartsGLJS/2.0.9/echarts-gl.min.js"></script>
+	<script src="../../../resources/jQuery/jquery-3.3.1.min.js"></script>
+	<script src="../../../resources/EchartsJS/mapData/china.js"></script>
+</head>
+
+<body>
+	<!-- 用于放置Echarts地图的DOM元素 -->
+	<div id="main" style="width: 800px; height: 600px; background-color: floralwhite;"></div>
+	<script>
+		// 1. 初始化Echarts实例
+		const myChart = echarts.init(document.getElementById('main'));
+
+		const mapName = 'china';
+
+		let seriesData = [];
+
+		// 2. 配置基础选项
+		const option = {
+			tooltip: {
+				show: true,
+				textStyle: {
+					color: '#dddfe1',
+					fontSize: 16,
+					fontFamily: '微软雅黑'
+				}
+			},
+			visualMap: {
+				type: 'continuous',
+				right: 20,
+				top: 50,
+				seriesIndex: 0,
+				calculable: true,
+				text: ['高', '低'],
+				textStyle: {
+					color: '#dddfe1',
+					fontSize: 18,
+					fontFamily: '微软雅黑'
+				},
+				itemStyle: {
+					color: {
+						type: 'linear',
+						x: 0,
+						y: 0,
+						x2: 0,
+						y2: 1,
+						colorStops: [{
+							offset: 0, color: '#0cc7ff' // 0% 处的颜色
+						}, {
+							offset: 1, color: '#153c9a' // 100% 处的颜色
+						}],
+						global: false // 缺省为 false
+					},
+					shadowColor: 'rgba(0, 0, 0, 0.5)',
+					shadowBlur: 10
+				},
+				inRange: {
+					// color: ['#1941f6', '#3b6ff3', '#8dd8fb']
+					color: ['#0cc7ff', '#2d7afd', '#1840f6']
+				}
+			},
+			geo: {
+				map: mapName,
+				label: {
+					emphasis: {
+						show: false
+					}
+				},
+				layoutCenter: ['50%', '50%'],
+				// 如果宽高比大于 1 则宽度为 100，如果小于 1 则高度为 100，保证了不超过 100x100 的区域
+				// layoutSize: 700,
+				zoom: 1.12,
+				aspectScale: 1,
+				roam: false,
+				itemStyle: {
+					normal: {
+						areaColor: '#5993f7',
+						borderColor: '#5993f7',
+						shadowColor: '#5993f7',
+						borderWidth: 4,
+					},
+				}
+			},
+			series: [{
+				type: 'map',
+				map: mapName,
+				// left: '18%',
+				//整个地图扩大
+				zoom: 1.1,
+				//长宽比，默认为0.75
+				aspectScale: 1,
+				// coordinateSystem:'geo3D',
+				label: {
+					normal: {
+						show: true,
+						textStyle: {
+							fontSize: 16,
+							fontFamily: 'Microsoft YaHei',
+							color: '#ffffff',
+						},
+					}
+				},
+				itemStyle: {
+					normal: {
+						borderColor: '#06134a',
+						borderWidth: 1,
+						areaColor: '#1941f6'
+					}
+				},
+				data: seriesData
+			}]
+		};
+
+		// 3. 使用配置项显示图表
+		myChart.setOption(option);
+	</script>
+</body>
+
+</html>

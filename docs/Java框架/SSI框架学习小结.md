@@ -41,7 +41,7 @@ iBatis则是一种轻量级的OR Mapping框架，与Hibernate相比，iBatis提�
 ## SSI框架结构图
 如下所示：
 
-![SSI框架结构图](https://github.com/tucaoxingren/ProgramingNote/raw/master/img/SSI框架结构图.jpg)
+![SSI框架结构图](../img/SSI框架结构图.jpg)
 
 ## 与servlet的区别
 

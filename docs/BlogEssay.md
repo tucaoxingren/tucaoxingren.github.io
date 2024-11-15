@@ -10,4 +10,4 @@ tag:
 
 
 
-https://github.com/tucaoxingren/ProgramingNote/raw/master/img/
+../img/

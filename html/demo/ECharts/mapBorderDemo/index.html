@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Echarts Map Stereo Effect</title>
+  <!-- 引入Echarts核心库 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script> -->
+  <!-- <script src="../EchartsJS/3.7.2/echarts.min.js"></script> -->
+  <script src="../../../resources/EchartsJS/5.4.0/echarts.min.js"></script>
+  <script src="../../../resources/EchartsJS/mapData/china.js"></script>
+</head>
+
+<body>
+<!-- 用于放置Echarts地图的DOM元素 -->
+<div id="main" style="width: 800px; height: 600px; background-color: floralwhite;"></div>
+<script>
+  // 1. 初始化Echarts实例
+  const myChart = echarts.init(document.getElementById('main'))
+
+  // 2. 配置基础选项
+  const option = {
+    backgroundColor: '#000',//画布背景颜色
+    geo: {
+      show: true,
+      map: 'china',
+      label: {
+        normal: {
+          show: false
+        },
+        emphasis: {
+          show: false
+        }
+      },
+      roam: false,
+      itemStyle: {
+        normal: {
+          areaColor: '#01215c',
+          borderWidth: 5,//设置外层边框
+          borderColor: '#9ffcff',
+          shadowColor: 'rgba(0,54,255, 1)',
+          shadowBlur: 150
+        }
+      }
+    },
+    series: [
+      {
+        type: 'map',
+        map: 'china',
+        geoIndex: 1,
+        aspectScale: 0.75, //长宽比
+        showLegendSymbol: false, // 存在legend时显示
+        label: {
+          normal: {
+            show: false
+          },
+          emphasis: {
+            show: false,
+            textStyle: {
+              color: '#fff'
+            }
+          }
+        },
+        roam: false,
+        itemStyle: {
+          normal: {
+            areaColor: '#01215c',
+            borderColor: '#3074d0',
+            borderWidth: 1
+          },
+          emphasis: {
+            areaColor: '#01215c'
+          }
+        }
+      }]
+  }
+
+  // 3. 使用配置项显示图表
+  myChart.setOption(option)
+</script>
+</body>
+
+</html>

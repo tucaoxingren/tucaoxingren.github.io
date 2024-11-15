@@ -52,3 +52,8 @@ Set-ExecutionPolicy RemoteSigned
 不生效时检查服务是否启动
 
 `net start iphlpsvc`
+
+清空全部端口转发配置 
+`netsh interface portproxy reset`
+
+显示所有端口转发 `netsh interface portproxy show all`

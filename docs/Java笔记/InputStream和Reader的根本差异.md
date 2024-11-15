@@ -66,7 +66,7 @@ APPL-Apple
 GS-Goldman Sachs
 ```
 
-![](https://github.com/tucaoxingren/ProgramingNote/raw/master/img/InputStream和Reader的根本差异.jpg)
+![](../img/InputStream和Reader的根本差异.jpg)
 
 第1个例子是按字节从文件中读取数据，因此势必会非常慢。FileInputStream的read() 方法是阻塞式的，读取字节或数据块，直到无数据输入。它要么返回数据的下一个字节，当到达文件末尾时，返回-1。这意味着，我们每循环读取一个字节，将其打印为十六进制字符串。顺便说一句，将InputStream转换成字节数组是可选的。另一方面，例2是按字符读取数据。继承自FileReader的InputStreamReader 的read() 方法读取单个字符，并返回该字符，当到达流末尾时，返回-1。这就是为什么你看到例2输出的文字跟文件中的完全一样。
 

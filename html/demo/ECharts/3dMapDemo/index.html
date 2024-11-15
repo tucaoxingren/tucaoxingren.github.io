@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Echarts Map Stereo Effect</title>
+    <!-- 引入Echarts核心库 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script> -->
+    <!-- <script src="../EchartsJS/3.7.2/echarts.min.js"></script> -->
+    <script src="../../../resources/EchartsJS/5.4.0/echarts.min.js"></script>
+	<script src="../../../resources/EchartsJS/mapData/china.js"></script>
+</head>
+
+<body>
+    <!-- 用于放置Echarts地图的DOM元素 -->
+    <div id="main" style="width: 800px; height: 600px; background-color: floralwhite;"></div>
+    <script>
+        // 1. 初始化Echarts实例
+        const myChart = echarts.init(document.getElementById('main'));
+
+        // 2. 配置基础选项
+        const option = {
+            tooltip: {},
+            // 视觉映射组件配置（可根据实际数据情况调整，这里简单设置示例）
+            visualMap: {
+                max: 1000,
+                min: 0,
+                calculable: true,
+                inRange: {
+                    color: ['#50a3ba', '#eac763', '#d94e5d']
+                }
+            },
+            series: []
+        };
+
+        // 3. 配置底层地图（颜色较深、透明度稍低，模拟立体的底部效果，加强阴影效果）
+        const bottomMapOption = {
+            type: 'map',
+            map: 'china',
+            itemStyle: {
+                areaColor: 'rgba(60, 60, 60, 0.5)',  // 适当调深颜色且保持半透明
+                borderWidth: 0.5,
+                borderColor: '#ccc',
+                // 加强阴影效果
+                shadowColor: 'rgba(0, 0, 0, 0.5)',  // 加深阴影颜色
+                shadowBlur: 12,  // 增加模糊度，让阴影更柔和自然
+                shadowOffsetX: 5,  // 增加水平偏移量
+                shadowOffsetY: 5  // 增加垂直偏移量
+            },
+            zlevel: 0  // 设置较低层级，使其处于底层
+        };
+        option.series.push(bottomMapOption);
+
+        // 4. 配置中层地图（颜色适中、透明度适中，作为过渡层进一步营造立体层次，加强阴影）
+        const middleMapOption = {
+            type: 'map',
+            map: 'china',
+            itemStyle: {
+                areaColor: 'rgba(100, 100, 100, 0.7)',  // 调整中间色调且半透明颜色
+                borderWidth: 0.5,
+                borderColor: '#ccc',
+                // 加强阴影效果
+                shadowColor: 'rgba(0, 0, 0, 0.4)',  // 阴影颜色适当加深
+                shadowBlur: 10,  // 增加模糊度
+                shadowOffsetX: 4,  // 调整水平偏移量
+                shadowOffsetY: 4  // 调整垂直偏移量
+            },
+            zlevel: 1  // 层级高于底层
+        };
+        option.series.push(middleMapOption);
+
+        // 4. 配置上层地图（颜色较浅、透明度稍高，模拟立体的顶部效果，添加相对弱些的阴影）
+        const topMapOption = {
+            type: 'map',
+            map: 'china',
+            itemStyle: {
+                areaColor: 'rgba(180, 180, 180, 0.8)',  // 较浅且透明度稍高颜色
+                borderWidth: 0.5,
+                borderColor: '#ccc',
+                // 也添加一定的阴影效果，比下层稍弱些，体现立体层次感
+                shadowColor: 'rgba(0, 0, 0, 0.2)',
+                shadowBlur: 6,
+                shadowOffsetX: 2,
+                shadowOffsetY: 2
+            },
+            zlevel: 2  // 设置较高层级，使其处于最上层
+        };
+        option.series.push(topMapOption);
+
+        // 3. 使用配置项显示图表
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

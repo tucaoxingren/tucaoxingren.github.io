@@ -11,10 +11,10 @@ tag:
 # 简单Spring项目理解Spring的依赖注入
 
 项目结构图如下：
-![](https://github.com/tucaoxingren/ProgramingNote/raw/master/img/简单Spring项目结构图.png)
+![](../img/简单Spring项目结构图.png)
 
 依赖jar包：
-![](https://github.com/tucaoxingren/ProgramingNote/raw/master/img/简单Spring项目jar包.png)
+![](../img/简单Spring项目jar包.png)
 
 **HelloWorld.java**
 ```java

@@ -169,7 +169,7 @@ tag:
 
 > servlet 与 iBatis对应关系图
 
-![servlet 与 iBatis对应关系图](https://github.com/tucaoxingren/ProgramingNote/raw/master/img/image008.gif)
+![servlet 与 iBatis对应关系图](../img/image008.gif)
 
 
 > 参考文章
