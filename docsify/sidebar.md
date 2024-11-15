@@ -157,8 +157,5 @@
   - [windows设置只有指定IP段才走VPN](docs/其它/windows设置只有指定IP段才走VPN.md)
   - [xml标记语言浅析](docs/其它/xml标记语言浅析.md)
   - [大O记号](docs/其它/大O记号.md)
-  - [运维知识库@逝水fox](docsify/sidebar/其它/运维知识库/)
-    - [MySQL数据库](docsify/sidebar/其它/运维知识库/MySQL数据库/)
-      - [MySQL概述](docsify/sidebar/其它/运维知识库/MySQL数据库/MySQL概述.md)
 - [MarkDown语法](docs/MarkDown语法.md)
 - [开源项目记录](docs/开源项目记录.md)
