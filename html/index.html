@@ -93,7 +93,7 @@
                 <template v-for="item in list">
                     <li class="layui-nav-item"><a href="javascript:;">{{item.title}}</a>
                         <dl class="layui-nav-child" v-if="item.children">
-                            <dd style="cursor: pointer;" v-for="item2 in item.children" @click="route(item2)">{{item2.title}}</dd>
+                            <dd style="cursor: pointer; padding-left: 5px;" v-for="item2 in item.children" @click="route(item2)">{{item2.title}}</dd>
                         </dl>
                     </li>
                 </template>
