@@ -104,6 +104,7 @@
 
 - [开放平台](docsify/sidebar/开放平台/)
   - [云南医保](docs/开放平台/云南医保.md)
+  - [高德地图使用问题记录](docs/开放平台/高德地图使用问题记录.md)
 
 - [问题记录](docsify/sidebar/问题记录/)
   - [httpClient导致大量的close_wait记录](docs/问题记录/httpClient导致大量的close_wait记录.md)
