@@ -35,3 +35,21 @@ private Date date;
 
 实现此接口后可以自定义消息转换器`HttpMessageConverter`等MVC配置
 
+### 跨域配置
+```java
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**") // 为所有请求添加跨域支持
+                .allowedOriginPatterns("*")    // 允许任何源
+                .allowedMethods("GET", "POST", "PUT", "DELETE") // 允许的HTTP方法
+                .allowCredentials(true); // 是否允许发送Cookie信息
+    }
+}
+```

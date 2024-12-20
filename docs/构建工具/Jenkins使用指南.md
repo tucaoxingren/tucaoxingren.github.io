@@ -114,3 +114,21 @@
 ### 简单指南
 
 在通互联网的服务器上安装配置好后，直接将整个目录复制到目标服务器
+
+## 使用问题记录
+
+### 凭据明文获取
+
+[Jenkins 凭据密码忘记获取凭据密码_jenkins credentials查看密码-CSDN博客](https://blog.csdn.net/catoop/article/details/128327310)
+
+系统管理->脚本命令行 执行下面的代码即可
+
+
+```
+com.cloudbees.plugins.credentials.SystemCredentialsProvider.getInstance().getCredentials().forEach{
+  it.properties.each { prop, val ->
+    println(prop + ' = "' + val + '"')
+  }
+  println("-----------------------")
+}
+```
