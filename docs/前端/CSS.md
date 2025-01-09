@@ -1,5 +1,5 @@
 ---
-title: CSS初识
+title: CSS
 date: 2017-12-29
 time: 10:33:05
 categories: css
@@ -8,7 +8,7 @@ tag:
 ---
 </p>
 
-# CSS初识
+# CSS
 
 ## 样式分类
 

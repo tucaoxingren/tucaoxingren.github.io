@@ -71,6 +71,12 @@ let colorMap: colorMapType = {
 
 console.log(colorMap.red);
 
+// 第三种写法 Map结构 Es2015
+const colorMap: Map<string, number> = new Map();
+colorMap.set("red", 1);
+colorMap.set("white", 2);
+console.log(colorMap.get("red"));
+
 ```
 
 

@@ -46,10 +46,10 @@
   - [Docker使用记录](docs/中间件/Docker使用记录.md)
 
 - [前端](docsify/sidebar/前端/)
-  - [CSS初识](docs/前端/CSS初识.md)
+  - [CSS](docs/前端/CSS.md)
   - [ECharts](docs/前端/ECharts.md)
   - [ES6自学](docs/前端/ES6自学.md)
-  - [JavaScript初识](docs/前端/JavaScript初识.md)
+  - [JavaScript](docs/前端/JavaScript.md)
   - [vue](docs/前端/vue.md)
   - [前端开发问题记录](docs/前端/前端开发问题记录.md)
   - [微信小程序开发](docs/前端/微信小程序开发.md)

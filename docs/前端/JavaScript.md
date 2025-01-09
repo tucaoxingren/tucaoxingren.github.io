@@ -1,5 +1,5 @@
 ---
-title: JavaScript初识
+title: JavaScript
 date: 2017-12-12
 time: 15:33:05
 categories: JavaScript
@@ -8,9 +8,9 @@ tag:
 ---
 </p>
 
-# JavaScript初识
+# JavaScript
 
-## JavaScript 用法
+## 用法
 
 HTML 中的脚本必须位于 `<script>` 与 `</script>` 标签之间
 
@@ -44,7 +44,7 @@ HTML 中的脚本必须位于 `<script>` 与 `</script>` 标签之间
 </html>
 ```
 
-## JavaScript 语法
+## 语法
 
 ### typeof
 
@@ -81,7 +81,7 @@ null == undefined            // true
 
 1. 函数内部判断某个变量是否存在用`typeof myVar === 'undefined'`
 
-### JavaScript 数据类型
+### 数据类型
 
 在 JavaScript 中有 6 种不同的数据类型：
 
@@ -108,7 +108,7 @@ null == undefined            // true
     null 的数据类型是 object
     未定义变量的数据类型为 undefined
 
-### JavaScript 变量
+### 变量
 
 在编程语言中，变量用于存储数据值。
 JavaScript 使用关键字 var 来定义变量， 使用等号来为变量赋值：
@@ -141,14 +141,52 @@ var person= new Object;
 
 没有声明就使用的变量，默认为全局变量，不论这个变量在哪被使用
 
-### JavaScript 操作符
+### 操作符
 
 | 类型 | 实例 | 描述 |
 |------|------|------|
 | 赋值，算术和位运算符   | =  +  -  *  / | 在 JS 运算符中描述      |
 | 条件，比较及逻辑运算符 | ==  != <  >   | 在 JS 比较运算符中描述 |
 
-### `JavaScript` 字符集
+### 字符集
 
 `JavaScript` 使用 `Unicode` 字符集。
 `Unicode` 覆盖了所有的字符，包含标点等字符。
+
+### for...in/for...of 区别
+```javascript
+// for...in 可以用于遍历对象和数组 遍历数组时 遍历值为数组下标 遍历对象时 遍历值为对象属性名
+
+console.log("for...in 遍历对象");
+for (let key in {a: 1, b: 2}) {
+    console.log(key);
+}
+
+console.log("for...in 遍历数组");
+let temp = [{a: 1, b: 2}, {a: 2, b: 4}]
+for (let index in temp) {
+    console.log(temp[index].a);
+}
+
+// for...of 可以用于遍历数组 遍历值为数组元素；不能用于遍历对象；可以用于遍历字符串 遍历值为字符
+// 编译错误
+// for (let key of {a: 1, b: 2}) {
+//     console.log(key);
+// }
+
+console.log("for...of 遍历字符串");
+for (let key of "abc") {
+    console.log(key);
+}
+
+console.log("for...of 遍历数组");
+for (let item of temp) {
+    console.log(item.a);
+}
+
+console.log("数组forEach遍历");
+temp.forEach((value, index, array) => {
+    console.log(value.a);
+    console.log(index);
+})
+```
