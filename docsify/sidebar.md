@@ -45,6 +45,11 @@
   - [DockerHub镜像站](docs/中间件/DockerHub镜像站.md)
   - [Docker使用记录](docs/中间件/Docker使用记录.md)
 
+
+- [CAD二开](docsify/sidebar/CAD二开/)
+  - [DXF格式文件说明](docs/CAD二开/DXF格式文件说明.md)
+  - [DockeDXF开源库记录r使用记录](docs/CAD二开/DXF开源库记录.md)
+
 - [前端](docsify/sidebar/前端/)
   - [CSS](docs/前端/CSS.md)
   - [ECharts](docs/前端/ECharts.md)
