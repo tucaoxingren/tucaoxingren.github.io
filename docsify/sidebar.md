@@ -48,7 +48,7 @@
 
 - [CAD二开](docsify/sidebar/CAD二开/)
   - [DXF格式文件说明](docs/CAD二开/DXF格式文件说明.md)
-  - [DockeDXF开源库记录r使用记录](docs/CAD二开/DXF开源库记录.md)
+  - [DXF开源库记录](docs/CAD二开/DXF开源库记录.md)
 
 - [前端](docsify/sidebar/前端/)
   - [CSS](docs/前端/CSS.md)
