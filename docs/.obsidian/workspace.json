@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "6ea37a4a287ae9fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "941a7c2fd3d640e6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1cb366c22c6143e1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "前端/CSS.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CSS"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "578c8a41f0c894e4",
+    "type": "split",
+    "children": [
+      {
+        "id": "73192bf92c0affcc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "91d33e76603c36e6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "c518009bcebc91e4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "2610d13478c683e3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "165d5208fc12ea35",
+    "type": "split",
+    "children": [
+      {
+        "id": "5491b1b21443f3d2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6346ded19e02e22b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "前端/CSS.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "CSS 的反向链接列表"
+            }
+          },
+          {
+            "id": "6d545c60e09db5bd",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "前端/CSS.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "CSS 的出链列表"
+            }
+          },
+          {
+            "id": "03302277edad7194",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "c1b00c19c75071ed",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "前端/CSS.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "CSS 的大纲"
+            }
+          },
+          {
+            "id": "13aabb6eea9f80a8",
+            "type": "leaf",
+            "state": {
+              "type": "chinese-calendar-view",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "日历"
+            }
+          },
+          {
+            "id": "f3fae75813f7edd3",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "c1b00c19c75071ed",
+  "lastOpenFiles": [
+    "前端/前端开发问题记录.md",
+    "前端/微信小程序开发.md",
+    "开发工具/IDEA.md",
+    "版本控制/Git/SVN迁移到Git.md",
+    "版本控制/Git/git文档.pdf",
+    "前端/CSS.md"
+  ]
+}
