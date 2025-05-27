@@ -69,3 +69,16 @@
 6. 由对应开发人员审核合并到`dev`分支的合并请求
 
 7. 由管理员发起合并到`master`分支的合并请求
+
+## Git 配置
+
+### 代理配置
+
+开启了梯子，但是仍旧无法访问`Github`时，可以手动设置下代理
+
+```bash
+git config --global http.proxy socks5 127.0.0.1:7890
+git config --global https.proxy socks5 127.0.0.1:7890
+git config --global http.proxy 127.0.0.1:7890
+git config --global https.proxy 127.0.0.1:7890
+```
