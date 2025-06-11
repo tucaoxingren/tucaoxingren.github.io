@@ -17,6 +17,7 @@
   - [简单Spring项目理解Spring的依赖注入](docs/Java框架/简单Spring项目理解Spring的依赖注入.md)
   - [Mybatis-Plus使用说明](docs/Java框架/Mybatis-Plus使用说明.md)
   - [JDBC使用记录](docs/Java框架/JDBC使用记录.md)
+  - [Springboot配置加载指南](docs/Java框架/Springboot配置加载指南.md)
 
 - [中间件](docsify/sidebar/中间件/)
   - [ElasticSearch](docsify/sidebar/中间件/ElasticSearch/)

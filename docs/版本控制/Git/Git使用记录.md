@@ -77,8 +77,19 @@
 开启了梯子，但是仍旧无法访问`Github`时，可以手动设置下代理
 
 ```bash
+# 使用socks5代理的 例如ss，ssr
 git config --global http.proxy socks5 127.0.0.1:7890
 git config --global https.proxy socks5 127.0.0.1:7890
+# 使用http代理的 例如Clash
 git config --global http.proxy 127.0.0.1:7890
 git config --global https.proxy 127.0.0.1:7890
+# 只针对Github开启全局代理
+git config --global http.https://github.com.proxy http://127.0.0.1:7890
+git config --global https.https://github.com.proxy https://127.0.0.1:7890
+#取消github代理
+git config --global --unset http.https://github.com.proxy
+git config --global --unset https.https://github.com.proxy
+#取消全局代理
+git config --global --unset http.proxy
+git config --global --unset https.proxy
 ```
