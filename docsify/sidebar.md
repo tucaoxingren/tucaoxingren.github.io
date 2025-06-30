@@ -181,7 +181,8 @@
 - [其它](docsify/sidebar/其它/)
   - [xml标记语言浅析](docs/其它/xml标记语言浅析.md)
   - [大O记号](docs/其它/大O记号.md)
-
+  - [YNSDSJ笔试题](docs/其它/云南省大数据公司软件开发岗笔试.md)
+  
 - [MarkDown语法](docs/MarkDown语法.md)
 
 - [开源项目记录](docs/开源项目记录.md)

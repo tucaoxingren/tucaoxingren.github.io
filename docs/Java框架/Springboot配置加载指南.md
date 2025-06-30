@@ -1,6 +1,27 @@
 ## 本地开发覆盖Nacos配置
 
-基于下面的论述，Nacos配置优先级最高，因此，本地开发若想覆盖Nacos中的同名配置，建议不起用Nacos，将全部配置放到本地启动项目
+基于下面的论述，Nacos配置优先级最高
+
+本地开发若想覆盖Nacos中的同名配置
+
+1. 不起用Nacos，将全部配置放到本地启动项目
+
+2. 将下面的配置放到nacos上 [nacos配置文件优先级过程_java_脚本之家](https://www.jb51.net/program/324266vge.htm)
+
+```yml
+spring:
+  cloud:
+    config:
+      # 如果本地配置优先级高，那么 override-none 设置为 true，包括系统环境变量、本地配置文件等配置
+      override-none: true
+      # 如果想要远程配置优先级高，那么 allow-override 设置为 false，如果想要本地配置优先级高那么 allow-override 设置为 true
+      allow-override: true
+      # 只有系统环境变量或者系统属性才能覆盖远程配置文件的配置，本地配置文件中配置优先级低于远程配置；注意本地配置文件不是系统属性
+      override-system-properties: false
+
+```
+
+
 
 
 
@@ -44,6 +65,10 @@ nacos服务端 2.2.1
 `application-{profile}.yaml`
 
 `application-{profile}.properties`
+
+`环境变量`
+
+`jvm参数`
 
 因此，配置生效覆盖关系：
 
@@ -91,6 +116,10 @@ nacos服务端 2.2.1
 `Nacos配置中心该服务配置（通过spring.cloud.nacos.config.prefix和spring.cloud.nacos.config.file-extension指定）`
 
 `Nacos配置中心该服务-{profile}配置（通过spring.cloud.nacos.config.prefix和spring.cloud.nacos.config.file-extension、以及spring.profiles.active指定）`
+
+`环境变量`
+
+`jvm参数`
 
 因此，配置生效覆盖关系：
 
