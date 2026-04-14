@@ -17,6 +17,22 @@
 - 支持多模型快速切换，兼顾效果与成本
 - 适用于个人快速开发与团队标准化协作
 
+### Claude Code 为何是 Vibe Coding 核心
+Vibe Coding 是轻量化、沉浸式 AI 辅助编程模式，Claude Code 完美适配其核心：
+
+沉浸式体验：CLI 形式与终端 / 编辑器深度融合，无网页切换割裂感，契合 “氛围式开发”；
+
+全流程适配：联动 Trellis 工作流（/start//check等指令），覆盖需求分析→编码→校验全流程；
+
+标准化 + 灵活：自动加载.trellis/spec项目规范，支持claude.md会话定制，兼顾个人 / 团队协作；
+
+成本优化：可切换低成本国内模型，高低模型协同（高端规划 + 低成本编码）；
+区别于豆包网页版仅能单点生成代码，Claude Code 是 “环境级工具”，承接 Vibe Coding 全流程辅助能力。
+
+总结
+
+豆包等大模型网页版是通用网页 AI，编程仅为附加功能；Claude Code 是专为 Vibe Coding 设计的 CLI 工具，从交互、工作流、定制化上完全匹配其 “轻量化、高效率、沉浸式” 核心，成为其核心载体。
+
 ## 二、基础环境安装
 
 本教程支持 Claude、Codex、Gemini 三大主流 AI 编程模型，需提前配置基础运行环境。
@@ -182,6 +198,111 @@ AI 自动学习习惯：捕捉注释、异常处理等偏好并写入规范
 
 执行 `/start` 加载生效
 提交 Git：git add claude.md
+
+### 8. `.trellis/spec` 初始化：接入公司统一规范实例
+
+#### 8.1 初始化前提
+公司架构 / 研发团队已输出标准化编码规范文档（如《XX 公司 Java 编码规范》《XX 前端开发规约》）
+本地已完成 Trellis 基础安装，项目根目录可创建 .trellis 目录
+
+#### 8.2 初始化步骤（企业级标准）
+
+##### 8.2.1 创建规范目录结构
+在项目根目录执行以下命令，搭建标准化 spec 目录：
+```bash
+# 创建核心目录
+mkdir -p .trellis/spec
+# 按公司规范分类创建子文件（示例）
+touch .trellis/spec/frontend.md  # 前端规范
+touch .trellis/spec/backend.md  # 后端规范
+touch .trellis/spec/api.md      # 接口规范
+touch .trellis/spec/naming.md   # 命名规范（公司统一）
+touch .trellis/spec/comment.md  # 注释规范（公司统一）
+touch .trellis/spec/security.md # 安全规范（公司强制）
+```
+
+##### 8.2.2 写入公司统一规范
+以 .trellis/spec/backend.md（Java 后端为例）写入公司规范：
+```markdown
+# XX公司Java后端编码规范（v2.0）
+## 1. 基础语法约束
+- 代码缩进使用4个空格，禁止使用Tab
+- 每行代码字符数不超过120，超出需换行
+- 关键字后必须加空格（如 if、for、while）
+- 方法体超过80行必须拆分，禁止超长方法
+
+## 2. 命名规则（公司强制）
+- 类名：大驼峰，前缀需体现业务域（如 OrderService、UserController）
+- 方法名：小驼峰，动词+名词（如 queryOrderList、updateUserInfo）
+- 常量：全大写，下划线分隔（如 MAX_RETRY_TIMES、DEFAULT_PAGE_SIZE）
+- 包名：全小写，按公司域划分（com.xxcompany.business.order）
+
+## 3. 架构约束
+- 禁止在Controller层写业务逻辑，仅做参数校验/返回封装
+- Service层必须实现接口，接口名以I开头（如 IOrderService）
+- 数据库操作必须通过MyBatis-Plus，禁止直接写JDBC
+- 异常必须抛自定义业务异常（BusinessException），禁止抛RuntimeException
+
+## 4. 注释要求
+- 类注释：必须包含作者、创建时间、业务说明
+- 方法注释：必须包含入参、出参、异常说明、业务逻辑描述
+- 关键业务代码块必须加行注释（如复杂计算、特殊逻辑）
+```
+
+以 .trellis/spec/security.md（公司安全规范）为例：
+```markdown
+# XX公司编码安全规范（强制）
+## 1. 接口安全
+- 所有对外接口必须加签名校验，签名密钥需配置化（禁止硬编码）
+- 敏感接口（如支付、用户信息）必须加token校验+IP白名单
+- 入参必须做XSS/SQL注入过滤，使用公司统一工具类 XssFilterUtil
+
+## 2. 数据安全
+- 手机号/身份证号必须脱敏存储，使用 DesensitizeUtil 工具类
+- 密码必须通过BCrypt加密，禁止明文/MD5存储
+- 数据库连接信息必须放在配置中心（Nacos/Apollo），禁止写在本地配置
+
+## 3. 日志安全
+- 禁止打印敏感信息（密码、token、身份证号）
+- 日志级别规范：ERROR（异常）、WARN（风险）、INFO（关键流程）、DEBUG（开发调试，生产禁用）
+```
+
+##### 8.2.3 关联公司规范到 claude.md
+修改 claude.md 的「开发规范引用」模块，直接关联公司规范文件：
+```markdown
+# 开发规范引用
+请严格遵循XX公司统一编码规范，加载以下spec文件：
+- .trellis/spec/frontend.md （引用公司前端规范）
+- .trellis/spec/backend.md （引用公司后端规范）
+- .trellis/spec/api.md      （引用公司接口规范）
+- .trellis/spec/naming.md   （引用公司命名规范）
+- .trellis/spec/comment.md  （引用公司注释规范）
+- .trellis/spec/security.md （引用公司安全规范，强制遵守）
+
+# 规范执行要求
+1. 所有输出代码必须100%符合公司规范，不符合的需标注原因并提供修正方案
+2. 若规范存在冲突，优先遵循 security.md 中的安全强制条款
+3. 生成代码后需自动校验规范符合性，输出校验报告
+```
+
+初始化生效与验证
+```bash
+# 启动 Claude Code 并加载规范
+claude
+# 在会话中执行启动命令，触发规范加载
+/start
+# 验证：让AI生成一段后端接口代码，检查是否符合公司规范
+请生成一个订单查询接口（/api/order/{id}），需符合XX公司后端+安全规范
+```
+
+#### 8.3 团队规范同步与维护
+规范下发：架构师将公司标准 spec 文件包上传至 Git 私服 / 内网文档库
+
+全员同步：开发者拉取后放入项目 .trellis/spec 目录，执行 /start 即可加载
+
+规范更新：公司规范迭代后，架构师更新基准文件，全员重新拉取覆盖本地 spec 基础文件（自动更新会在基础规范上叠加个性化适配）
+
+合规校验：通过 `/check-backend`、`/check-frontend` 命令，让 AI 自动校验代码是否符合公司规范
 
 ## 五、实用使用技巧
 高效提问：把 Claude Code 当作资深开发工程师，直接清晰描述需求即可获得专业解答。
