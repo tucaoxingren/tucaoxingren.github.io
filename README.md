@@ -11,3 +11,5 @@ docsify: Docsify发布框架
 ## 使用说明
 
 1.  使用Markdown记录笔记
+1.  新增笔记后需要在`docsify/sidebar.md` 新增目录
+1.  文件名不能包含空格

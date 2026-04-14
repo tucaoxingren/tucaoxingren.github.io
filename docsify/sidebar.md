@@ -186,3 +186,5 @@
 - [MarkDown语法](docs/MarkDown语法.md)
 
 - [开源项目记录](docs/开源项目记录.md)
+
+- [Vibe Coding 快速上手指南](docs/VibeCoding快速上手指南.md)

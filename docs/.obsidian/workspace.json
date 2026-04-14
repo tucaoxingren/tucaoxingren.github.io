@@ -11,10 +11,14 @@
             "id": "04fe3a3aef3146f3",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Java框架/Springboot配置加载指南.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "Springboot配置加载指南"
             }
           }
         ]
@@ -49,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "跨域",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,12 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Java框架/Springboot配置加载指南.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Springboot配置加载指南 的大纲"
             }
           },
           {
@@ -186,6 +191,9 @@
   },
   "active": "91d33e76603c36e6",
   "lastOpenFiles": [
+    "Java框架/SpringBoot问题记录.md",
+    "其它/云南省大数据公司软件开发岗笔试.md",
+    "银海框架/Ta404/ta404使用问题记录.md",
     "2025-05-08.md",
     "未命名.canvas",
     "数据库/MySQL笔记/MySQL安装使用说明.md",
